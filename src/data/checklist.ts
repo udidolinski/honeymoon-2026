@@ -2,112 +2,121 @@ import type { ChecklistItem } from "./types";
 
 export const bookingChecklist: ChecklistItem[] = [
   {
-    id: "book-canyon-park",
-    text: "Canyon Park SUP (18 Aug, 10:45)",
-    detail:
-      "6 boards reserved for the 10:45 slot. Payment is cash on site (€168). Confirmation is in Itay's email.",
-    done: true
+    id: "passports-valid",
+    text: "Check passports are valid 6+ months past the return date",
+    detail: "US entry generally wants at least 6 months of validity remaining beyond your stay — renew now if either passport is close."
   },
   {
-    id: "book-argentario-boat",
-    text: "Argentario catamaran cruise (23 Aug)",
-    detail: "GetYourGuide / DONNINI, 5 adults + 5 kids. Snorkel gear & lunch included on board. Check in at the Porto Santo Stefano pier by 08:30. Confirmation is in Itay's email.",
-    done: true
+    id: "esta",
+    text: "Apply for ESTA (US Visa Waiver Program)",
+    detail: "Israel is part of the US Visa Waiver Program — apply for an ESTA online well before departure instead of a full visa. Approval usually comes within minutes but can take up to 72 hours."
   },
   {
-    id: "book-rafting",
-    text: "Soft rafting, Serchio (19 Aug, 09:30)",
-    detail: "GetYourGuide / Lucca Rafting, whole group. Guide, gear & wetsuits included. Check in at Chifenti by 09:25. Confirmation is in Itay's email.",
-    done: true
+    id: "travel-insurance",
+    text: "Buy travel insurance covering both of you",
+    detail: "US medical care is expensive without insurance — confirm coverage for hospital visits, trip interruption, and any adventure activities (snorkeling, hiking) on the itinerary."
   },
   {
-    id: "book-waterpark",
-    text: "Acqua Village waterpark tickets (22 Aug)",
-    detail: "Follonica. Buy online the night before — meaningfully cheaper than at the gate.",
-    link: "https://www.acquavillage.it/"
+    id: "annual-pass-plan",
+    text: "Plan to buy the America the Beautiful annual pass at the first park",
+    detail: "Covers Yosemite, Sequoia, Death Valley and Hawaiʻi Volcanoes — $80 for the vehicle, pays for itself after about three park entries. Not valid at Grand Canyon West (tribal land, separate fees)."
   },
   {
-    id: "book-gondola",
-    text: "Abetone gondola tickets (20 Aug)",
-    detail: "Monte Gomito cable car in the mountains — check the day's opening hours before you drive up."
+    id: "us-license-check",
+    text: "Confirm your Israeli driver's license is enough, or get an International Driving Permit",
+    detail: "Israeli licenses are generally accepted for short-term car rental in most US states, but some rental companies still ask for an International Driving Permit as a translated backup ID — check the specific rental company's policy and consider getting an IDP before you fly."
   },
   {
-    id: "book-private-chef",
-    text: "Private chef dinner at the villa (optional)",
-    detail: "Chef-at-Home Tuscany / Eatwith / Airbnb Experiences. Pici workshop + dinner. Pick a settled villa evening (22–25 Aug) — not the 21st, that's the hotel-switch day.",
-    link: "https://www.eatwith.com/"
+    id: "rental-car-confirm",
+    text: "Confirm the SFO rental car booking",
+    detail: "Pickup at SFO on day 1, drop-off in Las Vegas before day 8 — confirm the one-way drop-off fee and that the driver's card matches the reservation name."
   },
   {
-    id: "book-horses",
-    text: "Reserve a Maremma horseback hour",
-    detail: "Beginner-friendly ranch near Alberese / Albinia. Early-morning slot is best."
+    id: "grand-canyon-antelope-tour",
+    text: "Book the Grand Canyon West + Antelope Canyon combo tour",
+    detail: "Antelope Canyon sells out weeks ahead, especially the popular light-beam slots — book the combo day tour from Las Vegas early."
   },
   {
-    id: "credit-card-on-driver-name",
-    text: "Make sure the rental driver has a credit card in their own name",
-    detail: "Debit cards usually rejected. The deposit hold can be €1,500+."
+    id: "haleakala-sunrise-reservation",
+    text: "Book the Haleakalā sunrise viewing reservation",
+    detail: "A separate advance reservation via recreation.gov, on top of the park entrance fee — book as soon as your Maui dates are set."
   },
   {
-    id: "esim",
-    text: "Sort out an Italian eSIM",
-    detail: "Airalo / Holafly / Nomad — 10 GB Italy plan is plenty. Activate at the airport."
+    id: "interisland-flights",
+    text: "Book the inter-island and return flights",
+    detail: "Las Vegas → Maui (likely via Honolulu), Maui → Big Island, and Big Island → San Francisco — confirm routing and baggage allowances for each leg."
+  },
+  {
+    id: "manta-ray-tour",
+    text: "Book the manta ray night snorkel tour",
+    detail: "A popular Kona-coast experience — book ahead, especially for a specific date."
+  },
+  {
+    id: "luau-booking",
+    text: "Book a Lahaina-area luau",
+    detail: "Consider Old Lahaina Luau or a similar reputable option — popular luaus sell out on weekends."
+  },
+  {
+    id: "mauna-kea-tour",
+    text: "Book a guided Mauna Kea sunset/stargazing tour",
+    detail: "4WD is required above the visitor station — a guided tour is safer and easier than self-driving."
   }
 ];
 
 export const packingChecklist: ChecklistItem[] = [
   {
-    id: "water-shoes",
-    text: "Closed-toe water shoes — for everyone",
-    detail: "Sentierelsa, Saturnia, the Serchio. No sandals, no flip-flops."
+    id: "reef-safe-sunscreen",
+    text: "Reef-safe sunscreen — for everyone",
+    detail: "Required by Hawaii law (no oxybenzone/octinoxate) — bring it from home, it's pricier locally."
   },
   {
-    id: "dry-bag",
-    text: "Dry bag (10–20 L)",
-    detail: "Phones, wallets, car keys on the SUP and on the boat at Argentario."
+    id: "desert-heat-layers",
+    text: "Lightweight, breathable layers for Death Valley heat",
+    detail: "October days can still hit 90+°F at Badwater Basin — sun hat, high-SPF sunscreen, more water than feels necessary."
   },
   {
-    id: "swim-goggles",
-    text: "Swim goggles — per person",
-    detail: "For the waterpark pools and any hotel/villa pool. (Snorkel gear is provided on the Argentario catamaran, so no need to pack that.)"
+    id: "altitude-cold-layers",
+    text: "Real warm layers for Mauna Kea and Haleakalā",
+    detail: "Both summits can drop to near or below freezing, even though you're in Hawaii — a proper jacket, hat and gloves earn their space in the suitcase."
   },
   {
-    id: "uv-shirts",
-    text: "UV / lycra rashguards",
-    detail: "Hours on an open boat in August — sunscreen alone won't do it."
+    id: "power-adapter-voltage",
+    text: "Plug adapter and check device voltage",
+    detail: "Israel runs 230V on Type C/H sockets; the US runs 120V on Type A/B sockets. Most phone and laptop chargers are dual-voltage and only need a plug adapter, but check any single-voltage appliances (hair dryers, etc.) — they'll need a voltage converter, not just an adapter."
   },
   {
-    id: "headlamps",
-    text: "Headlamps (small, per person)",
-    detail: "For Vitozza cave dwellings and the Vie Cave at dusk."
+    id: "cash-for-tipping",
+    text: "Some US cash for tipping",
+    detail: "15–20% at restaurants is standard, plus small cash tips for bellhops and housekeeping — unlike tipping norms in Israel."
   },
   {
-    id: "reef-sunscreen",
-    text: "High-SPF reef-safe sunscreen + after-sun",
-    detail: "The Italian sun in August is brutal."
+    id: "offline-maps",
+    text: "Download offline maps for the desert stretches",
+    detail: "Death Valley and long stretches of the Southwest have minimal to no cell service — download offline Google Maps or a dedicated navigation app before you leave home."
   },
   {
-    id: "first-aid",
+    id: "snorkel-gear",
+    text: "Snorkel mask (optional — rentable everywhere)",
+    detail: "Bring your own if you're picky about fit; otherwise every Hawaii beach town rents gear cheaply."
+  },
+  {
+    id: "hiking-shoes",
+    text: "Sturdy walking/hiking shoes",
+    detail: "For the Yosemite valley floor, Moro Rock's stairs, and any Road to Hana wading."
+  },
+  {
+    id: "swimwear",
+    text: "Swimwear for both the desert pools and Hawaii beaches",
+    detail: "Pack more than one set — you'll want a dry one for driving days."
+  },
+  {
+    id: "first-aid-kit",
     text: "Mini first-aid kit",
-    detail: "Plasters, antiseptic, kids' paracetamol, antihistamine, anti-diarrheal."
-  },
-  {
-    id: "swim-towels",
-    text: "Quick-dry microfibre towels",
-    detail: "One per person — for river walks and beach stops."
+    detail: "Blister plasters, antiseptic, pain relief, motion-sickness tablets for the Road to Hana's 600+ curves."
   },
   {
     id: "reusable-bottles",
-    text: "Reusable water bottles",
-    detail: "Tap water is fine almost everywhere; refill at fountains."
-  },
-  {
-    id: "power-adapter",
-    text: "EU power adapters + multi-port USB charger",
-    detail: "Italian sockets are mostly type F/L."
-  },
-  {
-    id: "kids-snacks",
-    text: "Kids' snack stash",
-    detail: "First night arrival is late; no time for proper shopping."
+    text: "Reusable water bottles — one per person",
+    detail: "Fill up before every desert or trail stop; tap water is safe throughout the US."
   }
 ];

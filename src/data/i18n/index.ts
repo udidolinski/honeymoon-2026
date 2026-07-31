@@ -1,4 +1,12 @@
-import { useLang } from "../../lib/i18n";
+/**
+ * English-only build: this app no longer ships a Hebrew (or any second
+ * language) overlay. These `localizeX` functions are kept as identity
+ * passthroughs — and the `useLocalizeX` hooks as thin wrappers — purely
+ * so every call site across the app (components, the AI persona digest,
+ * etc.) keeps compiling unchanged. If a future trip wants bilingual
+ * support again, reintroduce the partial-overlay `*.he.ts` files and
+ * merge logic here.
+ */
 import type {
   POI,
   Stay,
@@ -10,208 +18,81 @@ import type {
   Dish,
   Winery
 } from "../types";
-import { attractionsHE } from "./attractions.he";
-import { staysHE } from "./stays.he";
-import { servicesHE } from "./services.he";
-import { itineraryHE } from "./itinerary.he";
-import { tipsHE } from "./tips.he";
-import { checklistHE } from "./checklist.he";
-import { emergencyHE } from "./emergency.he";
-import { dishesHE } from "./dishes.he";
-import { wineriesHE } from "./wineries.he";
-
-function mergeIfDefined<T extends object>(
-  base: T,
-  overrides?: Partial<Record<keyof T, unknown>> | undefined
-): T {
-  if (!overrides) return base;
-  const out: Record<string, unknown> = { ...(base as Record<string, unknown>) };
-  for (const [k, v] of Object.entries(overrides)) {
-    if (v !== undefined) out[k] = v;
-  }
-  return out as T;
-}
-
-/** Drop keys whose value is undefined so a spread `{ ...defaults, ...he }`
- *  doesn't accidentally clobber a defined English value with `undefined`. */
-function stripUndefined<T extends object>(obj: T): Partial<T> {
-  const out: Record<string, unknown> = {};
-  for (const [k, v] of Object.entries(obj)) {
-    if (v !== undefined) out[k] = v;
-  }
-  return out as Partial<T>;
-}
 
 /* ---------- Attractions / POIs (incl. stays + services) ---------- */
 
-export function localizePoi(p: POI, lang: "en" | "he"): POI {
-  if (lang === "en") return p;
-  if (p.id in attractionsHE) return mergeIfDefined(p, attractionsHE[p.id]);
-  if (p.id in staysHE) return mergeIfDefined(p, staysHE[p.id]) as POI;
-  if (p.id in servicesHE) return mergeIfDefined(p, servicesHE[p.id]) as POI;
+export function localizePoi(p: POI): POI {
   return p;
 }
 
-export function localizeStay(s: Stay, lang: "en" | "he"): Stay {
-  if (lang === "en") return s;
-  return mergeIfDefined(s, staysHE[s.id]) as Stay;
+export function localizeStay(s: Stay): Stay {
+  return s;
 }
 
-export function localizeService(s: Service, lang: "en" | "he"): Service {
-  if (lang === "en") return s;
-  return mergeIfDefined(s, servicesHE[s.id]) as Service;
+export function localizeService(s: Service): Service {
+  return s;
 }
 
 /* ---------- Days / Itinerary ---------- */
 
-export function localizeDay(d: Day, lang: "en" | "he"): Day {
-  if (lang === "en") return d;
-  const he = itineraryHE[d.dayNumber];
-  if (!he) return d;
-
-  const localizedGear =
-    he.gear && d.gear
-      ? d.gear.map((g, i) => ({ ...g, item: he.gear?.[i] ?? g.item }))
-      : d.gear;
-
-  /* Italian words (up to three per day): keep `word` and `example` as the
-     original Italian, but let HE override per-index (pronunciation in Hebrew
-     letters, meaning, example translation). */
-  const localizedItalianWords =
-    d.italianWords && he.italianWords
-      ? d.italianWords.map((w, i) => ({
-          ...w,
-          ...stripUndefined(he.italianWords?.[i] ?? {})
-        }))
-      : d.italianWords;
-
-  /* End-of-day drink: keep the proper Italian name (e.g. "Aperol Spritz",
-     "Chianti Classico DOCG") and the universal `type` enum, but overlay
-     the localized prose (`pairing`, optional `servingNote`). */
-  const localizedDrink =
-    d.drinkOfTheDay && he.drinkOfTheDay
-      ? { ...d.drinkOfTheDay, ...stripUndefined(he.drinkOfTheDay) }
-      : d.drinkOfTheDay;
-
-  const baseMerged = mergeIfDefined(d, {
-    title: he.title,
-    subtitle: he.subtitle,
-    base: he.base,
-    driveNotes: he.driveNotes,
-    gear: localizedGear,
-    dayTips: he.dayTips,
-    italianWords: localizedItalianWords,
-    drinkOfTheDay: localizedDrink
-  });
-  if (!he.activities) return baseMerged;
-  const activities = d.activities.map((a, i) => {
-    const aHe = he.activities?.[i];
-    /* `rideToNext`: only present on activities with a meaningful drive
-       to the next stop. We overlay the HE duration / note onto the EN
-       object so the connector reads natively in either language; if the
-       EN side has no rideToNext we don't synthesize one even if HE
-       happens to have a stray entry. */
-    const localizedRide =
-      a.rideToNext && aHe?.rideToNext
-        ? { ...a.rideToNext, ...stripUndefined(aHe.rideToNext) }
-        : a.rideToNext;
-    return mergeIfDefined(a, {
-      time: aHe?.time,
-      title: aHe?.title,
-      description: aHe?.description,
-      rideToNext: localizedRide
-    });
-  });
-  return { ...baseMerged, activities };
+export function localizeDay(d: Day): Day {
+  return d;
 }
 
 /* ---------- Tips ---------- */
 
-export function localizeTip(t: Tip, lang: "en" | "he"): Tip {
-  if (lang === "en") return t;
-  return mergeIfDefined(t, tipsHE[t.id]);
+export function localizeTip(t: Tip): Tip {
+  return t;
 }
 
 /* ---------- Checklist ---------- */
 
-export function localizeChecklistItem(
-  item: ChecklistItem,
-  lang: "en" | "he"
-): ChecklistItem {
-  if (lang === "en") return item;
-  return mergeIfDefined(item, checklistHE[item.id]);
+export function localizeChecklistItem(item: ChecklistItem): ChecklistItem {
+  return item;
 }
 
-/* ---------- Emergency (positional, since contacts have no ids) ---------- */
+/* ---------- Emergency ---------- */
 
-export function localizeEmergencyGroup(
-  group: EmergencyGroup,
-  index: number,
-  lang: "en" | "he"
-): EmergencyGroup {
-  if (lang === "en") return group;
-  const he = emergencyHE[index];
-  if (!he) return group;
-  const items = group.items.map((it, i) => {
-    const heItem = he.items?.[i];
-    if (!heItem) return it;
-    return mergeIfDefined(it, {
-      label: heItem.label,
-      value: heItem.value,
-      detail: heItem.detail
-    });
-  });
-  return { ...group, title: he.title ?? group.title, items };
+export function localizeEmergencyGroup(group: EmergencyGroup): EmergencyGroup {
+  return group;
 }
 
-/* ---------- Food & Wine ---------- */
+/* ---------- Food & Drink ---------- */
 
-export function localizeDish(d: Dish, lang: "en" | "he"): Dish {
-  if (lang === "en") return d;
-  return mergeIfDefined(d, dishesHE[d.id]);
+export function localizeDish(d: Dish): Dish {
+  return d;
 }
 
-export function localizeWinery(w: Winery, lang: "en" | "he"): Winery {
-  if (lang === "en") return w;
-  return mergeIfDefined(w, wineriesHE[w.id]);
+export function localizeWinery(w: Winery): Winery {
+  return w;
 }
 
 /* ---------- Hooks (most components use these) ---------- */
 
 export function useLocalizePoi() {
-  const { lang } = useLang();
-  return (p: POI) => localizePoi(p, lang);
+  return (p: POI) => p;
 }
 export function useLocalizeStay() {
-  const { lang } = useLang();
-  return (s: Stay) => localizeStay(s, lang);
+  return (s: Stay) => s;
 }
 export function useLocalizeService() {
-  const { lang } = useLang();
-  return (s: Service) => localizeService(s, lang);
+  return (s: Service) => s;
 }
 export function useLocalizeDay() {
-  const { lang } = useLang();
-  return (d: Day) => localizeDay(d, lang);
+  return (d: Day) => d;
 }
 export function useLocalizeTip() {
-  const { lang } = useLang();
-  return (t: Tip) => localizeTip(t, lang);
+  return (t: Tip) => t;
 }
 export function useLocalizeChecklistItem() {
-  const { lang } = useLang();
-  return (it: ChecklistItem) => localizeChecklistItem(it, lang);
+  return (it: ChecklistItem) => it;
 }
 export function useLocalizeEmergencyGroup() {
-  const { lang } = useLang();
-  return (group: EmergencyGroup, idx: number) =>
-    localizeEmergencyGroup(group, idx, lang);
+  return (group: EmergencyGroup, _index?: number) => group;
 }
 export function useLocalizeDish() {
-  const { lang } = useLang();
-  return (d: Dish) => localizeDish(d, lang);
+  return (d: Dish) => d;
 }
 export function useLocalizeWinery() {
-  const { lang } = useLang();
-  return (w: Winery) => localizeWinery(w, lang);
+  return (w: Winery) => w;
 }

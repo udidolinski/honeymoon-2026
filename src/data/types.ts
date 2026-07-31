@@ -1,4 +1,4 @@
-export type Region = "north" | "south" | "transit";
+export type Region = "mainland" | "hawaii" | "transit";
 
 export type Category =
   | "attraction"
@@ -8,8 +8,8 @@ export type Category =
   | "gas"
   | "airport"
   | "hospital"
-  // Wineries from data/wineries.ts get projected onto the map as POIs
-  // under this category (off by default in the filter UI).
+  // Local flavor stops from data/wineries.ts get projected onto the map
+  // as POIs under this category (off by default in the filter UI).
   | "winery";
 
 export type AttractionTag =
@@ -21,7 +21,9 @@ export type AttractionTag =
   | "food"
   | "view"
   | "cave"
-  | "village";
+  | "village"
+  | "trail"
+  | "national-park";
 
 export interface ImageCredit {
   /** Display name of the photographer / source. */
@@ -34,43 +36,21 @@ export interface ImageCredit {
   licenseUrl?: string;
 }
 
-/** Casual three-tier rating for how demanding an attraction is for a
- *  family of mixed ages. We try to keep most of the trip "easy" and
- *  flag anything with a real climb, scramble, or specific gear. */
+/** Casual three-tier rating for how demanding an attraction is. */
 export type Difficulty = "easy" | "moderate" | "challenging";
 
 /**
- * One hand-curated piece of trivia about an attraction's story,
- * legend, signature feature, or unmissable historical detail.
- *
- * The offline fallback quiz turns these straight into multiple-choice
- * questions ("In the Devil's Bridge legend, what did the villagers
- * send across first to outsmart the devil?" → "A dog"), and the AI
- * persona surfaces them in the day digest so Gemini also sees them
- * as priority question fodder when the network IS available — so the
- * AI and the fallback both ask substantive, story-driven questions
- * instead of generic "which town are we in?" facts.
- *
- * Keep facts:
- *   - genuinely answerable from the attraction's description (the
- *     kid should be able to recall it from listening), or from one
- *     extra sentence we deliberately add to the description,
- *   - kid-friendly (8–14): no scary detail, no booze, no politics,
- *   - 4 options total at runtime, so author 3+ wrong-but-plausible
- *     `distractors`.
+ * One hand-curated piece of trivia about an attraction's story, science,
+ * or signature feature. Kept in a light "fun couple trivia" tone — this
+ * is a childless honeymoon, so no need for kid-safe phrasing, but still
+ * warm and playful rather than dry.
  */
 export interface AttractionQuizFact {
-  /** Complete question text, ready to read aloud — e.g. "In the
-   *  Devil's Bridge legend, what did the villagers send across
-   *  first to outsmart the devil?". */
+  /** Complete question text, ready to read aloud. */
   question: string;
-  /** The single correct answer. The fallback randomizes which slot
-   *  it lands in at runtime so the kid can't just tap the same
-   *  letter every time. */
+  /** The single correct answer. */
   correctAnswer: string;
-  /** Plausible-but-clearly-wrong alternatives. Need at least 3 so
-   *  the fallback can build a 4-option question; the AI persona
-   *  uses the whole list as in-context "wrong-answer style" hints. */
+  /** Plausible-but-clearly-wrong alternatives (need at least 3). */
   distractors: string[];
 }
 
@@ -91,15 +71,9 @@ export interface POI {
   bookingNote?: string;
   /** How demanding the visit is — Easy / Moderate / Challenging. */
   difficulty?: Difficulty;
-  /** Practical "insider" notes for the place — parking, what to wear,
-   *  opening tricks, kid age limits. Short bullets, not paragraphs. */
+  /** Practical "insider" notes for the place. */
   tips?: string[];
-  /** Hand-curated trivia about the attraction's story, history, or
-   *  signature legend. Used by the offline quiz fallback to ask
-   *  substantive story-driven questions, AND surfaced inside the AI
-   *  persona's day digest as "trivia you can ask about" hints so
-   *  Gemini also reaches for these angles. Omit when the attraction
-   *  is a purely practical stop with no story worth the effort. */
+  /** Hand-curated trivia used by the offline quiz fallback + AI persona. */
   quizFacts?: AttractionQuizFact[];
 }
 
@@ -111,15 +85,14 @@ export interface Stay extends POI {
   bookingLink?: string;
   highlights: string[];
   warnings?: string[];
-  /** Optional extra photos shown in the stay-card carousel.
-   *  When present, the card crossfades through `[image, ...gallery]`. */
+  /** Optional extra photos shown in the stay-card carousel. */
   gallery?: string[];
 }
 
 export interface Service extends POI {
   category: "restaurant" | "supermarket" | "gas";
   hours?: string;
-  base: "north" | "south";
+  base: "mainland" | "hawaii";
 }
 
 export interface DayActivity {
@@ -129,52 +102,37 @@ export interface DayActivity {
   attractionId?: string;
   tag?: AttractionTag;
   /** Drive time from this stop to the NEXT activity, rendered as a small
-   *  inline connector on the chapter detail page. Only set when there's a
-   *  meaningful drive between stops — skip for sub-5-minute hops or when
-   *  the next activity is at the same place. Examples: "45 min", "1 h 15".
-   *  `note` is a short hint like "via A1" or "winding mountain road". */
-   rideToNext?: { duration: string; note?: string; departAt?: string };
-  /** When true, render this activity with an "Optional" badge and slightly
-   *  muted styling — signal to the family that the day's plan still works
-   *  if they skip this one. When undefined, the chapter page applies a
-   *  rule-of-thumb: on a day with more than 2 attractionId-bearing
-   *  activities, the 3rd-and-later ones are treated as optional (you can
-   *  realistically only fit ~2 multi-hour stops in a day with drives).
-   *  Set explicitly to `false` to opt a specific activity OUT of the
-   *  auto-rule (e.g. Day 9's Civita is always part of the plan). */
+   *  inline connector on the chapter detail page. */
+  rideToNext?: { duration: string; note?: string; departAt?: string };
+  /** When true, render this activity with an "Optional" badge. When
+   *  undefined, the chapter page applies the 3rd-attraction-and-later
+   *  auto-rule. Set explicitly to `false` to opt a specific activity OUT. */
   optional?: boolean;
 }
 
-/** A single item on the per-day pack list. `item` is the description that
- *  gets translated; `for` (optional) is the attraction id this item is
- *  there for, so the UI can show a "for Canyon Park" chip and let the
- *  reader jump to that activity. Items without `for` are general-purpose
- *  (think: hat, water, cash) and apply to the whole day. */
+/** A single item on the per-day pack list. */
 export interface GearItem {
   item: string;
   for?: string;
 }
 
-/** A small phrase-of-the-day flashcard, picked to fit the day's mood
- *  (water words on water days, "arrivederci" on departure day, etc.).
- *  Italian and the spoken pronunciation are universal; meaning + the
- *  example translation get translated per language. */
-export interface ItalianWord {
-  /** The Italian word or short phrase, e.g. "Acqua". */
+/** A small phrase-of-the-day flashcard, picked to fit the day's mood —
+ *  fun American road-trip / National-Park-ranger vocabulary on mainland
+ *  days, real Hawaiian words travellers will actually hear on island days. */
+export interface PhraseOfDay {
+  /** The word or short phrase, e.g. "Aloha". */
   word: string;
-  /** Pronunciation in plain phonetics, e.g. "AH-kwah". Universal. */
+  /** Pronunciation in plain phonetics, e.g. "ah-LOH-hah". */
   pronounce: string;
-  /** Plain-language meaning in the active language ("Water" / "מים"). */
+  /** Plain-language meaning. */
   meaning: string;
-  /** Optional example sentence in Italian — "L'acqua è fresca!". */
+  /** Optional example sentence. */
   example?: string;
-  /** Translation of the example in the active language. */
+  /** Translation / gloss of the example. */
   exampleMeaning?: string;
 }
 
-/** Categories for the "drink of the day" closing flourish — drives the
- *  card's icon and accent color. `other` is the catch-all for anything
- *  exotic (grappa, vermouth, vin santo, etc.). */
+/** Categories for the "drink of the day" closing flourish. */
 export type DrinkType =
   | "wine"
   | "cocktail"
@@ -185,18 +143,14 @@ export type DrinkType =
   | "other";
 
 /** An adults-only "what to pour tonight" suggestion that closes each
- *  chapter — picked to match the day's mood and to lean into local
- *  Tuscan / Maremmano grapes & rituals where possible. */
+ *  chapter — picked to match the day's mood: craft beer/wine on the road,
+ *  a Vegas classic on Strip nights, Mai Tais and POG on the islands. */
 export interface DayDrink {
-  /** The drink's name — "Aperol Spritz", "Chianti Classico DOCG". The
-   *  Italian / proper-noun part stays universal across languages. */
   name: string;
-  /** Italian-friendly category — drives icon + chip color. */
   type: DrinkType;
   /** One or two sentences on why this drink fits this specific day. */
   pairing: string;
-  /** Optional serving / glassware note ("tall glass with ice and an orange
-   *  slice", "served chilled, never with ice"). */
+  /** Optional serving / glassware note. */
   servingNote?: string;
 }
 
@@ -204,7 +158,7 @@ export interface Day {
   dayNumber: number;
   date: string;
   weekday: string;
-  /** Recommended time to leave the base/hotel in the morning (e.g. "08:30", "09:00"). */
+  /** Recommended time to leave the base/hotel in the morning. */
   departureTime?: string;
   /** The first drive of the day from the base to the first activity. */
   rideToFirst?: { duration: string; note?: string };
@@ -217,26 +171,19 @@ export interface Day {
   /** Lead photo for the chapter when no activity in the day has an image. */
   leadImage?: string;
   leadImageCredit?: ImageCredit;
-  /** Suggested clothing & gear for this day's mix of activities.
-   *  Items can optionally reference the specific attraction they're for. */
+  /** Suggested clothing & gear for this day's mix of activities. */
   gear?: GearItem[];
-  /** Day-specific advice (timing, money, mood) that doesn't belong to
-   *  a single attraction — the things you'd whisper at breakfast. */
+  /** Day-specific advice that doesn't belong to a single attraction. */
   dayTips?: string[];
-  /** Up to six Italian words or phrases for the day — shown in a carousel
-   *  with audio for each clip. */
-  italianWords?: ItalianWord[];
-  /** Curated list of `Service.id` values (restaurants only) that make
-   *  sense to eat at on this day — typically the lunch spot mentioned
-   *  in an activity, plus a dinner option near base. Looked up via
-   *  `getService` and rendered in the chapter detail page. */
+  /** Up to six words/phrases for the day — shown in a carousel with audio. */
+  phrasesOfDay?: PhraseOfDay[];
+  /** Curated list of `Service.id` values (restaurants only) for this day. */
   restaurants?: string[];
-  /** Adults-only "what to pour tonight" suggestion — closes the chapter
-   *  with a small drink card after the tips. */
+  /** Adults-only "what to pour tonight" suggestion — closes the chapter. */
   drinkOfTheDay?: DayDrink;
 }
 
-/* ---------- Food & Wine ---------- */
+/* ---------- Food & Drink ---------- */
 
 export type DishCategory =
   | "pasta"
@@ -248,93 +195,57 @@ export type DishCategory =
 
 export interface Dish {
   id: string;
-  /** English name of the dish. */
+  /** Name of the dish. */
   name: string;
-  /** The original Italian name (rendered in italics on the card). */
+  /** A local-language / proper name for the dish, shown in italics. */
   italianName?: string;
-  /** "north" = best in the Larciano / Garfagnana zone,
-   *  "south" = best in the Maremma / Pitigliano zone,
-   *  "tuscany" = found everywhere we travel. */
-  region: "north" | "south" | "tuscany";
+  /** "mainland" = road trip + Vegas leg, "hawaii" = Maui + Big Island,
+   *  "trip" = found on both halves of the trip. */
+  region: "mainland" | "hawaii" | "trip";
   category: DishCategory;
   description: string;
-  /** Short hint at where to try it — "Trattoria Verdi in Manciano". */
+  /** Short hint at where to try it. */
   tryIt?: string;
-  /** Optional CC photo of the dish, served from /public/images/. */
+  /** Optional photo, served from /public/images/. */
   image?: string;
   imageCredit?: ImageCredit;
 }
 
+/** Repurposed from the template's "wineries" concept into general local
+ *  flavor stops: a coffee farm tour, a brewery, a luau, a signature bar —
+ *  anywhere worth a dedicated visit for food/drink/culture on this trip. */
 export interface Winery {
   id: string;
   name: string;
-  region: "north" | "south";
-  /** The DOC / DOCG denomination, e.g. "Carmignano DOCG". */
+  region: "mainland" | "hawaii";
+  /** A short tagline — the "denomination" equivalent (e.g. "Kona Coffee Belt"). */
   appellation: string;
   description: string;
   website?: string;
   address?: string;
   coords?: [number, number];
-  /** "Book ahead — small family operation" etc. */
   bookingNote?: string;
-  /** Optional CC photo — vineyard, cellar, the village it sits in. */
   image?: string;
   imageCredit?: ImageCredit;
 }
 
-/* ---------- Per-day quiz (Quizzo, the kid-friendly recap host) ---------- */
+/* ---------- Per-day quiz (Quizzo, the trivia host) ---------- */
 
-/** A single multiple-choice question generated by Gemini for the
- *  per-day kid quiz. The model is asked to return JSON conforming to
- *  this shape; `generateQuiz` validates and falls back if it doesn't.
- *  Both `question` and the option strings are in the active UI
- *  language; reactions are short host-style snippets ("Bravissimo!",
- *  "Ouf, almost!") shown / spoken when the kid answers. */
 export interface QuizQuestion {
-  /** The question text, ready to read aloud (no markdown). */
   question: string;
-  /** 4 plausible answer strings; the kid taps one. Order is
-   *  shuffled by the host before render so `correctIndex` doesn't
-   *  always sit in the same slot. */
   options: string[];
-  /** Index into `options` for the correct answer (0–3). */
   correctIndex: number;
-  /** One short line Quizzo says when the kid picks correctly. */
   reactionCorrect: string;
-  /** One short line Quizzo says when the kid picks wrong (still
-   *  warm — kids don't like being scolded). */
   reactionWrong: string;
 }
 
-/** A quiz set (one batch in `live` mode, or the full 10-question
- *  offline pack in `offline` mode) for one day in one UI language. */
 export interface Quiz {
-  /** Which day-chapter this quiz covers. */
   day: number;
-  /** UI language the questions are written in. */
   lang: "en" | "he";
-  /** Variable length:
-   *  - `live` mode: 5 questions per batch (the orchestrator chains
-   *    batches into an endless stream).
-   *  - `offline` mode: 10 questions, fixed pack stored once per
-   *    device. */
   questions: QuizQuestion[];
-  /** When this quiz was generated (epoch ms). */
   generatedAt: number;
 }
 
-/** Two play modes the kid can toggle between at the bottom of the
- *  Quiz card. Persisted per device.
- *
- *  - `offline` — 10 questions per day, generated once and cached
- *    forever in `localStorage`. After the first generation the day
- *    plays without a network connection — perfect for the car ride
- *    home if the cell signal drops in the hills. Fixed end + score.
- *  - `live` — endless stream. Questions are generated in batches of
- *    5; the orchestrator prefetches the next batch while the kid is
- *    answering the last two of the current one. Round ends when the
- *    kid taps "End round". Burns API quota with every batch — use
- *    when the kid wants to keep going and there's wifi handy. */
 export type QuizMode = "offline" | "live";
 
 export interface ChecklistItem {
@@ -343,8 +254,6 @@ export interface ChecklistItem {
   detail?: string;
   link?: string;
   urgent?: boolean;
-  /** Pre-checked by default (e.g. an already-booked reservation). The user
-   *  can still toggle it; their choice is remembered per device. */
   done?: boolean;
 }
 

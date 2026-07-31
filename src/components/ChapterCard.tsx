@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowLeft, MapPin, Sun, Car, Ticket } from "lucide-react";
+import { ArrowRight, ArrowLeft, MapPin, Sun, Car } from "lucide-react";
 import type { Day, POI } from "../data/types";
+import { itinerary } from "../data/itinerary";
 import { getAttraction } from "../data/attractions";
-import { BOOKED_DAY_NUMBERS } from "../lib/bookingsStore";
 import { getTripState } from "../lib/tripState";
 import { activityIcon } from "../lib/activityIcon";
 import { navigateChapter } from "../lib/route";
@@ -11,7 +11,11 @@ import { useLang } from "../lib/i18n";
 import { useLocalizeDay, useLocalizePoi } from "../data/i18n";
 import PoiImage from "./PoiImage";
 
-const ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
+const ROMAN = [
+  "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
+  "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX",
+  "XXI", "XXII", "XXIII", "XXIV", "XXV"
+];
 
 const TAG_KEY: Record<string, DictKey> = {
   water: "tag_water",
@@ -22,12 +26,14 @@ const TAG_KEY: Record<string, DictKey> = {
   food: "tag_food",
   view: "tag_view",
   cave: "tag_cave",
-  village: "tag_village"
+  village: "tag_village",
+  trail: "tag_trail",
+  "national-park": "tag_national_park"
 };
 
 const REGION_KEY: Record<string, DictKey> = {
-  north: "region_north_short",
-  south: "region_south_short",
+  mainland: "region_mainland_short",
+  hawaii: "region_hawaii_short",
   transit: "region_transit_short"
 };
 
@@ -85,12 +91,11 @@ export default function ChapterCard({ day }: { day: Day }) {
     tripState.phase === "during" && tripState.today.dayNumber === day.dayNumber;
 
   const lead = resolveLead(localDay, localizePoi);
-  const hasTicket = BOOKED_DAY_NUMBERS.has(day.dayNumber);
-  const previewActivities = localDay.activities.slice(0, 3);
+    const previewActivities = localDay.activities.slice(0, 3);
   const remaining = Math.max(0, localDay.activities.length - previewActivities.length);
 
   const accentText =
-    day.region === "south"
+    day.region === "hawaii"
       ? "text-gold-400"
       : day.region === "transit"
       ? "text-terracotta-300"
@@ -109,7 +114,7 @@ export default function ChapterCard({ day }: { day: Day }) {
         <PoiImage
           src={lead.src}
           alt={lead.alt}
-          region={localDay.region === "transit" ? "north" : localDay.region}
+          region={localDay.region === "transit" ? "mainland" : localDay.region}
           category={lead.category}
           tags={lead.tags}
         />
@@ -123,7 +128,7 @@ export default function ChapterCard({ day }: { day: Day }) {
             </div>
             <div className="hidden sm:block h-px w-10 bg-cream-50/40 mb-1.5" />
             <div className={`text-[9px] uppercase tracking-[0.24em] font-medium ${accentText}`}>
-              {t("plan_chapter_x_of_y", { x: String(day.dayNumber).padStart(2, "0"), y: "10" })}
+              {t("plan_chapter_x_of_y", { x: String(day.dayNumber).padStart(2, "0"), y: String(itinerary.length).padStart(2, "0") })}
             </div>
           </div>
           {isToday && (
@@ -186,14 +191,9 @@ export default function ChapterCard({ day }: { day: Day }) {
           })}
         </ul>
 
-        {(remaining > 0 || localDay.driveNotes || hasTicket) && (
+        {(remaining > 0 || localDay.driveNotes) && (
           <div className="mt-3 flex items-center gap-3 text-[11px] text-ink-700/65 flex-wrap">
-            {hasTicket && (
-              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-terracotta-500/12 text-terracotta-700 font-medium">
-                <Ticket size={12} /> {t("nav_bookings")}
-              </span>
-            )}
-            {remaining > 0 && (
+                        {remaining > 0 && (
               <span className="inline-flex items-center gap-1">
                 <span className="font-semibold text-ink-900">+{remaining}</span>{" "}
                 {remaining === 1 ? t("more_stop_one") : t("more_stop_many")}

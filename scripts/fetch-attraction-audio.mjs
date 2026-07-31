@@ -40,7 +40,7 @@ const OUT_DIR = resolve(REPO_ROOT, "public", "audio", "attractions");
  *  voice. Native Italian speaker, warm broadcast tone. We use the
  *  multilingual_v2 model so the voice can speak English text while
  *  carrying its native Italian accent — exactly the "Italian tour
- *  guide who speaks English" effect we want for Gemininio. */
+ *  guide who speaks English" effect we want for Kai. */
 const VOICE_ID = "mcMi8FJDhg35bMpWHv2R";
 const MODEL_ID = "eleven_multilingual_v2";
 const OUTPUT_FORMAT = "mp3_44100_128";

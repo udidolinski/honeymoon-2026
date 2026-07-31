@@ -155,7 +155,7 @@ export default function StaysSection() {
             <div className="p-5 flex-1 flex flex-col">
               <div className="flex items-start justify-between gap-3">
                 <h3 className="font-serif text-2xl text-ink-900 leading-tight">{s.name}</h3>
-                <span className={`shrink-0 ${s.region === "south" ? "pill-gold" : s.region === "north" ? "pill-olive" : "pill-ink"}`}>
+                <span className={`shrink-0 ${s.region === "hawaii" ? "pill-gold" : s.region === "mainland" ? "pill-olive" : "pill-ink"}`}>
                   {s.nights === 1
                     ? t("stay_nights_one", { n: s.nights })
                     : t("stay_nights_many", { n: s.nights })}

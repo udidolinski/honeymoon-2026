@@ -8,7 +8,7 @@ import {
 } from "react";
 import { type Lang, loc, type Loc } from "./lang";
 
-const STORAGE_KEY = "tuscany:lang";
+const STORAGE_KEY = "honeymoon:lang";
 
 interface LangCtxValue {
   lang: Lang;

@@ -12,8 +12,8 @@ interface Props {
 }
 
 const palette: Record<Region, [string, string]> = {
-  north: ["#6B7A4B", "#8A9A6B"],
-  south: ["#C45A3D", "#D87154"],
+  mainland: ["#6B7A4B", "#8A9A6B"],
+  hawaii: ["#1B7A8C", "#2FA5B8"],
   transit: ["#8B4513", "#B8862C"]
 };
 
@@ -27,7 +27,7 @@ function pickIcon(category?: Category, tags?: AttractionTag[]) {
   return Camera;
 }
 
-export default function PoiImage({ src, alt, region = "north", category, tags, className }: Props) {
+export default function PoiImage({ src, alt, region = "mainland", category, tags, className }: Props) {
   const [failed, setFailed] = useState(false);
   const [from, to] = palette[region];
 

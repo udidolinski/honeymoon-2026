@@ -4,7 +4,7 @@
  *   1. LiveQuizVoice — opens a Gemini Live session with a "narrator"
  *      persona (just speak the line you receive, in Quizzo's playful
  *      Italian-flavored cartoon voice). Reuses the WebSocket plumbing
- *      and PCM player that Gemininio already battle-tested. Best
+ *      and PCM player that Kai already battle-tested. Best
  *      sounding option, costs ~5 cents per quiz on free-tier-equivalent
  *      accounts. Fails closed: any setup error rejects within ~3 s and
  *      the caller drops to the TTS fallback.
@@ -21,8 +21,8 @@
  * (or `null` if the browser has no speech synthesis at all).
  */
 
-import { LiveSession } from "../gemininio/live";
-import { PcmPlayer } from "../gemininio/audio";
+import { LiveSession } from "../kai/live";
+import { PcmPlayer } from "../kai/audio";
 import type { Lang } from "../lang";
 
 const LIVE_CONNECT_TIMEOUT_MS = 3000;

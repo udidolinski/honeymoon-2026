@@ -25,7 +25,9 @@ const TAG_KEY: Record<string, DictKey> = {
   food: "tag_food",
   view: "tag_view",
   cave: "tag_cave",
-  village: "tag_village"
+  village: "tag_village",
+  trail: "tag_trail",
+  "national-park": "tag_national_park"
 };
 
 /** Tone for the difficulty pill — green for easy, amber for moderate,
@@ -61,9 +63,9 @@ export default function AttractionCard({ poi: rawPoi }: { poi: POI }) {
   const { focusOn } = useMapFocus();
   const [open, setOpen] = useState(false);
 
-  const isSouth = poi.region === "south";
-  const regionLabel = isSouth ? t("region_south_short") : t("region_north_short");
-  const regionLong = isSouth ? t("region_south_long") : t("region_north_long");
+  const isHawaii = poi.region === "hawaii";
+  const regionLabel = isHawaii ? t("region_hawaii_short") : t("region_mainland_short");
+  const regionLong = isHawaii ? t("region_hawaii_long") : t("region_mainland_long");
   const firstTag = poi.tags?.[0];
 
   return (
@@ -88,7 +90,7 @@ export default function AttractionCard({ poi: rawPoi }: { poi: POI }) {
       <div className="absolute top-3 start-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-ink-900/55 backdrop-blur-md text-cream-50 text-[10px] uppercase tracking-[0.18em] font-medium">
         <span
           className={`w-1.5 h-1.5 rounded-full ${
-            isSouth ? "bg-gold-500" : "bg-olive-500"
+            isHawaii ? "bg-gold-500" : "bg-olive-500"
           }`}
         />
         {regionLabel}

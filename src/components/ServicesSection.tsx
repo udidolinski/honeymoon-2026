@@ -6,7 +6,6 @@ import Section from "./Section";
 import { useMapFocus } from "../lib/mapContext";
 import NavigateLinks from "./NavigateLinks";
 import { useT, type DictKey } from "../lib/dict";
-import { useLang } from "../lib/i18n";
 import { useLocalizeService } from "../data/i18n";
 
 const CATS: { id: "restaurant" | "supermarket" | "gas"; key: DictKey; Icon: typeof Utensils; color: string }[] = [
@@ -16,27 +15,26 @@ const CATS: { id: "restaurant" | "supermarket" | "gas"; key: DictKey; Icon: type
 ];
 
 const BASES: {
-  id: "north" | "south";
+  id: "mainland" | "hawaii";
   key: DictKey;
-  sub: { en: string; he: string };
+  sub: string;
 }[] = [
   {
-    id: "north",
-    key: "services_filter_north",
-    sub: { en: "Aug 17–21 · Larciano", he: "17–21 באוגוסט · לרצ'יאנו" }
+    id: "mainland",
+    key: "services_filter_mainland",
+    sub: "Oct 4–12 · Road trip & Vegas"
   },
   {
-    id: "south",
-    key: "services_filter_south",
-    sub: { en: "Aug 21–26 · Cortevecchia", he: "21–26 באוגוסט · קורטווקיה" }
+    id: "hawaii",
+    key: "services_filter_hawaii",
+    sub: "Oct 12–27 · Maui & Big Island"
   }
 ];
 
 export default function ServicesSection() {
   const t = useT();
-  const { lang } = useLang();
   const localizeService = useLocalizeService();
-  const [base, setBase] = useState<"north" | "south">("north");
+  const [base, setBase] = useState<"mainland" | "hawaii">("mainland");
   const { focusOn } = useMapFocus();
 
   return (
@@ -50,7 +48,7 @@ export default function ServicesSection() {
       <div className="-mx-4 sm:mx-0 px-4 sm:px-0 overflow-x-auto scrollbar-hide mb-6 sm:mb-8">
         <div className="flex gap-2 min-w-max sm:min-w-0 sm:flex-wrap">
           {BASES.map(b => {
-            const subText = b.sub[lang];
+            const subText = b.sub;
             return (
               <button
                 key={b.id}

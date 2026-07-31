@@ -14,6 +14,8 @@ import {
   Coffee,
   Camera,
   Mountain as MountainIcon,
+  Footprints,
+  Trees,
   type LucideIcon
 } from "lucide-react";
 import type { AttractionTag } from "../data/types";
@@ -27,7 +29,9 @@ const TAG_ICON: Record<AttractionTag, LucideIcon> = {
   food: Utensils,
   view: Mountain,
   cave: MountainIcon,
-  village: Castle
+  village: Castle,
+  trail: Footprints,
+  "national-park": Trees
 };
 
 interface Activity {

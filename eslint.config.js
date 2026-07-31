@@ -18,6 +18,12 @@ export default defineConfig([
     languageOptions: {
       globals: globals.browser,
     },
+    rules: {
+      // Allow a leading underscore to mark an intentionally-unused
+      // parameter (e.g. a stable function signature kept for callers
+      // even though this build no longer branches on it).
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+    },
   },
   {
     files: ['src/lib/i18n.tsx'],

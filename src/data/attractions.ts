@@ -8,734 +8,752 @@ const wmCredit = (article: string): ImageCredit => ({
 });
 
 export const attractions: POI[] = [
-  // ---------- NORTH ----------
+  // ---------- MAINLAND: YOSEMITE ----------
   {
-    id: "canyon-park",
-    name: "Canyon Park",
+    id: "yosemite-tunnel-view",
+    name: "Tunnel View",
     category: "attraction",
-    region: "north",
-    shortDescription: "SUP and gorge-side adventure on the Lima",
+    region: "mainland",
+    shortDescription: "The classic first look at Yosemite Valley",
     description:
-      "An adventure park built into a gorge on the river Lima outside Bagni di Lucca. Between the wooded cliffs are mellow options (paddleboard hire through turquoise narrows, a pebble beach, soft rafting) and full-throttle canyon routes with aerial bridges and zip lines. Your plan is the easy family stand-up paddle through the gorge. Separate canyon / zip routes usually enforce a minimum age and height (about ten years old, roughly 140 cm).",
-    image: "./images/canyon-park.jpg",
-    imageCredit: {
-      author: "Luo Jin Hong (Unsplash)",
-      license: "Unsplash License",
-      source: "https://unsplash.com/photos/1qJ_l5O4OXo",
-      licenseUrl: "https://unsplash.com/license"
-    },
-    website: "https://www.canyonpark.it/en/",
-    address: "Località il Pianello, Bagni di Lucca (LU)",
-    coords: [44.0167, 10.5833],
-    tags: ["water", "extreme", "family"],
-    bookingNote:
-      "Booked — SUP on 18 Aug, 10:45, 6 boards (€168 cash on site).",
+      "A roadside overlook just past the Wawona Tunnel that frames El Capitan, Bridalveil Fall and Half Dome in one iconic view — the photo that made Yosemite famous, reproduced by Ansel Adams and millions since. Easiest and most photographed vista in the park.",
+    image: "./images/yosemite-tunnel-view.jpg",
+    imageCredit: wmCredit("Tunnel_View"),
+    website: "https://www.nps.gov/yose/",
+    address: "Wawona Road, Yosemite National Park, CA",
+    coords: [37.7150, -119.7076],
+    tags: ["view", "family"],
     difficulty: "easy",
     tips: [
-      "Life jackets are provided; ask the crew to snug them up for smaller kids",
-      "Keep phone and cash in a dry bag — most water lines are splash zones",
-      "Quick-dry layers and closed-toe water shoes; expect to get properly wet"
+      "Arrive at sunrise or within an hour of it for soft light and light traffic",
+      "The pullout parking lot fills fast by mid-morning in season",
+      "Free, no separate ticket beyond the park entrance fee"
     ],
     quizFacts: [
       {
-        question: "What kind of place is Canyon Park built into?",
-        correctAnswer: "A deep river canyon",
-        distractors: ["A volcano crater", "An old castle", "A giant cave"]
+        question: "Which famous granite monolith stands on the left side of the Tunnel View frame?",
+        correctAnswer: "El Capitan",
+        distractors: ["Half Dome", "Mount Whitney", "Glacier Point"]
       },
       {
-        question: "How does lunch sometimes reach the pebble beach at Canyon Park?",
-        correctAnswer: "Down a zip-line!",
-        distractors: ["By helicopter", "On a trained dog", "On a boat"]
-      },
-      {
-        question: "What do most visitors stand on to paddle the Lima through the gorge?",
-        correctAnswer: "Stand-up paddleboards (SUP)",
-        distractors: ["Wooden gondolas", "Inflatable unicorns", "Motorboats only"]
+        question: "Which photographer made Tunnel View internationally famous with his black-and-white prints?",
+        correctAnswer: "Ansel Adams",
+        distractors: ["Annie Leibovitz", "Steve McCurry", "Dorothea Lange"]
       }
     ]
   },
   {
-    id: "ponte-del-diavolo",
-    name: "Ponte del Diavolo (Devil's Bridge)",
+    id: "yosemite-valley-floor",
+    name: "Yosemite Valley Floor",
     category: "attraction",
-    region: "north",
-    shortDescription: "A medieval humpback bridge wrapped in legend",
+    region: "mainland",
+    shortDescription: "Meadows and granite walls, best explored by shuttle and foot",
     description:
-      "A dramatic 11th-century bridge arching impossibly over the Serchio river just outside Borgo a Mozzano. Local legend says the devil himself finished it overnight in exchange for the first soul to cross — outsmarted by the villagers, who sent a dog. A short photo stop with great folklore for the kids.",
-    image: "./images/ponte-del-diavolo.jpg",
-    imageCredit: wmCredit("Ponte_della_Maddalena"),
-    website: "https://www.visittuscany.com/en/attractions/ponte-della-maddalena-devils-bridge/",
-    address: "Borgo a Mozzano (LU)",
-    coords: [43.9869, 10.5475],
-    tags: ["culture", "view", "family"],
+      "The seven-mile-long glacially carved valley at the heart of the park — open meadows ringed by sheer granite walls thousands of feet high, with a free shuttle looping between trailheads, viewpoints and campgrounds.",
+    image: "./images/yosemite-valley-floor.jpg",
+    imageCredit: wmCredit("Yosemite_Valley"),
+    website: "https://www.nps.gov/yose/planyourvisit/valleyshuttle.htm",
+    address: "Yosemite Valley, Yosemite National Park, CA",
+    coords: [37.7459, -119.5936],
+    tags: ["nature", "family", "view"],
     difficulty: "easy",
     tips: [
-      "Free, open 24/7 — a 10-minute photo stop is plenty",
-      "Tiny lay-by just north of the bridge; arrive early or late",
-      "Best photo from the river bank, not the bridge itself"
+      "Free shuttle buses run the length of the valley — parking is limited and fills early",
+      "Meadow boardwalks keep the fragile grasses protected — stay on the paths"
+    ]
+  },
+  {
+    id: "bridalveil-fall",
+    name: "Bridalveil Fall",
+    category: "attraction",
+    region: "mainland",
+    shortDescription: "A short paved walk to the valley's signature waterfall",
+    description:
+      "A 620-foot waterfall at the valley's western end, reachable via a short, easy paved path. Flow varies enormously by season — a thundering, wind-blown veil in spring snowmelt, often reduced to a trickle or dry by October.",
+    image: "./images/bridalveil-fall.jpg",
+    imageCredit: wmCredit("Bridalveil_Fall"),
+    website: "https://www.nps.gov/yose/planyourvisit/bridalveil.htm",
+    address: "Bridalveil Fall Trail, Yosemite National Park, CA",
+    coords: [37.7168, -119.6483],
+    tags: ["water", "family", "view"],
+    openingNote: "October is dry season — expect a trickle or a dry fall rather than the springtime flow.",
+    difficulty: "easy",
+    tips: [
+      "October is the driest month — don't expect the roaring spring flow",
+      "The short paved trail is stroller-friendly but can be slick with spray in wetter months"
+    ]
+  },
+  {
+    id: "glacier-point",
+    name: "Glacier Point",
+    category: "attraction",
+    region: "mainland",
+    shortDescription: "A sweeping panorama over Half Dome, 7,214 feet up",
+    description:
+      "A dramatic overlook above the valley, face-to-face with Half Dome and looking down onto Vernal and Nevada Falls. Glacier Point Road typically closes for the season with the first significant snowfall — sometimes as early as late October, so check conditions before the drive.",
+    image: "./images/glacier-point.jpg",
+    imageCredit: wmCredit("Glacier_Point"),
+    website: "https://www.nps.gov/yose/planyourvisit/glacierpoint.htm",
+    address: "Glacier Point Road, Yosemite National Park, CA",
+    coords: [37.7290, -119.5742],
+    tags: ["view", "nature"],
+    openingNote: "Road closes with the first real snowfall — verify it's still open before driving up.",
+    difficulty: "easy",
+    tips: [
+      "Check the NPS road-status page the morning of your visit — this closure can happen with little warning in fall",
+      "The main overlook is a short paved walk from the parking area"
+    ]
+  },
+
+  // ---------- MAINLAND: SEQUOIA & KINGS CANYON ----------
+  {
+    id: "general-sherman-tree",
+    name: "General Sherman Tree",
+    category: "attraction",
+    region: "mainland",
+    shortDescription: "The largest tree on Earth by volume",
+    description:
+      "A giant sequoia in the Giant Forest, measured at roughly 275 feet tall, about 36 feet in diameter at its base, and an estimated trunk volume near 52,500 cubic feet — making it the largest known living single-stem tree on Earth by volume. Reached by a short, paved half-mile trail from the main parking area.",
+    image: "./images/general-sherman-tree.jpg",
+    imageCredit: wmCredit("General_Sherman_(tree)"),
+    website: "https://www.nps.gov/seki/planyourvisit/gse.htm",
+    address: "Giant Forest, Sequoia National Park, CA",
+    coords: [36.5786, -118.7752],
+    tags: ["nature", "family", "trail"],
+    difficulty: "easy",
+    tips: [
+      "The main trail down to the tree is paved but drops about 200 feet — the walk back up is the real workout",
+      "A wheelchair-accessible route exists from the upper parking area",
+      "Arrive early to avoid the mid-day tour-bus crowds"
     ],
     quizFacts: [
       {
-        question: "What animal did the villagers use to trick the devil at the bridge?",
-        correctAnswer: "A dog",
-        distractors: ["A goat", "A chicken", "A cat"]
+        question: "By what measure is General Sherman the largest tree on Earth?",
+        correctAnswer: "Total trunk volume",
+        distractors: ["Height", "Trunk diameter alone", "Age"]
       },
       {
-        question: "Why does the Devil's Bridge look so wonky?",
-        correctAnswer: "The devil built it in one night!",
-        distractors: ["An earthquake bent it", "Blindfolded builders made it", "A giant sat on it"]
-      },
-      {
-        question: "What kind of ghost might you see at the bridge in October?",
-        correctAnswer: "A glowing white dog",
-        distractors: ["A headless knight", "A grumpy troll", "A flying pizza"]
+        question: "Roughly how tall is the General Sherman Tree?",
+        correctAnswer: "About 275 feet",
+        distractors: ["About 50 feet", "About 1,000 feet", "About 700 feet"]
       }
     ]
   },
   {
-    id: "selva-buffardello",
-    name: "Parco Avventura Selva del Buffardello",
+    id: "giant-forest-museum",
+    name: "Giant Forest Museum",
     category: "attraction",
-    region: "north",
-    shortDescription: "Shaded forest ropes course with kid-friendly heights",
+    region: "mainland",
+    shortDescription: "A small museum on sequoia biology and fire ecology",
     description:
-      "A professional adventure park in a cool chestnut forest above the Garfagnana. Multiple ropes courses and zip lines are graded by height — including dedicated routes from 100 cm so younger kids can do the real thing safely. A welcome shaded escape on a hot August day.",
-    image: "./images/selva-buffardello.jpg",
-    imageCredit: {
-      author: "Unsplash",
-      license: "Unsplash License",
-      source: "https://unsplash.com/photos/jKVfhe-z8U4",
-      licenseUrl: "https://unsplash.com/license"
-    },
-    website: "https://www.selvadelbuffardello.it/",
-    address: "Loc. Buffardello, Villa Collemandina (LU)",
-    coords: [44.1644, 10.4339],
-    tags: ["extreme", "family", "nature"],
-    difficulty: "moderate",
-    tips: [
-      "100 cm minimum for the dedicated kid course; 140 cm for the high routes",
-      "Closed-toe shoes are mandatory — no sandals",
-      "Helmet, harness and safety briefing included in the ticket",
-      "Shaded chestnut forest — bring a long-sleeve top, can be cool"
-    ],
-    quizFacts: [
-      {
-        question: "What is the Buffardello elf's favourite night prank?",
-        correctAnswer: "Tangling people's hair",
-        distractors: ["Stealing left shoes", "Eating all the cheese", "Painting doors blue"]
-      },
-      {
-        question: "What did people leave by the door to stop the Buffardello elf?",
-        correctAnswer: "Juniper berries",
-        distractors: ["Spicy soup", "A scary mirror", "A mousetrap"]
-      },
-      {
-        question: "What two things must you wear for the tree-climbing courses?",
-        correctAnswer: "A harness and a helmet",
-        distractors: ["A cape and a sword", "Goggles and flippers", "Heavy snow boots"]
-      }
-    ]
-  },
-  {
-    id: "soft-rafting-serchio",
-    name: "Soft Rafting — Serchio River",
-    category: "attraction",
-    region: "north",
-    shortDescription: "Gentle white-water rafting suited for families",
-    description:
-      "A relaxed, splashy float down the Serchio with calm stretches, a few playful rapids, and chances to jump in and swim. Your booked family trip runs about 1.5 hours with Lucca Rafting in Chifenti — wet, cool, and a perfect contrast to the August heat.",
-    image: "./images/serchio-rafting.jpg",
-    imageCredit: {
-      author: "Unsplash",
-      license: "Unsplash License",
-      source: "https://unsplash.com/photos/ayhiuTdcUEk",
-      licenseUrl: "https://unsplash.com/license"
-    },
-    website: "https://www.getyourguide.com/bagni-di-lucca-l160058/lucca-family-friendly-rafting-soft-t513269/",
-    address: "Chifenti, Bagni di Lucca (LU)",
-    coords: [44.0742, 10.4853],
-    tags: ["water", "family", "nature"],
+      "A compact National Park Service museum inside a historic 1920s market building, covering how giant sequoias grow, survive fire, and reproduce — a good grounding stop between tree groves.",
+    image: "./images/giant-forest-museum.jpg",
+    imageCredit: wmCredit("Sequoia_National_Park"),
+    website: "https://www.nps.gov/seki/planyourvisit/gfm.htm",
+    address: "Generals Highway, Sequoia National Park, CA",
+    coords: [36.5622, -118.7691],
+    tags: ["culture", "nature"],
     difficulty: "easy",
-    tips: [
-      "About 1.5 hours including swim breaks",
-      "Min age usually 6; under-12s wear life vests the whole way",
-      "Wear swimwear, bring a dry change of clothes for the drive home",
-      "August water levels are gentle — splashy, not scary"
-    ]
+    tips: ["Free with park entry", "Good rainy-day or midday-heat alternative to the trails outside"]
   },
   {
-    id: "pisa",
-    name: "Pisa — Piazza dei Miracoli",
+    id: "moro-rock",
+    name: "Moro Rock",
     category: "attraction",
-    region: "north",
-    shortDescription: "The leaning tower and the cathedral square — a quick wow stop",
+    region: "mainland",
+    shortDescription: "350 steep steps to a 360-degree Sierra panorama",
     description:
-      "Skip the city centre and aim straight for Piazza dei Miracoli. The Leaning Tower, the cathedral, and the baptistery sit together on bright green lawn — one of the most photogenic 30-minute stops in Italy. Park outside the walls (the area is full ZTL) and walk in. Excellent gelato just off the square.",
-    image: "./images/pisa.jpg",
-    imageCredit: {
-      author: "Saffron Blaze",
-      license: "CC BY-SA 3.0",
-      source:
-        "https://commons.wikimedia.org/wiki/File:The_Leaning_Tower_of_Pisa_SB.jpeg",
-      licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/"
-    },
-    website: "https://www.opapisa.it/en/",
-    address: "Piazza del Duomo, 56126 Pisa (PI)",
-    coords: [43.7229, 10.3966],
-    tags: ["culture", "view", "family"],
-    openingNote: "ZTL all around the square — park outside the walls and walk.",
-    difficulty: "easy",
+      "A granite dome rising above the Giant Forest, climbed via a steep stairway of about 350 steps carved into the rock in the 1930s, gaining roughly 300 feet in a quarter mile. The summit delivers a sweeping view of the Great Western Divide. Narrow in places with real drop-offs — not for anyone with a fear of heights.",
+    image: "./images/moro-rock.jpg",
+    imageCredit: wmCredit("Moro_Rock"),
+    website: "https://www.nps.gov/seki/planyourvisit/moro-rock.htm",
+    address: "Moro Rock Road, Sequoia National Park, CA",
+    coords: [36.5459, -118.7686],
+    tags: ["view", "trail", "extreme"],
+    difficulty: "challenging",
     tips: [
-      "Park at 'Via Pietrasantina' (€2/hr) — free shuttle bus to the square",
-      "30–45 min is enough for the photo + gelato",
-      "Tower climb is timed-ticket only — book online before you go",
-      "Best 'leaning hand' photo from the lawn opposite the cathedral"
+      "350 steps up a narrow staircase with sheer drop-offs in places — skip it if anyone in your party has vertigo",
+      "Can ice over even in October at this elevation — check conditions at the visitor center first",
+      "Best light for the Great Western Divide view is late afternoon"
     ],
     quizFacts: [
       {
-        question: "What did the scientist Galileo drop from the Leaning Tower?",
-        correctAnswer: "Two heavy cannonballs",
-        distractors: ["Two watermelons", "A feather and a hammer", "Two giant pizzas"]
+        question: "About how many steps does the Moro Rock stairway have?",
+        correctAnswer: "Around 350",
+        distractors: ["About 10", "Over 5,000", "Exactly 100"]
       },
       {
-        question: "Why does the Leaning Tower of Pisa lean?",
-        correctAnswer: "The soft ground sank",
-        distractors: ["An earthquake tilted it", "It was a joke", "A strong wind blew it"]
-      },
-      {
-        question: "How many bells are at the top of the Leaning Tower?",
-        correctAnswer: "Seven",
-        distractors: ["Just one massive bell", "Fifty tiny bells", "None at all"]
-      }
-    ]
-  },
-  {
-    id: "abetone-monte-gomito",
-    name: "Abetone — Monte Gomito Cable Car",
-    category: "attraction",
-    region: "north",
-    shortDescription: "Modern cable car to a cool ridge near 2,000 m",
-    description:
-      "Abetone is the Apennine ski village that turns into a high-altitude playground in summer. Ride the new gondola to Monte Gomito (about 1,892 m) for cool air, panoramic ridge walks, and easy family trails through pine forest. A perfect midday escape from the heat below.",
-    image: "./images/abetone.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons contributors",
-      license: "CC BY-SA 4.0",
-      source:
-        "https://commons.wikimedia.org/wiki/File:Foresta_piazzale_Abetone.jpg",
-      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/"
-    },
-    website: "https://www.abetonefuniviaombrellino.it/",
-    address: "Abetone Cutigliano (PT)",
-    coords: [44.1344, 10.6717],
-    tags: ["nature", "view", "family"],
-    difficulty: "easy",
-    tips: [
-      "Bring a light jacket — 12–15 °C cooler at the top, even in August",
-      "First gondola ~09:30, last descent ~17:00 — don't miss it",
-      "Round-trip ticket ~€18 adult / cheaper for kids; cash works",
-      "Pack a picnic — mountain restaurants close mid-afternoon"
-    ],
-    quizFacts: [
-      {
-        question: "At the top of Monte Gomito, what happens to the temperature?",
-        correctAnswer: "It gets much colder",
-        distractors: ["It gets boiling hot", "It stays exactly the same", "It changes every five minutes"]
-      },
-      {
-        question: "What do the twin stone pyramids at Abetone mark?",
-        correctAnswer: "An old kingdom border",
-        distractors: ["A buried treasure", "The highest point in Italy", "An alien landing spot"]
-      }
-    ]
-  },
-  {
-    id: "lucca-walls",
-    name: "Lucca City Walls — Bike Loop",
-    category: "attraction",
-    region: "north",
-    shortDescription: "Cycle the 4 km tree-lined Renaissance wall ring around old Lucca",
-    description:
-      "Lucca's massive 16th-century walls were never tested in battle and were turned into a leafy public promenade in the 19th century. Today the 4.2 km grass-and-tree-shaded ring on top of the walls is one of Tuscany's signature family bike rides — completely flat, completely traffic-free, with rampart views into the old city on one side and the Tuscan plain on the other. Rental shops cluster around Porta San Pietro and Piazzale Verdi (Tourist Center Lucca, Cicli Bizzarri, Poli Antonio Bici); kids' bikes, child seats and trailers are all standard. Loop the walls in 30–45 min, then drop the bikes and disappear into the old town for gelato.",
-    image: "./images/lucca-walls.jpg",
-    imageCredit: wmCredit("Walls_of_Lucca"),
-    website: "https://en.wikipedia.org/wiki/Walls_of_Lucca",
-    address: "Mura Urbane di Lucca, Piazzale Verdi (LU)",
-    coords: [43.8443, 10.5050],
-    tags: ["family", "culture", "nature", "view"],
-    difficulty: "easy",
-    tips: [
-      "Rentals from ~€4/hr near Porta San Pietro & Piazzale Verdi",
-      "Whole 4.2 km loop ~30–45 min easy pedalling, totally flat",
-      "Child seats, tagalongs and trailers are standard at every shop",
-      "Park outside the walls — the historic centre is full ZTL"
-    ],
-    quizFacts: [
-      {
-        question: "Lucca's walls were never attacked, but they saved the city from what in 1812?",
-        correctAnswer: "A massive river flood",
-        distractors: ["Angry elephants", "A terrible fire", "Giant bees"]
-      },
-      {
-        question: "How long did it take to build the walls of Lucca?",
-        correctAnswer: "About 140 years!",
-        distractors: ["Just 3 weeks", "About 5 years", "Over 1000 years"]
-      },
-      {
-        question: "What covers the top of the Lucca city wall today?",
-        correctAnswer: "Green grass and big trees",
-        distractors: ["Sharp spikes", "Shiny gold coins", "A fast rollercoaster"]
-      }
-    ]
-  },
-  {
-    id: "sentierelsa",
-    name: "Sentierelsa — Diborrato Waterfall",
-    category: "attraction",
-    region: "north",
-    shortDescription: "Walk a turquoise river to a hidden waterfall",
-    description:
-      "A short, magical river walk along the Elsa near Colle di Val d'Elsa. The path crosses small wooden bridges and lets you wade through pools of impossibly turquoise water on the way to the Diborrato waterfall — a cliff-rimmed swimming hole where the brave cliff-jump from above. Closed-toe water shoes are essential.",
-    image: "./images/sentierelsa.jpg",
-    imageCredit: wmCredit("Elsa_(river)"),
-    website: "https://www.sentierelsa.it/",
-    address: "Colle di Val d'Elsa (SI)",
-    coords: [43.4197, 11.1289],
-    tags: ["water", "nature", "family"],
-    difficulty: "moderate",
-    tips: [
-      "Closed-toe water shoes are mandatory — barefoot is dangerous on the rocks",
-      "Free entry; no toilets at the trailhead — go in town first",
-      "Cliff-jumping at Diborrato is for strong swimmers only",
-      "Bring a dry bag for phones — there's no totally dry stretch"
-    ],
-    quizFacts: [
-      {
-        question: "What happens if a branch stays in the Elsa river for a long time?",
-        correctAnswer: "It slowly turns to stone!",
-        distractors: ["It turns bright pink", "It melts into jelly", "It catches on fire"]
-      },
-      {
-        question: "How deep is the pool under the Diborrato waterfall?",
-        correctAnswer: "About 15 metres deep!",
-        distractors: ["Only up to your knees", "About 2 metres", "Over 1000 metres deep"]
-      },
-      {
-        question: "Why is the Elsa river so bright turquoise?",
-        correctAnswer: "Tiny bits of white calcium",
-        distractors: ["Someone pours blue dye in", "It reflects the green trees", "Glow-in-the-dark fish"]
+        question: "What mountain range comes into view from the top of Moro Rock?",
+        correctAnswer: "The Great Western Divide",
+        distractors: ["The Rocky Mountains", "The Cascades", "The Andes"]
       }
     ]
   },
 
-  // ---------- SOUTH ----------
+  // ---------- MAINLAND: DEATH VALLEY ----------
   {
-    id: "porto-santo-stefano",
-    name: "Porto Santo Stefano — Catamaran Cruise",
+    id: "badwater-basin",
+    name: "Badwater Basin",
     category: "attraction",
-    region: "south",
-    shortDescription: "Guided catamaran cruise around Monte Argentario, with snorkelling & lunch",
+    region: "mainland",
+    shortDescription: "282 feet below sea level — the lowest point in North America",
     description:
-      "The harbour town on Monte Argentario, and the departure pier for the booked catamaran cruise. Sail the peninsula with the crew, drop anchor in glassy coves to swim and snorkel right off the boat (gear provided), and enjoy a full lunch served on deck as you go.",
-    image: "./images/porto-santo-stefano.jpg",
-    imageCredit: wmCredit("Porto_Santo_Stefano"),
-    website: "https://www.getyourguide.com/porto-santo-stefano-l169819/argentario-catamaran-cruise-with-snorkeling-lunch-t1229195/",
-    address: "Porto Santo Stefano, Monte Argentario (GR)",
-    coords: [42.4361, 11.1167],
-    tags: ["water", "family", "view"],
-    bookingNote: "Booked via GetYourGuide (operator DONNINI) for 23 Aug — check in at the pier by 08:30.",
+      "A vast basin of crusted salt flats sitting 282 feet below sea level, the lowest point in North America. A boardwalk leads out onto the salt crust, with the Panamint Range rising across the valley and a small sign on the cliff above marking sea level, far overhead.",
+    image: "./images/badwater-basin.jpg",
+    imageCredit: wmCredit("Badwater_Basin"),
+    website: "https://www.nps.gov/deva/planyourvisit/badwater-basin.htm",
+    address: "Badwater Road, Death Valley National Park, CA",
+    coords: [36.2500, -116.8258],
+    tags: ["nature", "family", "view"],
     difficulty: "easy",
     tips: [
-      "Meeting point is the Porto Santo Stefano pier — arrive 08:30, 30 min before the 09:00 departure",
-      "Snorkel gear, lunch and an open bar (water, soft drinks, wine) are all included on board",
-      "No pets on board; not recommended if pregnant",
-      "Free cancellation up to 09:00 on 22 Aug — worth a forecast check the night before"
+      "Bring far more water than feels necessary — there's no shade at all",
+      "The salt flats are rough and can be slippery near the spring-fed pool at the trailhead",
+      "Look up at the cliff face for the small 'sea level' marker high above — a good sense of scale"
     ],
     quizFacts: [
       {
-        question: "Who built the big stone fortress above the harbour?",
-        correctAnswer: "The Spanish",
-        distractors: ["The Vikings", "The Egyptians", "The British"]
+        question: "How far below sea level is Badwater Basin?",
+        correctAnswer: "282 feet",
+        distractors: ["50 feet", "1,000 feet", "It's at sea level"]
       },
       {
-        question: "Every August, the town has a big race. What do they race in?",
-        correctAnswer: "Wooden rowing boats",
-        distractors: ["Speedboats", "Bathtubs", "Swimming with flippers"]
+        question: "What is Badwater Basin's white ground surface actually made of?",
+        correctAnswer: "Crusted salt",
+        distractors: ["Snow", "Bleached sand", "Volcanic ash"]
       }
     ]
   },
   {
-    id: "cala-del-gesso",
-    name: "Cala del Gesso",
+    id: "artists-palette",
+    name: "Artist's Palette",
     category: "attraction",
-    region: "south",
-    shortDescription: "A turquoise pocket cove on the wild side of Argentario",
+    region: "mainland",
+    shortDescription: "Volcanic hills streaked pink, green and purple",
     description:
-      "Often called the most beautiful cove on Monte Argentario — a small white-pebble beach below sheer cliffs, a tiny Spanish watchtower, and water so clear it looks fake. Reachable on foot via a steep path, or from the water on a boat day.",
-    image: "./images/cala-del-gesso.jpg",
-    imageCredit: {
-      author: "Cristina Gottardi (Unsplash)",
-      license: "CC0 / Public Domain",
-      source: "https://unsplash.com/photos/7_APbY7Afsg",
-      licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/"
-    },
-    address: "Monte Argentario (GR)",
-    coords: [42.3642, 11.1233],
-    tags: ["water", "nature", "view"],
-    difficulty: "moderate",
-    tips: [
-      "Reachable from the water, or on foot",
-      "Land path is steep, ~30 min down and a sweaty 40 min back up",
-      "White pebbles, no sand — water shoes save your feet",
-      "No facilities of any kind: bring your own water and snacks"
-    ],
-    quizFacts: [
-      {
-        question: "Why is this beach called 'Cala del Gesso' (Chalk Cove)?",
-        correctAnswer: "Chalky rocks were mined there",
-        distractors: ["Artists painted there with chalk", "The water tastes like chalk", "Kids use it as a chalkboard"]
-      },
-      {
-        question: "What is the beach at Cala del Gesso made of?",
-        correctAnswer: "Small white pebbles",
-        distractors: ["Black volcanic sand", "Soft yellow mud", "Wooden planks"]
-      }
-    ]
-  },
-  {
-    id: "acqua-village-follonica",
-    name: "Acqua Village Follonica",
-    category: "attraction",
-    region: "south",
-    shortDescription: "Hawaiian-themed water park with serious slides",
-    description:
-      "The biggest, most polished water park in southern Tuscany — Polynesian theming, multi-lane slides, a wave pool, and a lazy river. A full-day, all-ages adrenaline reset between cultural and outdoor days.",
-    image: "./images/acqua-village.jpg",
-    imageCredit: {
-      author: "Unsplash",
-      license: "Unsplash License",
-      source: "https://unsplash.com/photos/1-P3CP8Z1Qg",
-      licenseUrl: "https://unsplash.com/license"
-    },
-    website: "https://www.acquavillage.it/follonica/",
-    address: "Via Sanzio, 58022 Follonica (GR)",
-    coords: [42.9183, 10.7717],
-    tags: ["water", "extreme", "family"],
+      "A one-way scenic drive (Artist's Drive) through hills colored by oxidized volcanic and metamorphic minerals — iron oxides for red and pink, chlorite for green, manganese for purple. Best seen in the softer light of late afternoon.",
+    image: "./images/artists-palette.jpg",
+    imageCredit: wmCredit("Artist%27s_Palette"),
+    website: "https://www.nps.gov/deva/planyourvisit/artists-drive.htm",
+    address: "Artist's Drive, Death Valley National Park, CA",
+    coords: [36.3894, -116.8394],
+    tags: ["view", "nature"],
     difficulty: "easy",
     tips: [
-      "Buy tickets online — meaningfully cheaper than at the gate",
-      "Lockers ~€5 with key deposit; bring a €1 coin",
-      "Outside food is allowed in the picnic area — pack a cooler",
-      "Arrive at opening (10:00) — slide queues triple after lunch"
+      "Artist's Drive is one-way — plan your route accordingly",
+      "Best colors show up in late-afternoon light, not midday sun",
+      "No shade at the main viewpoint pullout"
     ]
   },
   {
-    id: "maremma-horseback",
-    name: "Maremma Horseback Riding",
+    id: "zabriskie-point",
+    name: "Zabriskie Point",
     category: "attraction",
-    region: "south",
-    shortDescription: "Ride with the butteri (Maremma cowboys) through dunes and pine forest",
+    region: "mainland",
+    shortDescription: "Golden, wildly eroded badlands — an iconic sunset spot",
     description:
-      "The Maremma is Italy's old cowboy country, and several family-run agriturismi offer guided beginner rides through umbrella-pine forests and back-country dunes. Cool early-morning slot is the best — book a 1-hour family pony / horse experience at a ranch near Alberese or Albinia.",
-    image: "./images/maremma-horse.jpg",
-    imageCredit: wmCredit("Maremmano"),
-    website: "https://www.parco-maremma.it/en/",
-    address: "Parco della Maremma, Alberese (GR)",
-    coords: [42.6647, 11.0883],
-    tags: ["nature", "family"],
+      "A short paved path climbs to an overlook above a maze of eroded golden and brown badlands, with Manly Beacon's distinctive spire rising from the foreground. One of Death Valley's most photographed sunset locations.",
+    image: "./images/zabriskie-point.jpg",
+    imageCredit: wmCredit("Zabriskie_Point"),
+    website: "https://www.nps.gov/deva/planyourvisit/zabriskie-point.htm",
+    address: "CA-190, Death Valley National Park, CA",
+    coords: [36.4269, -116.8117],
+    tags: ["view", "family"],
     difficulty: "easy",
     tips: [
-      "Long pants (jeans) and closed-toe shoes are non-negotiable",
-      "Min age usually 6 for trail rides; younger kids get a led pony",
-      "Book the 09:00 slot — by 11 it's brutally hot in the open",
-      "Helmets always provided; bring a wide-brim hat for after"
-    ],
-    quizFacts: [
-      {
-        question: "Which famous American cowboy did the Italian cowboys beat in 1890?",
-        correctAnswer: "Buffalo Bill",
-        distractors: ["John Wayne", "Wild Bill Hickok", "Indiana Jones"]
-      },
-      {
-        question: "What are the Maremma cowboys called?",
-        correctAnswer: "Butteri",
-        distractors: ["Vaqueros", "Gauchos", "Banditos"]
-      }
+      "Arrive 30 minutes before sunset to claim a good spot on the overlook",
+      "The short walk up from the parking lot is paved and easy",
+      "Named for Christian Brevoort Zabriskie, a manager of the borax mining operation once based here"
     ]
   },
   {
-    id: "pitigliano",
-    name: "Pitigliano",
+    id: "mesquite-flat-dunes",
+    name: "Mesquite Flat Sand Dunes",
     category: "attraction",
-    region: "south",
-    shortDescription: "The 'Little Jerusalem' carved out of a tufa cliff",
+    region: "mainland",
+    shortDescription: "Rolling dunes near Stovepipe Wells, best at sunrise",
     description:
-      "An Etruscan-Jewish hill town that grows straight out of the volcanic tufa rock — best photographed from the viewpoint on the road in. Wander the old Jewish quarter, ducking into the synagogue, kosher bakery and rock-cut wine cellars. Plenty of cool, shaded alleys for an afternoon walk.",
-    image: "./images/pitigliano.jpg",
-    imageCredit: wmCredit("Pitigliano"),
-    website: "https://visit.pitigliano.org/en/",
-    address: "Pitigliano (GR)",
-    coords: [42.6353, 11.6700],
-    tags: ["culture", "village", "view"],
+      "A field of rolling sand dunes reaching about 100 feet high near Stovepipe Wells — the most accessible dune field in the park, with no marked trail, so visitors wander freely across the sand. Sunrise and early morning give the softest light and coolest sand.",
+    image: "./images/mesquite-flat-dunes.jpg",
+    imageCredit: wmCredit("Mesquite_Flat_Sand_Dunes"),
+    website: "https://www.nps.gov/deva/planyourvisit/mesquite-flat-sand-dunes.htm",
+    address: "Near Stovepipe Wells, Death Valley National Park, CA",
+    coords: [36.6058, -117.1219],
+    tags: ["nature", "family", "view"],
+    openingNote: "Best at sunrise or early morning, before the sand heats up.",
     difficulty: "easy",
     tips: [
-      "Park at the big lot opposite the panorama viewpoint",
-      "Synagogue + Jewish quarter combo ticket ~€6 — closes early Friday",
-      "Don't leave without a slice of 'sfratto dei Goym' (local Jewish-Italian dessert)",
-      "Cool, shaded alleys make this the ideal late-afternoon walk"
-    ],
-    quizFacts: [
-      {
-        question: "What is Pitigliano's famous nickname?",
-        correctAnswer: "Little Jerusalem",
-        distractors: ["Little Athens", "The Roman Ruin", "The Pearl of the Sea"]
-      },
-      {
-        question: "What kind of rock is Pitigliano carved out of?",
-        correctAnswer: "Tufa, a soft volcanic rock",
-        distractors: ["Solid white marble", "Clear ice", "Shiny black coal"]
-      },
-      {
-        question: "What is the famous stick-shaped pastry from Pitigliano called?",
-        correctAnswer: "Sfratto",
-        distractors: ["Cannolo", "Tiramisu", "Panettone"]
-      }
+      "Sand surface temperatures can exceed 150°F by midday in warm weather — go early",
+      "No marked trail — pick any line into the dunes and retrace your own footprints back",
+      "Bring closed shoes; sand gets hot fast even in cooler months"
     ]
   },
+
+  // ---------- MAINLAND: LAS VEGAS ----------
   {
-    id: "via-cava-san-giuseppe",
-    name: "Via Cava di San Giuseppe",
+    id: "the-venetian-resort",
+    name: "The Venetian Resort",
     category: "attraction",
-    region: "south",
-    shortDescription: "Etruscan rock corridors carved up to 20 m deep",
+    region: "mainland",
+    shortDescription: "Central-Strip hotel with indoor gondola canals — a suggested pick",
     description:
-      "The Vie Cave are mysterious Etruscan trenches sliced into the soft tufa, in places more than 20 m deep, threading the woods between Pitigliano, Sovana and Sorano. The San Giuseppe path is the most accessible — cool, shaded, dramatic, and feels like walking through a natural maze.",
-    image: "./images/via-cava.jpg",
-    imageCredit: wmCredit("Vie_Cave"),
-    website: "https://www.parcodeglietruschi.it/en/",
-    address: "Pitigliano (GR)",
-    coords: [42.6313, 11.6722],
-    tags: ["culture", "cave", "nature"],
-    difficulty: "moderate",
+      "A Venice-themed mega-resort near the center of the Strip, with indoor canals, gondoliers, and an enormous casino and shopping arcade. Listed here as a suggested pick — swap it for whichever Strip hotel you actually book.",
+    website: "https://www.venetianlasvegas.com/",
+    address: "3355 S Las Vegas Blvd, Las Vegas, NV",
+    coords: [36.1212, -115.1697],
+    tags: ["culture", "family"],
+    difficulty: "easy",
+    tips: ["A suggested pick — confirm and book your own Strip hotel"]
+  },
+  {
+    id: "bellagio-fountains",
+    name: "Bellagio Fountains",
+    category: "attraction",
+    region: "mainland",
+    shortDescription: "Free choreographed fountain show on the Bellagio's lake",
+    description:
+      "A free, choreographed water, light and music show on the eight-acre lake in front of the Bellagio hotel — jets shoot up to 460 feet in time with the soundtrack, running every 15–30 minutes through the afternoon and evening.",
+    image: "./images/bellagio-fountains.jpg",
+    imageCredit: wmCredit("Fountains_of_Bellagio"),
+    website: "https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html",
+    address: "3600 S Las Vegas Blvd, Las Vegas, NV",
+    coords: [36.1126, -115.1767],
+    tags: ["culture", "family", "view"],
+    difficulty: "easy",
     tips: [
-      "Free, no ticket — trailhead just below the old town",
-      "Wear grippy shoes — the tufa is shaded but slick when damp",
-      "1-hour comfortable loop; longer if you take the Sovana extension",
-      "Surprisingly cool down inside — bring a light layer"
+      "Free, no ticket needed — just find a spot along the Strip sidewalk or the Bellagio's own walkway",
+      "Shows run every 15 minutes in the afternoon, every 30 minutes early evening, check the posted schedule"
+    ]
+  },
+  {
+    id: "fremont-street-experience",
+    name: "Fremont Street Experience",
+    category: "attraction",
+    region: "mainland",
+    shortDescription: "Downtown Vegas's neon pedestrian mall under an LED canopy",
+    description:
+      "The historic downtown core of Las Vegas, now a pedestrian mall covered by a massive curved LED canopy that runs free light-and-sound shows on the hour after dark — a grittier, more old-school contrast to the polished modern Strip.",
+    image: "./images/fremont-street-experience.jpg",
+    imageCredit: wmCredit("Fremont_Street_Experience"),
+    website: "https://www.vegasexperience.com/",
+    address: "Fremont Street, Las Vegas, NV",
+    coords: [36.1699, -115.1436],
+    tags: ["culture", "family"],
+    difficulty: "easy",
+    tips: ["Free light shows run on the hour after dark", "A rideshare from the Strip is about 15–20 minutes"]
+  },
+  {
+    id: "red-rock-canyon",
+    name: "Red Rock Canyon National Conservation Area",
+    category: "attraction",
+    region: "mainland",
+    shortDescription: "A 13-mile scenic loop through dramatic red sandstone cliffs",
+    description:
+      "A striking sandstone escarpment about 25 minutes from the Strip, managed by the Bureau of Land Management (not the National Park Service). A 13-mile one-way scenic drive winds past red and white striped cliffs, with pullouts for short hikes and photos.",
+    image: "./images/red-rock-canyon.jpg",
+    imageCredit: wmCredit("Red_Rock_Canyon_National_Conservation_Area"),
+    website: "https://www.blm.gov/visit/red-rock-canyon",
+    address: "Red Rock Canyon Scenic Dr, Las Vegas, NV",
+    coords: [36.1357, -115.4269],
+    tags: ["nature", "view", "family"],
+    difficulty: "easy",
+    tips: [
+      "This is BLM land, not a national park — its entrance fee is separate from an America the Beautiful pass, though the pass is still honored here",
+      "The scenic drive requires a timed-entry reservation in peak season — check before you go"
+    ]
+  },
+
+  // ---------- MAINLAND: GRAND CANYON WEST + ANTELOPE CANYON ----------
+  {
+    id: "grand-canyon-west",
+    name: "Grand Canyon West — Eagle Point",
+    category: "attraction",
+    region: "mainland",
+    shortDescription: "Canyon-edge overlooks on Hualapai tribal land, with an optional glass Skywalk",
+    description:
+      "A section of the western Grand Canyon rim managed by the Hualapai Tribe, not the National Park Service — Eagle Point's overlooks are named for a rock formation resembling an eagle in flight, with the Skywalk glass bridge available as a paid add-on for those who want to walk out over the canyon edge.",
+    image: "./images/grand-canyon-west.jpg",
+    imageCredit: wmCredit("Grand_Canyon_West"),
+    website: "https://grandcanyonwest.com/",
+    address: "Grand Canyon West, Peach Springs, AZ",
+    coords: [35.9743, -113.8114],
+    tags: ["view", "culture", "national-park"],
+    openingNote: "Hualapai tribal land — NOT covered by the America the Beautiful national park pass.",
+    difficulty: "easy",
+    tips: [
+      "Not part of the National Park Service — the America the Beautiful pass does NOT cover entry here; expect separate tribal fees",
+      "Skywalk access is a paid add-on beyond the base admission",
+      "It's windy at the rim year-round — bring a layer"
     ],
     quizFacts: [
       {
-        question: "Who carved the deep 'Via Cava' rock roads?",
-        correctAnswer: "The Etruscans",
-        distractors: ["The Romans", "The Vikings", "Aliens"]
+        question: "Which tribe manages Grand Canyon West?",
+        correctAnswer: "The Hualapai Tribe",
+        distractors: ["The National Park Service", "The Navajo Nation", "The state of Arizona"]
       },
       {
-        question: "Why were these roads carved so deep into the rock?",
-        correctAnswer: "It's an ancient mystery!",
-        distractors: ["To hide from dinosaurs", "To find gold", "As swimming pools"]
+        question: "Is the America the Beautiful national park pass accepted at Grand Canyon West?",
+        correctAnswer: "No — it's tribal land with its own fees",
+        distractors: ["Yes, fully covered", "Only on weekdays", "Only for the Skywalk"]
       }
     ]
   },
   {
-    id: "vitozza",
-    name: "Vitozza Cave City",
+    id: "antelope-canyon",
+    name: "Antelope Canyon",
     category: "attraction",
-    region: "south",
-    shortDescription: "Abandoned medieval cave dwellings in the woods",
+    region: "mainland",
+    shortDescription: "Swirling sandstone slot canyon, Navajo-guided tours only",
     description:
-      "Over 200 cave dwellings hollowed into the tufa cliffs of a forested ravine near San Quirico di Sorano — a wild, atmospheric site you mostly explore alone. Great backup or alternative to the Vie Cave, especially if the kids love crawling into rock-cut rooms with a headlamp.",
-    image: "./images/vitozza.jpg",
-    imageCredit: wmCredit("Sorano"),
-    website: "https://visit.pitigliano.org/en/",
-    address: "San Quirico, Sorano (GR)",
-    coords: [42.6864, 11.7464],
-    tags: ["cave", "nature", "culture"],
+      "A narrow, deep sandstone slot canyon on Navajo land near Page, Arizona, carved over millennia by flash floods. Light beams stream down through narrow openings at certain times of day, especially prized in Upper Antelope Canyon. Access is only via guided Navajo-led tours, which sell out well in advance.",
+    image: "./images/antelope-canyon.jpg",
+    imageCredit: wmCredit("Antelope_Canyon"),
+    website: "https://www.navajonationparks.org/tribal-parks/antelope-canyon/",
+    address: "Antelope Canyon, near Page, AZ",
+    coords: [36.8619, -111.3743],
+    tags: ["cave", "culture", "view"],
+    bookingNote: "Navajo-guided tours only — book well ahead, popular light-beam time slots sell out fastest.",
+    difficulty: "easy",
+    tips: [
+      "Book weeks ahead — this tour sells out, especially the midday light-beam slots",
+      "No large bags allowed inside; check your tour operator's rules",
+      "Upper Antelope Canyon has the famous light beams; Lower Antelope Canyon involves more stairs but fewer crowds"
+    ],
+    quizFacts: [
+      {
+        question: "What natural force carved Antelope Canyon's swirling walls?",
+        correctAnswer: "Flash floods, over thousands of years",
+        distractors: ["Wind alone", "An ancient river that still flows there", "A meteor impact"]
+      },
+      {
+        question: "Whose tribal land is Antelope Canyon located on?",
+        correctAnswer: "The Navajo Nation",
+        distractors: ["The Hualapai Tribe", "Federal Bureau of Land Management", "The state of Utah"]
+      }
+    ]
+  },
+
+  // ---------- HAWAII: MAUI ----------
+  {
+    id: "wailea-beach",
+    name: "Wailea Beach",
+    category: "attraction",
+    region: "hawaii",
+    shortDescription: "A wide gold-sand beach fronting the Wailea resort corridor",
+    description:
+      "A broad, gently sloping gold-sand beach along Maui's south shore, fronting the Wailea resort strip — generally calm swimming with good snorkeling near the rocky points at either end.",
+    image: "./images/wailea-beach.jpg",
+    imageCredit: wmCredit("Wailea,_Hawaii"),
+    website: "https://www.gohawaii.com/islands/maui/regions/wailea",
+    address: "Wailea Beach, Wailea, Maui, HI",
+    coords: [20.6867, -156.4406],
+    tags: ["water", "family"],
+    difficulty: "easy",
+    tips: [
+      "Snorkeling is best near the rocky points on either end of the beach, not the open middle stretch",
+      "Public beach access paths run between the resorts — Hawaii's beaches are all public below the high-tide line"
+    ]
+  },
+  {
+    id: "twin-falls-maui",
+    name: "Twin Falls",
+    category: "attraction",
+    region: "hawaii",
+    shortDescription: "The most accessible waterfall on the Road to Hana",
+    description:
+      "The first major waterfall stop on the Hana Highway, reached by a short, easy walk from a roadside fruit stand — a gentle introduction to the jungle scenery of the drive ahead, with a swimmable pool below the falls.",
+    image: "./images/twin-falls-maui.jpg",
+    imageCredit: wmCredit("Twin_Falls_(Hawaii)"),
+    address: "Hana Highway, Haiku, Maui, HI",
+    coords: [20.9308, -156.2308],
+    tags: ["water", "family", "trail"],
+    difficulty: "easy",
+    tips: ["A short, easy walk from the roadside parking and fruit stand", "The pool can get crowded midday — go early on the drive"]
+  },
+  {
+    id: "waianapanapa-state-park",
+    name: "Waiʻānapanapa State Park",
+    category: "attraction",
+    region: "hawaii",
+    shortDescription: "A dramatic black-sand beach and sea cave near Hana",
+    description:
+      "A striking black-sand beach formed from cooled lava, framed by a sea arch and a lava-tube sea cave, plus a short section of the ancient King's Highway coastal trail. Hawaii state parks require an advance reservation for both parking and entry.",
+    image: "./images/waianapanapa-black-sand.jpg",
+    imageCredit: wmCredit("Waianapanapa_State_Park"),
+    website: "https://dlnr.hawaii.gov/dsp/parks/maui/waianapanapa-state-park/",
+    address: "Waiʻānapanapa State Park, Hana, Maui, HI",
+    coords: [20.7864, -156.0011],
+    tags: ["nature", "view", "water"],
+    bookingNote: "Advance reservation required — book online before you go, walk-ins are turned away.",
+    difficulty: "easy",
+    tips: [
+      "Book the state park reservation online in advance — this is strictly enforced",
+      "The black sand and lava rock get very hot — sandals help",
+      "Strong currents make this a look-don't-swim beach for most visitors"
+    ]
+  },
+  {
+    id: "wailua-falls",
+    name: "Wailua Falls",
+    category: "attraction",
+    region: "hawaii",
+    shortDescription: "A tall roadside waterfall just past Hana",
+    description:
+      "An 80-foot roadside waterfall visible right from the highway just past Hana town — one of the easiest big-waterfall views on the whole drive, no hiking required.",
+    image: "./images/wailua-falls-maui.jpg",
+    imageCredit: wmCredit("Wailua_Falls_(Maui)"),
+    address: "Hana Highway, past Hana, Maui, HI",
+    coords: [20.6636, -156.0092],
+    tags: ["water", "view", "family"],
+    difficulty: "easy",
+    tips: ["Visible directly from a highway pullout — no hike required", "Flow is much stronger after recent rain"]
+  },
+  {
+    id: "hana-town",
+    name: "Hana",
+    category: "attraction",
+    region: "hawaii",
+    shortDescription: "A tiny, sleepy town at the end (or midpoint) of the drive",
+    description:
+      "A small, quiet former plantation town on Maui's remote east end — a good lunch and leg-stretch stop, with a historic general store, a couple of food trucks, and a slower pace than anywhere else on the island.",
+    website: "https://www.gohawaii.com/islands/maui/regions/hana",
+    address: "Hana, Maui, HI",
+    coords: [20.7584, -155.9903],
+    tags: ["village", "food"],
+    difficulty: "easy",
+    tips: ["Food trucks near the ballpark are the easiest lunch option", "Gas up here if you're low — the last reliable station before the long drive back"]
+  },
+  {
+    id: "haleakala-summit",
+    name: "Haleakalā Summit",
+    category: "attraction",
+    region: "hawaii",
+    shortDescription: "Sunrise above the clouds at 10,023 feet",
+    description:
+      "The summit of Maui's dormant shield volcano, its vast reddish crater looking almost lunar. Sunrise here is a bucket-list experience — watching dawn break from above a sea of clouds — but requires a separate advance reservation from the National Park Service for the 3:00–7:00 am viewing window, on top of the standard park entrance fee.",
+    image: "./images/haleakala-summit.jpg",
+    imageCredit: wmCredit("Haleakal%C4%81"),
+    website: "https://www.nps.gov/hale/planyourvisit/sunrise.htm",
+    address: "Haleakalā National Park, Maui, HI",
+    coords: [20.7097, -156.2533],
+    tags: ["view", "nature", "national-park"],
+    bookingNote: "Sunrise viewing requires a separate advance reservation via recreation.gov, on top of park entry.",
+    difficulty: "easy",
+    tips: [
+      "Book the sunrise reservation well ahead on recreation.gov — it sells out",
+      "Summit temperatures can be near or below freezing before dawn — bring real warm layers",
+      "A daytime summit visit needs no special reservation, only the park entrance fee"
+    ],
+    quizFacts: [
+      {
+        question: "What does 'Haleakalā' mean in Hawaiian?",
+        correctAnswer: "House of the Sun",
+        distractors: ["Sleeping Giant", "Rainbow Mountain", "Valley of Fire"]
+      },
+      {
+        question: "What's required to watch sunrise at Haleakalā's summit, beyond the park entrance fee?",
+        correctAnswer: "A separate advance viewing reservation",
+        distractors: ["Nothing extra is needed", "A 4WD vehicle only", "A guided tour is mandatory"]
+      }
+    ]
+  },
+  {
+    id: "molokini-crater",
+    name: "Molokini Crater",
+    category: "attraction",
+    region: "hawaii",
+    shortDescription: "A partially-submerged volcanic crescent and marine preserve",
+    description:
+      "A crescent-shaped, partially submerged volcanic crater about three miles off Maui's coast, protected as a marine life conservation district. Its sheltered, exceptionally clear water makes it one of Maui's best snorkel and dive sites, reached only by boat.",
+    image: "./images/molokini-crater.jpg",
+    imageCredit: wmCredit("Molokini"),
+    website: "https://dlnr.hawaii.gov/dar/marine-managed-areas/molokini-shoal-marine-life-conservation-district/",
+    address: "Molokini, off Maui, HI",
+    coords: [20.6317, -156.4972],
+    tags: ["water", "nature"],
+    difficulty: "easy",
+    tips: ["Morning tours have the calmest water and best visibility", "No walk-up access — book a boat tour in advance"]
+  },
+  {
+    id: "lahaina-town",
+    name: "Lahaina",
+    category: "attraction",
+    region: "hawaii",
+    shortDescription: "Historic former capital of the Hawaiian Kingdom",
+    description:
+      "A historic whaling port and former capital of the Kingdom of Hawaiʻi, on Maui's west side. Parts of the town are still recovering from the devastating August 2023 wildfire — check current visitor guidance and respect any areas still off-limits before you go.",
+    website: "https://www.gohawaii.com/islands/maui/regions/lahaina",
+    address: "Lahaina, Maui, HI",
+    coords: [20.8783, -156.6825],
+    tags: ["culture", "village"],
+    openingNote: "Check current visitor guidance — parts of the town are still recovering from the 2023 wildfire.",
+    difficulty: "easy",
+    tips: ["Check for current visitor guidance before planning time here", "Respect any areas still closed to visitors"]
+  },
+
+  // ---------- HAWAII: BIG ISLAND ----------
+  {
+    id: "kona-coffee-farm",
+    name: "Kona Coffee Farm Tour",
+    category: "attraction",
+    region: "hawaii",
+    shortDescription: "A working farm tour in the famous Kona coffee belt",
+    description:
+      "A tour of a working coffee farm on the narrow volcanic-slope strip between roughly 800 and 2,500 feet elevation known as the Kona coffee belt — the only place in the United States where coffee is grown commercially at scale. Tours typically end with a tasting.",
+    image: "./images/kona-coffee-farm.jpg",
+    imageCredit: wmCredit("Kona_coffee"),
+    website: "https://www.konacoffeefarmers.org/",
+    address: "Kona coffee belt, Holualoa, HI",
+    coords: [19.6208, -155.9411],
+    tags: ["food", "culture"],
+    difficulty: "easy",
+    tips: [
+      "'100% Kona' is legally protected — a 'Kona blend' may be only 10% actual Kona coffee, check labels",
+      "Harvest season runs roughly August through January, so October visits may catch active picking"
+    ]
+  },
+  {
+    id: "kilauea-crater",
+    name: "Kīlauea Crater Rim",
+    category: "attraction",
+    region: "hawaii",
+    shortDescription: "Trails and steam vents around one of the world's most active volcanoes",
+    description:
+      "Sections of the Crater Rim Trail overlook the vast Kīlauea caldera at the heart of Hawaiʻi Volcanoes National Park, with roadside steam vents nearby where groundwater meets hot volcanic rock and rises as visible steam.",
+    image: "./images/kilauea-crater.jpg",
+    imageCredit: wmCredit("K%C4%ABlauea"),
+    website: "https://www.nps.gov/havo/",
+    address: "Hawaiʻi Volcanoes National Park, HI",
+    coords: [19.4194, -155.2885],
+    tags: ["nature", "view", "national-park"],
+    difficulty: "easy",
+    tips: [
+      "Check the current eruption and air-quality status before visiting — conditions change",
+      "The elevation here is cooler and often wetter than the Kona coast — bring a layer"
+    ],
+    quizFacts: [
+      {
+        question: "What is Kīlauea?",
+        correctAnswer: "One of the world's most active volcanoes",
+        distractors: ["An extinct volcano", "A coral reef", "A mountain range"]
+      }
+    ]
+  },
+  {
+    id: "thurston-lava-tube",
+    name: "Thurston Lava Tube",
+    category: "attraction",
+    region: "hawaii",
+    shortDescription: "Walk through a centuries-old natural lava tunnel",
+    description:
+      "A several-hundred-year-old lava tube in a lush fern forest — a natural tunnel formed when the outer surface of a lava flow cooled and hardened while molten rock kept draining through the middle, leaving a hollow passage you can walk straight through.",
+    image: "./images/thurston-lava-tube.jpg",
+    imageCredit: wmCredit("Th%C4%81rston_Lava_Tube"),
+    website: "https://www.nps.gov/havo/planyourvisit/thurston-lava-tube.htm",
+    address: "Hawaiʻi Volcanoes National Park, HI",
+    coords: [19.4106, -155.2422],
+    tags: ["cave", "nature", "family"],
+    difficulty: "easy",
+    tips: ["A short, easy loop, but the tube's interior is darker than expected — bring a light", "Can be slippery when wet"]
+  },
+  {
+    id: "punaluu-black-sand-beach",
+    name: "Punaluʻu Black Sand Beach",
+    category: "attraction",
+    region: "hawaii",
+    shortDescription: "Black lava-sand beach, a favorite resting spot for green sea turtles",
+    description:
+      "A striking beach of black sand formed from fragmented cooled lava, on the Big Island's southeast coast — also one of the best-known places to see Hawaiian green sea turtles (honu) resting on the shore. Keep a respectful distance; touching or approaching them is illegal.",
+    image: "./images/punaluu-black-sand-beach.jpg",
+    imageCredit: wmCredit("Punalu%CA%BBu_Beach"),
+    website: "https://www.gohawaii.com/islands/hawaii-big-island/regions/kau/punaluu-beach-park",
+    address: "Punaluʻu Beach Rd, Naalehu, HI",
+    coords: [19.1372, -155.5006],
+    tags: ["nature", "family", "view"],
+    difficulty: "easy",
+    tips: ["Never touch or approach the turtles — it's illegal and stresses them", "The black sand gets very hot — sandals recommended"]
+  },
+  {
+    id: "south-point-green-sand",
+    name: "South Point & Green Sand Beach",
+    category: "attraction",
+    region: "hawaii",
+    shortDescription: "The southernmost point in the US, plus a rare olivine-crystal beach",
+    description:
+      "Ka Lae (South Point) is the southernmost point in the United States. Nearby, a long walk or rough 4WD track leads to Papakōlea Green Sand Beach, one of only a handful of green-sand beaches in the world, colored by olivine crystals eroded from a volcanic cinder cone.",
+    image: "./images/south-point-green-sand.jpg",
+    imageCredit: wmCredit("Papak%C5%8Dlea_Beach"),
+    address: "South Point Rd, Naalehu, HI",
+    coords: [18.9105, -155.6811],
+    tags: ["nature", "extreme", "view"],
     difficulty: "challenging",
     tips: [
-      "Bring a head-lamp per person — the chambers are properly dark",
-      "1.5–2 hr round trip on uneven, sometimes overgrown ground",
-      "Wild, atmospheric, almost no signage — keep close to the trail",
-      "Wear long pants & closed shoes; brambles & rough stone"
-    ],
-    quizFacts: [
-      {
-        question: "Roughly how many cave dwellings are there at Vitozza?",
-        correctAnswer: "Over 200",
-        distractors: ["Just 5", "Exactly 10", "More than 5,000"]
-      },
-      {
-        question: "Until roughly when did people actually still live inside the caves of Vitozza?",
-        correctAnswer: "Until the late 1700s",
-        distractors: [
-          "Only during the Stone Age",
-          "Only in ancient Roman times",
-          "All the way until last year"
-        ]
-      },
-      {
-        question: "Many of the caves at Vitozza have shapes carved into the rock walls inside. What were they used as?",
-        correctAnswer: "As wardrobes and shelves for everyday things",
-        distractors: [
-          "As secret slides for kids",
-          "As fish tanks for goldfish",
-          "As frozen-food drawers"
-        ]
-      }
+      "The walk to Green Sand Beach is about 2.5 miles each way over exposed, uneven terrain",
+      "Only attempt the 4WD track if your rental is actually rated for it"
     ]
   },
   {
-    id: "saturnia",
-    name: "Cascate del Mulino — Saturnia Hot Springs",
+    id: "manta-ray-night-snorkel",
+    name: "Manta Ray Night Snorkel",
     category: "attraction",
-    region: "south",
-    shortDescription: "Free, 24/7 turquoise hot waterfalls — best at sunrise",
+    region: "hawaii",
+    shortDescription: "Float above feeding manta rays under boat-mounted lights",
     description:
-      "A natural staircase of warm sulphur pools and the iconic milky-blue waterfall. Free and open 24/7. The trick is timing: arrive by 07:30 to enjoy steam rising off cool morning water in near-empty pools. By 10 am it's packed and parking disappears.",
-    image: "./images/saturnia.jpg",
-    imageCredit: wmCredit("Saturnia"),
-    website: "https://www.termedisaturnia.it/en/",
-    address: "Cascate del Mulino, Saturnia, Manciano (GR)",
-    coords: [42.6483, 11.5089],
-    tags: ["water", "nature", "view"],
-    openingNote: "Free, open 24/7. Arrive by 07:30 to beat crowds and heat.",
+      "The Big Island's signature nighttime ocean experience — boats anchor off the Kona coast after dark and shine lights into the water, drawing plankton and, in turn, giant manta rays that glide and loop just beneath snorkelers holding onto a lit surface float.",
+    image: "./images/manta-ray-night-snorkel.jpg",
+    imageCredit: wmCredit("Manta_ray"),
+    website: "https://www.gohawaii.com/islands/hawaii-big-island/things-do",
+    address: "Off Keauhou Bay, Kona, HI",
+    coords: [19.5586, -155.9678],
+    tags: ["water", "nature"],
+    bookingNote: "Book ahead — this tour is popular and fills up, especially in high season.",
     difficulty: "easy",
-    tips: [
-      "100 % free, 24/7, no facilities, no lockers — leave valuables in the car",
-      "Sulphur stains light fabrics — wear darker swimwear and rinse after",
-      "Bring sandals you don't mind smelling of eggs for a few days",
-      "Arrive by 07:30; by 10 it's elbow-to-elbow and parking is gone"
-    ],
-    quizFacts: [
-      {
-        question: "In Roman legend, how were the Saturnia hot springs created?",
-        correctAnswer: "Jupiter threw a lightning bolt",
-        distractors: ["A dragon sneezed fire", "A giant dropped hot soup", "The sun got too close"]
-      },
-      {
-        question: "Why does the warm water at Saturnia smell like rotten eggs?",
-        correctAnswer: "It has a mineral called sulphur",
-        distractors: ["People drop old eggs in it", "Frogs live at the bottom", "A magic spell"]
-      },
-      {
-        question: "How warm is the water at Saturnia?",
-        correctAnswer: "37 degrees, like a warm bath!",
-        distractors: ["10 degrees, freezing!", "100 degrees, boiling!", "It changes every day"]
-      }
-    ]
+    tips: ["Wetsuits are usually provided — the water cools after dark", "Sightings are very common off Kona but never 100% guaranteed"]
   },
   {
-    id: "lago-di-bolsena",
-    name: "Lago di Bolsena",
+    id: "mauna-kea-summit",
+    name: "Mauna Kea Summit",
     category: "attraction",
-    region: "south",
-    shortDescription: "Europe's largest volcanic lake — calm, clean, swimmable",
+    region: "hawaii",
+    shortDescription: "9,200 ft visitor station, sunset and stargazing — 4WD required above",
     description:
-      "A vast volcanic crater lake with cool, clean fresh water — a far easier swim than the crowded Tuscan coast in August. The little towns of Bolsena and Capodimonte have shaded grassy beaches, gelato and pedalos. A perfect midday cool-down on the way back from the south.",
-    image: "./images/bolsena.jpg",
-    imageCredit: wmCredit("Lake_Bolsena"),
-    website: "https://www.comune.bolsena.vt.it/",
-    address: "Bolsena (VT)",
-    coords: [42.6447, 11.9847],
-    tags: ["water", "family", "nature"],
-    difficulty: "easy",
-    tips: [
-      "Free public beaches at Bolsena & Capodimonte; pay loungers also available",
-      "Lake water is cooler than the August coast — refreshing, not freezing",
-      "Pedalo & SUP rental at the marina; ice-cream & snack bars right there",
-      "Lake-fish 'coregone' is the local specialty — try at a marina trattoria"
-    ],
-    quizFacts: [
-      {
-        question: "What kind of crater formed Lake Bolsena a long time ago?",
-        correctAnswer: "An old volcano collapsing into itself",
-        distractors: [
-          "A meteor that landed yesterday",
-          "A giant whale's footprint",
-          "An abandoned diamond mine"
-        ]
-      },
-      {
-        question: "Lake Bolsena is the largest lake in Europe of which kind?",
-        correctAnswer: "The largest volcanic lake",
-        distractors: [
-          "The largest salt lake",
-          "The largest underground lake",
-          "The largest pink lake"
-        ]
-      },
-      {
-        question: "Which fish is the local specialty of Lake Bolsena?",
-        correctAnswer: "Coregone",
-        distractors: ["Salmon", "Tuna", "Shark"]
-      },
-      {
-        question: "How many islands sit in the southern part of Lake Bolsena?",
-        correctAnswer: "Two — Bisentina and Martana",
-        distractors: ["None at all", "About a dozen", "More than a hundred"]
-      }
-    ]
-  },
-  {
-    id: "civita-di-bagnoregio",
-    name: "Civita di Bagnoregio",
-    category: "attraction",
-    region: "south",
-    shortDescription: "The 'dying city' on a tufa pedestal, reached by footbridge",
-    description:
-      "An impossibly photogenic medieval village perched on a crumbling tufa column, accessible only by a long pedestrian bridge over a canyon of badlands. Tiny ticket fee, then a short steep walk into a tiny stone village frozen in time. Best in late afternoon light.",
-    image: "./images/civita.jpg",
-    imageCredit: wmCredit("Civita_di_Bagnoregio"),
-    website: "https://www.civitadibagnoregio.cloud/en/",
-    address: "Civita di Bagnoregio, Bagnoregio (VT)",
-    coords: [42.6275, 12.1131],
-    tags: ["culture", "village", "view"],
+      "The Big Island's tallest peak and one of the best astronomical observing sites on Earth. The Visitor Information Station sits at 9,200 feet, the highest point most visitors can drive to without 4WD; the true summit and observatories above require a 4WD vehicle, and a guided tour is strongly recommended over self-driving given the altitude, cold and darkness.",
+    image: "./images/mauna-kea-summit.jpg",
+    imageCredit: wmCredit("Mauna_Kea"),
+    website: "https://www.imiloahawaii.org/maunakeavisitorcenter",
+    address: "Mauna Kea Access Rd, Hilo, HI",
+    coords: [19.8207, -155.4681],
+    tags: ["view", "nature", "extreme"],
+    bookingNote: "A guided tour is recommended — 4WD is required above the visitor station.",
     difficulty: "moderate",
     tips: [
-      "Footbridge ticket ~€5/adult, cash only — kids under 6 free",
-      "The walk back is properly steep — strollers will struggle",
-      "Best light & cooler temps in late afternoon; village glows at golden hour",
-      "Tiny grocery on the bridge side — BYO water for the climb"
+      "Bring genuinely warm clothing — temperatures at 9,200+ ft can drop below freezing after dark",
+      "Book a guided tour rather than self-driving above the visitor station",
+      "Give yourself time to acclimatize before going higher if your tour allows it"
     ],
     quizFacts: [
       {
-        question: "What is Civita di Bagnoregio's famous nickname?",
-        correctAnswer: "The Dying City",
-        distractors: ["The Singing City", "The Sleeping Castle", "The Twin City"]
-      },
-      {
-        question: "How do visitors reach the village of Civita di Bagnoregio?",
-        correctAnswer: "Across a long pedestrian footbridge over a canyon",
-        distractors: [
-          "By cable car",
-          "By small submarine",
-          "Through a long underground tunnel"
-        ]
-      },
-      {
-        question: "Why is Civita called the 'Dying City'?",
-        correctAnswer: "The tufa pedestal it sits on is slowly crumbling away",
-        distractors: [
-          "All of its people are very, very old",
-          "It is haunted by a friendly ghost",
-          "The mayor wants a new, snappier name"
-        ]
-      },
-      {
-        question: "How many people actually live in Civita di Bagnoregio today?",
-        correctAnswer: "Only about a dozen",
-        distractors: ["Over a thousand", "About 50,000", "Half the country"]
-      },
-      {
-        question: "Civita di Bagnoregio also has a famous animal population. Roughly how many of these live in the village?",
-        correctAnswer: "About 20 cats",
-        distractors: ["Around 200 elephants", "About 1,000 pigeons", "Exactly 10 sharks"]
-      },
-      {
-        question: "Civita di Bagnoregio was first founded by which ancient Italian people, more than 2,500 years ago?",
-        correctAnswer: "The Etruscans",
-        distractors: ["The Vikings", "The Egyptians", "The Aztecs"]
+        question: "What does 'Mauna Kea' mean in Hawaiian?",
+        correctAnswer: "White Mountain",
+        distractors: ["Red Mountain", "Sleeping Volcano", "Sacred Cloud"]
       }
     ]
+  },
+  {
+    id: "kahaluu-beach-park",
+    name: "Kahaluʻu Beach Park",
+    category: "attraction",
+    region: "hawaii",
+    shortDescription: "One of the Big Island's easiest and best shore snorkel spots",
+    description:
+      "A calm, shallow, reef-protected beach right off the Kona coast road — full of tropical reef fish and commonly visited by resting honu (green sea turtles), with lifeguards on duty and easy shore access, making it one of the best beginner snorkel spots on the island.",
+    image: "./images/kahaluu-beach-park.jpg",
+    imageCredit: wmCredit("Kahalu%CA%BBu_Beach_Park"),
+    address: "78-6710 Alii Dr, Kailua-Kona, HI",
+    coords: [19.5661, -155.9683],
+    tags: ["water", "family"],
+    difficulty: "easy",
+    tips: ["Lifeguards on duty — check posted flags for current conditions", "Keep a respectful distance from resting sea turtles"]
   }
 ];
 

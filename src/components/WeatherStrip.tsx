@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 import { Cloud, CloudRain, Sun, CloudSun, Loader2 } from "lucide-react";
 import { useT } from "../lib/dict";
-import { useLang } from "../lib/i18n";
-import type { Lang } from "../lib/lang";
 
-const SPOT_LABEL: Record<"north" | "south", { en: string; he: string }> = {
-  north: { en: "Larciano", he: "לרצ'יאנו" },
-  south: { en: "Saturnia", he: "סאטורניה" }
+const SPOT_LABEL: Record<"mainland" | "hawaii", string> = {
+  mainland: "Las Vegas",
+  hawaii: "Kona"
 };
 
 interface DayForecast {
@@ -22,13 +20,13 @@ interface RegionWeather {
 }
 
 const SPOTS = [
-  { key: "north", label: "Larciano", lat: 43.8267, lon: 10.8978 },
-  { key: "south", label: "Saturnia", lat: 42.6483, lon: 11.5089 }
+  { key: "mainland", label: "Las Vegas", lat: 36.1699, lon: -115.1398 },
+  { key: "hawaii", label: "Kona", lat: 19.6400, lon: -155.9969 }
 ] as const;
 
 type SpotKey = (typeof SPOTS)[number]["key"];
 
-const CACHE_KEY = "tuscany-weather-v3";
+const CACHE_KEY = "trip-weather-v1";
 const CACHE_TTL_MS = 60 * 60 * 1000;
 
 function iconFor(code: number, size = 14) {
@@ -38,13 +36,9 @@ function iconFor(code: number, size = 14) {
   return <CloudRain size={size} className="text-olive-500" />;
 }
 
-function dayLabel(iso: string, idx: number, lang: Lang, todayLabel: string): string {
+function dayLabel(iso: string, idx: number, todayLabel: string): string {
   if (idx === 0) return todayLabel;
   const d = new Date(iso + "T12:00:00");
-  if (lang === "he") {
-    const heShort = ["א'", "ב'", "ג'", "ד'", "ה'", "ו'", "ש'"];
-    return heShort[d.getDay()];
-  }
   return d.toLocaleDateString("en-GB", { weekday: "short" });
 }
 
@@ -54,12 +48,11 @@ interface Props {
 
 export default function WeatherStrip({ variant = "paper" }: Props = {}) {
   const t = useT();
-  const { lang } = useLang();
   const [data, setData] = useState<Record<string, RegionWeather> | null>(null);
   const [loading, setLoading] = useState(true);
   const [open, setOpen] = useState(false);
   /** Expanded panel: which location's multi-day forecast is visible */
-  const [forecastTab, setForecastTab] = useState<SpotKey>("north");
+  const [forecastTab, setForecastTab] = useState<SpotKey>("mainland");
 
   const isGlass = variant === "glass";
 
@@ -81,7 +74,7 @@ export default function WeatherStrip({ variant = "paper" }: Props = {}) {
         const result: Record<string, RegionWeather> = {};
         await Promise.all(
           SPOTS.map(async spot => {
-            const url = `https://api.open-meteo.com/v1/forecast?latitude=${spot.lat}&longitude=${spot.lon}&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min,weather_code&timezone=Europe%2FRome&forecast_days=5`;
+            const url = `https://api.open-meteo.com/v1/forecast?latitude=${spot.lat}&longitude=${spot.lon}&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min,weather_code&timezone=auto&forecast_days=5`;
             const res = await fetch(url);
             if (!res.ok) throw new Error(String(res.status));
             const json = await res.json();
@@ -165,7 +158,7 @@ export default function WeatherStrip({ variant = "paper" }: Props = {}) {
           {days.map((d, i) => (
             <div key={d.date} className="flex flex-col items-center gap-1.5 text-center text-[11px] sm:text-xs min-w-0">
               <span className={`font-medium leading-tight ${dayLabelClass}`}>
-                {dayLabel(d.date, i, lang, t("today"))}
+                {dayLabel(d.date, i, t("today"))}
               </span>
               <span className="flex shrink-0">{iconFor(d.code, 18)}</span>
               <span className={`font-semibold tabular-nums leading-tight ${dayTempStrong}`}>
@@ -182,7 +175,7 @@ export default function WeatherStrip({ variant = "paper" }: Props = {}) {
       <div className="flex justify-between gap-1 overflow-x-auto pb-1 scrollbar-hide">
         {days.map((d, i) => (
           <div key={d.date} className="flex flex-col items-center gap-1 text-[11px] min-w-[3.25rem] shrink-0">
-            <span className={`font-medium ${dayLabelClass}`}>{dayLabel(d.date, i, lang, t("today"))}</span>
+            <span className={`font-medium ${dayLabelClass}`}>{dayLabel(d.date, i, t("today"))}</span>
             {iconFor(d.code, 14)}
             <span className={`font-medium tabular-nums ${dayTempStrong}`}>
               {d.tMax}°
@@ -211,7 +204,7 @@ export default function WeatherStrip({ variant = "paper" }: Props = {}) {
               <div key={spot.key} className="flex items-center gap-1.5 shrink-0">
                 {iconFor(w.days[0]?.code ?? 0, 14)}
                 <span className={`text-[10px] uppercase tracking-[0.16em] font-medium ${labelText}`}>
-                  {SPOT_LABEL[spot.key][lang]}
+                  {SPOT_LABEL[spot.key]}
                 </span>
                 <span className={`text-sm font-semibold tabular-nums ${tempStrong}`}>
                   {w.current !== null ? `${Math.round(w.current)}°` : "—"}
@@ -226,7 +219,7 @@ export default function WeatherStrip({ variant = "paper" }: Props = {}) {
         <span
           className={`text-[10px] uppercase tracking-[0.18em] font-medium shrink-0 hidden sm:inline ${triggerHint}`}
         >
-          {open ? (lang === "he" ? "סגור" : "Hide") : lang === "he" ? "תחזית" : "Forecast"}
+          {open ? "Hide" : "Forecast"}
         </span>
         <span
           className={`transition-transform shrink-0 text-[12px] leading-none ${open ? "rotate-180" : ""} ${
@@ -243,7 +236,7 @@ export default function WeatherStrip({ variant = "paper" }: Props = {}) {
         <div className={`border-t px-3 pb-3 pt-3 space-y-3 ${dividerClass}`}>
           <div
             role="tablist"
-            aria-label={lang === "he" ? "בחירת אזור לתחזית" : "Forecast location"}
+            aria-label="Forecast location"
             className={`flex rounded-xl p-1 gap-1 ${isGlass ? "bg-cream-50/10" : "bg-black/[0.06]"}`}
           >
             {SPOTS.map(spot => (
@@ -258,7 +251,7 @@ export default function WeatherStrip({ variant = "paper" }: Props = {}) {
                 }`}
               >
                 <span className="block truncate text-center">
-                  {lang === "he" ? SPOT_LABEL[spot.key].he : SPOT_LABEL[spot.key].en}
+                  {SPOT_LABEL[spot.key]}
                 </span>
               </button>
             ))}

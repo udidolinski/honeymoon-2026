@@ -1,254 +1,269 @@
 import type { Service } from "./types";
 
 export const services: Service[] = [
-  // ==================== NORTH BASE — Larciano area ====================
-
-  // Restaurants
+  // ==================== MAINLAND — Oakhurst / Yosemite ====================
   {
-    id: "rest-n-pizzeria-da-paolo",
-    name: "Pizzeria Ristorante Da Paolo",
+    id: "rest-m-oakhurst-diner",
+    name: "South Gate Brewing Co.",
     category: "restaurant",
-    region: "north",
-    base: "north",
-    shortDescription: "Local family pizzeria, classic wood-fired pies",
+    region: "mainland",
+    base: "mainland",
+    shortDescription: "Local brewpub and kitchen right on CA-41",
     description:
-      "An everyday neighbourhood spot in Larciano village — wood-fired pizza, simple pasta, friendly service, kids welcome. The easy go-to on a tired evening.",
-    address: "Larciano (PT)",
-    coords: [43.8265, 10.8985],
-    hours: "Dinner; closed Mon"
+      "A locally-owned brewery and restaurant in Oakhurst — burgers, pizza, and house-brewed beer, a reliable easy dinner after a long day in the park.",
+    address: "40233 Enterprise Dr, Oakhurst, CA",
+    coords: [37.3211, -119.6508],
+    hours: "Lunch & dinner daily"
   },
   {
-    id: "rest-n-osteria-larciano",
-    name: "Trattoria del Castello",
+    id: "sup-m-oakhurst-vons",
+    name: "Vons — Oakhurst",
+    category: "supermarket",
+    region: "mainland",
+    base: "mainland",
+    shortDescription: "Full-size grocery store on CA-41",
+    description: "The main supermarket in Oakhurst for water, snacks, and picnic supplies before heading into the park.",
+    address: "40120 CA-41, Oakhurst, CA",
+    coords: [37.3223, -119.6497],
+    hours: "Daily 6:00–23:00"
+  },
+  {
+    id: "gas-m-oakhurst-chevron",
+    name: "Chevron — Oakhurst",
+    category: "gas",
+    region: "mainland",
+    base: "mainland",
+    shortDescription: "Last reliable fuel stop before the park entrance",
+    description: "A Chevron station on CA-41 — top off here, fuel inside the park (if any) is limited and pricier.",
+    address: "40481 CA-41, Oakhurst, CA",
+    coords: [37.3183, -119.6511],
+    hours: "24/7"
+  },
+
+  // ==================== MAINLAND — Three Rivers / Sequoia ====================
+  {
+    id: "rest-m-three-rivers-cafe",
+    name: "Sierra Subs and Salads",
     category: "restaurant",
-    region: "north",
-    base: "north",
-    shortDescription: "Tuscan trattoria up in Larciano Castello with a view",
-    description:
-      "Up in the medieval upper village, classic Tuscan plates — pappardelle al cinghiale, bistecca, local Chianti — on a small terrace looking over the valley.",
-    address: "Larciano Castello (PT)",
-    coords: [43.8400, 10.8956],
+    region: "mainland",
+    base: "mainland",
+    shortDescription: "Casual café in Three Rivers",
+    description: "A friendly local sandwich-and-salad spot in Three Rivers — good grab-and-go before or after a day in Sequoia.",
+    address: "43326 Sierra Dr, Three Rivers, CA",
+    coords: [36.4392, -118.9021],
+    hours: "Lunch & early dinner"
+  },
+  {
+    id: "sup-m-three-rivers-market",
+    name: "Three Rivers Village Market",
+    category: "supermarket",
+    region: "mainland",
+    base: "mainland",
+    shortDescription: "Small grocery store in Three Rivers",
+    description: "A compact village market — enough for basics, water, and picnic supplies before heading into the park.",
+    address: "41005 Sierra Dr, Three Rivers, CA",
+    coords: [36.4331, -118.9089],
+    hours: "Daily, standard hours"
+  },
+  {
+    id: "gas-m-three-rivers-shell",
+    name: "Shell — Three Rivers",
+    category: "gas",
+    region: "mainland",
+    base: "mainland",
+    shortDescription: "Fuel stop before the Ash Mountain entrance",
+    description: "Fill up here — the nearest station once you're inside Sequoia is far away.",
+    address: "Sierra Dr, Three Rivers, CA",
+    coords: [36.4368, -118.9012],
+    hours: "24/7 self-service"
+  },
+
+  // ==================== MAINLAND — Furnace Creek / Death Valley ====================
+  {
+    id: "rest-m-furnace-creek",
+    name: "The Last Kind Words Saloon",
+    category: "restaurant",
+    region: "mainland",
+    base: "mainland",
+    shortDescription: "In-park saloon-style restaurant at Furnace Creek",
+    description: "A Wild-West-styled saloon and restaurant at the Ranch at Death Valley — the easiest sit-down meal inside the park.",
+    address: "Furnace Creek, Death Valley National Park, CA",
+    coords: [36.4614, -116.8697],
     hours: "Lunch & dinner"
   },
   {
-    id: "rest-n-vinci",
-    name: "Ristorante La Torre — Vinci",
-    category: "restaurant",
-    region: "north",
-    base: "north",
-    shortDescription: "Tuscan classics in Leonardo's hometown",
-    description:
-      "Just across the valley in Vinci (Leonardo's birthplace), a reliable Tuscan kitchen — handmade pasta, grilled meats, good wine list. Pair with a quick walk to the Leonardo museum.",
-    address: "Via della Torre 19, Vinci (FI)",
-    coords: [43.7861, 10.9261],
-    hours: "Lunch & dinner; check Mon"
-  },
-  {
-    id: "rest-n-bagni-lucca",
-    name: "Circolo dei Forestieri — Bagni di Lucca",
-    category: "restaurant",
-    region: "north",
-    base: "north",
-    shortDescription: "Belle-époque dining hall on the river",
-    description:
-      "A historic former gentlemen's club turned restaurant, right on the Lima river in Bagni di Lucca. Big shaded terrace — perfect lunch after Canyon Park or rafting.",
-    address: "Piazza Jean Varraud 10, Bagni di Lucca (LU)",
-    coords: [44.0103, 10.5969],
-    hours: "Lunch & dinner"
-  },
-  {
-    id: "rest-n-pisa",
-    name: "Osteria dei Cavalieri — Pisa",
-    category: "restaurant",
-    region: "north",
-    base: "north",
-    shortDescription: "Long-standing Pisan osteria, walking distance from the Tower",
-    description:
-      "A solid Pisa stop a short walk from Piazza dei Miracoli — Tuscan classics, bean soups, fresh pasta, fair prices. Reserve for lunch.",
-    address: "Via San Frediano 16, Pisa (PI)",
-    coords: [43.7180, 10.4011],
-    hours: "Lunch & dinner; closed Sun"
-  },
-
-  // Supermarkets
-  {
-    id: "sup-n-conad-larciano",
-    name: "Conad — Larciano",
+    id: "sup-m-furnace-creek-store",
+    name: "Furnace Creek General Store",
     category: "supermarket",
-    region: "north",
-    base: "north",
-    shortDescription: "Full-size local supermarket",
-    description:
-      "Closest large supermarket to the Larciano stay — water, fresh produce, breakfast supplies, baby/sun gear. Open every day.",
-    address: "Via Marx, Larciano (PT)",
-    coords: [43.8181, 10.9072],
-    hours: "Mon–Sat 08:00–20:00, Sun 08:30–13:00"
+    region: "mainland",
+    base: "mainland",
+    shortDescription: "The only real grocery stop inside the park",
+    description: "Limited but essential — water, ice, snacks and basic supplies. Stock up before entering the park if you can, prices are higher here.",
+    address: "Furnace Creek, Death Valley National Park, CA",
+    coords: [36.4618, -116.8693],
+    hours: "Daily, standard hours"
   },
   {
-    id: "sup-n-coop-monsummano",
-    name: "Coop — Monsummano Terme",
+    id: "gas-m-furnace-creek",
+    name: "Furnace Creek Fuel",
+    category: "gas",
+    region: "mainland",
+    base: "mainland",
+    shortDescription: "In-park fuel — fill up before you arrive if possible",
+    description: "The only fuel stop for a long way in any direction inside Death Valley — usually pricier than outside towns.",
+    address: "Furnace Creek, Death Valley National Park, CA",
+    coords: [36.4616, -116.8699],
+    hours: "Daily, standard hours"
+  },
+
+  // ==================== MAINLAND — Las Vegas Strip ====================
+  {
+    id: "rest-m-vegas-inn-n-out",
+    name: "In-N-Out Burger — Las Vegas",
+    category: "restaurant",
+    region: "mainland",
+    base: "mainland",
+    shortDescription: "The classic California/Nevada road-trip burger stop",
+    description: "A fun, low-key American road-trip institution — the double-double is the move, and there's a Strip-area location a short rideshare away.",
+    address: "2900 S Las Vegas Blvd, Las Vegas, NV",
+    coords: [36.1288, -115.1697],
+    hours: "Daily until late"
+  },
+  {
+    id: "rest-m-vegas-bacchanal",
+    name: "Bacchanal Buffet — Caesars Palace",
+    category: "restaurant",
+    region: "mainland",
+    base: "mainland",
+    shortDescription: "One of the Strip's best-known buffets",
+    description: "A sprawling, high-quality buffet at Caesars Palace — a fun, over-the-top Vegas dining experience for one night of the stay.",
+    address: "3570 S Las Vegas Blvd, Las Vegas, NV",
+    coords: [36.1163, -115.1745],
+    hours: "Daily, check current seatings"
+  },
+  {
+    id: "sup-m-vegas-whole-foods",
+    name: "Whole Foods Market — Las Vegas",
     category: "supermarket",
-    region: "north",
-    base: "north",
-    shortDescription: "Larger Coop hypermarket nearby",
-    description:
-      "If Conad is missing something, the Coop in Monsummano (10 min drive) is bigger — full deli, bakery, household, kids' stuff.",
-    address: "Via Empolese, Monsummano Terme (PT)",
-    coords: [43.8625, 10.8164],
-    hours: "Mon–Sat 08:00–21:00, Sun 09:00–20:00"
+    region: "mainland",
+    base: "mainland",
+    shortDescription: "Full-size grocery store a short rideshare from the Strip",
+    description: "The most convenient full grocery stop near the Strip for water, snacks and any resort-room supplies.",
+    address: "7250 W Lake Mead Blvd, Las Vegas, NV",
+    coords: [36.1783, -115.2650],
+    hours: "Daily 7:00–22:00"
   },
-
-  // Gas stations
   {
-    id: "gas-n-eni-larciano",
-    name: "Eni Station — Larciano",
+    id: "gas-m-vegas-chevron",
+    name: "Chevron — Las Vegas Blvd",
     category: "gas",
-    region: "north",
-    base: "north",
-    shortDescription: "Closest fuel stop to the Larciano house",
-    description:
-      "Standard Eni station on the main road through Larciano — 24/7 self-service via card. Tip: in Italy, 'servito' is staff-served and costs more; use 'fai da te' / self-service.",
-    address: "Via Marx, Larciano (PT)",
-    coords: [43.8198, 10.9051],
-    hours: "Self-service 24/7"
-  },
-  {
-    id: "gas-n-q8-monsummano",
-    name: "Q8 — Monsummano Terme",
-    category: "gas",
-    region: "north",
-    base: "north",
-    shortDescription: "Backup station on the SS-436 road",
-    description:
-      "Backup option en route to/from the A11 motorway — accepts foreign cards reliably.",
-    address: "Via Empolese, Monsummano Terme (PT)",
-    coords: [43.8639, 10.8189],
-    hours: "Self-service 24/7"
+    region: "mainland",
+    base: "mainland",
+    shortDescription: "Fuel stop before returning the rental car",
+    description: "A standard station on Las Vegas Blvd, convenient for topping off before returning the rental car ahead of the airport tour pickup.",
+    address: "Las Vegas Blvd S, Las Vegas, NV",
+    coords: [36.1055, -115.1728],
+    hours: "24/7"
   },
 
-  // ==================== SOUTH BASE — Manciano / Semproniano area ====================
-
-  // Restaurants
+  // ==================== HAWAII — Wailea / Maui ====================
   {
-    id: "rest-s-trattoria-verdi",
-    name: "Trattoria Verdi — Manciano",
+    id: "rest-h-wailea-grill",
+    name: "Monkeypod Kitchen — Wailea",
     category: "restaurant",
-    region: "south",
-    base: "south",
-    shortDescription: "Down-to-earth Maremma cooking in town",
-    description:
-      "A long-running family trattoria in Manciano — handmade pici, wild boar ragù, grilled lamb, good house wine. Closest 'real meal' option to Tenuta Cortevecchia.",
-    address: "Via Cavour, 58014 Manciano (GR)",
-    coords: [42.5886, 11.5158],
-    hours: "Lunch & dinner; check closure day"
+    region: "hawaii",
+    base: "hawaii",
+    shortDescription: "Popular Wailea restaurant with island-fresh fish and mai tais",
+    description: "A lively, well-regarded Wailea spot for fresh island fish, wood-fired pizza and a well-known mai tai — a solid go-to for most nights on Maui.",
+    address: "3750 Wailea Alanui Dr, Wailea, HI",
+    coords: [20.6889, -156.4419],
+    hours: "Lunch & dinner daily"
   },
   {
-    id: "rest-s-i-due-cippi",
-    name: "I Due Cippi da Michele — Saturnia",
+    id: "rest-h-hana-town-stand",
+    name: "Aunty Sandy's Banana Bread",
     category: "restaurant",
-    region: "south",
-    base: "south",
-    shortDescription: "Saturnia village classic — meats and pici",
-    description:
-      "On the main square of Saturnia village (the hilltop town above the hot springs). Strong on grilled meats and traditional Maremma pasta. Nice shaded terrace.",
-    address: "Piazza Vittorio Veneto 26/A, Saturnia (GR)",
-    coords: [42.6644, 11.5081],
-    hours: "Lunch & dinner"
+    region: "hawaii",
+    base: "hawaii",
+    shortDescription: "Classic roadside snack stop on the Road to Hana",
+    description: "A famous roadside stand near mile marker 31 on the Hana Highway, known for warm banana bread — a Road-to-Hana rite of passage.",
+    address: "Hana Highway, Maui, HI",
+    coords: [20.8394, -156.1417],
+    hours: "Daytime, weather permitting"
   },
   {
-    id: "rest-s-hostaria-ceccottino",
-    name: "Hostaria del Ceccottino — Pitigliano",
-    category: "restaurant",
-    region: "south",
-    base: "south",
-    shortDescription: "Refined Pitigliano cooking with kosher tradition",
-    description:
-      "In the heart of Pitigliano's old town — modern takes on Maremma and local Jewish-Italian dishes (sfratto dessert), good wine list, lovely small dining room.",
-    address: "Piazza San Gregorio VII, 58017 Pitigliano (GR)",
-    coords: [42.6358, 11.6694],
-    hours: "Lunch & dinner; closed Tue"
-  },
-  {
-    id: "rest-s-trattoria-sovana",
-    name: "Taverna Etrusca — Sovana",
-    category: "restaurant",
-    region: "south",
-    base: "south",
-    shortDescription: "Atmospheric stone-vaulted tavern in tiny Sovana",
-    description:
-      "Sovana is a postcard-perfect single-street Etruscan village near Pitigliano — Taverna Etrusca's vaulted dining room is the dinner stop after a day at the Vie Cave.",
-    address: "Piazza del Pretorio 16, Sovana, Sorano (GR)",
-    coords: [42.6561, 11.6322],
-    hours: "Lunch & dinner; closed Wed"
-  },
-  {
-    id: "rest-s-porto-santo-stefano",
-    name: "Dal Greco — Porto Santo Stefano",
-    category: "restaurant",
-    region: "south",
-    base: "south",
-    shortDescription: "Fresh fish in the harbour where the catamaran departs",
-    description:
-      "Right on the harbour at Porto Santo Stefano — daily catch, classic spaghetti allo scoglio, sea-view terrace. Perfect end to the boat day before driving back.",
-    address: "Via del Molo 1, Porto Santo Stefano (GR)",
-    coords: [42.4344, 11.1183],
-    hours: "Lunch & dinner; high season daily"
-  },
-
-  // Supermarkets
-  {
-    id: "sup-s-conad-manciano",
-    name: "Conad — Manciano",
+    id: "sup-h-safeway-kihei",
+    name: "Safeway — Kihei",
     category: "supermarket",
-    region: "south",
-    base: "south",
-    shortDescription: "Main supermarket for the southern base",
-    description:
-      "The main grocery for the Manciano / Semproniano area — stock up here on the way in to Tenuta Cortevecchia. Water, breakfast, fresh produce, pool snacks.",
-    address: "Via Roma, 58014 Manciano (GR)",
-    coords: [42.5897, 11.5142],
-    hours: "Mon–Sat 08:00–20:00, Sun 08:30–13:00"
+    region: "hawaii",
+    base: "hawaii",
+    shortDescription: "Full-size grocery store near Wailea",
+    description: "The most convenient full grocery store for the Wailea resort area — water, produce, sunscreen and picnic supplies.",
+    address: "1215 S Kihei Rd, Kihei, HI",
+    coords: [20.7508, -156.4547],
+    hours: "Daily 5:00–24:00"
   },
   {
-    id: "sup-s-coop-pitigliano",
-    name: "Coop — Pitigliano",
+    id: "sup-h-abc-stores-wailea",
+    name: "ABC Stores — Wailea",
     category: "supermarket",
-    region: "south",
-    base: "south",
-    shortDescription: "Backup supermarket near Pitigliano",
-    description:
-      "Convenient if you're already in Pitigliano for the Vie Cave — solid full-size supermarket on the way out of town.",
-    address: "Via Generale Orsini, 58017 Pitigliano (GR)",
-    coords: [42.6361, 11.6753],
-    hours: "Mon–Sat 08:00–20:00, Sun 09:00–13:00"
+    region: "hawaii",
+    base: "hawaii",
+    shortDescription: "The ubiquitous Hawaii convenience-store chain",
+    description: "ABC Stores are everywhere in resort Hawaii — sunscreen, snacks, POG juice, beach gear, all in one small shop steps from the hotel.",
+    address: "Wailea Alanui Dr, Wailea, HI",
+    coords: [20.6874, -156.4415],
+    hours: "Daily, extended hours"
+  },
+  {
+    id: "gas-h-chevron-kihei",
+    name: "Chevron — Kihei",
+    category: "gas",
+    region: "hawaii",
+    base: "hawaii",
+    shortDescription: "Convenient fuel stop near Wailea",
+    description: "The closest standard fuel stop to the Wailea resort area — useful before or after the Road to Hana or Haleakalā drives.",
+    address: "S Kihei Rd, Kihei, HI",
+    coords: [20.7519, -156.4522],
+    hours: "24/7"
   },
 
-  // Gas stations
+  // ==================== HAWAII — Kona / Big Island ====================
   {
-    id: "gas-s-eni-manciano",
-    name: "Eni Station — Manciano",
-    category: "gas",
-    region: "south",
-    base: "south",
-    shortDescription: "Closest fuel stop to the southern base",
-    description:
-      "Eni station on the SR74 through Manciano — easy stop on every drive in/out of Cortevecchia. Self-service 24/7 with card.",
-    address: "SR74 — Manciano (GR)",
-    coords: [42.5872, 11.5125],
-    hours: "Self-service 24/7"
+    id: "rest-h-kona-fish-shack",
+    name: "Da Poke Shack — Kailua-Kona",
+    category: "restaurant",
+    region: "hawaii",
+    base: "hawaii",
+    shortDescription: "Beloved local poke counter in Kona",
+    description: "A well-known poke shop in Kailua-Kona — fresh, simply dressed raw fish over rice, a Big Island staple worth trying at least once.",
+    address: "76-6246 Alii Dr, Kailua-Kona, HI",
+    coords: [19.6323, -155.9853],
+    hours: "Lunch & early dinner"
   },
   {
-    id: "gas-s-q8-albinia",
-    name: "Q8 — Albinia (Aurelia)",
+    id: "sup-h-safeway-kona",
+    name: "Safeway — Kailua-Kona",
+    category: "supermarket",
+    region: "hawaii",
+    base: "hawaii",
+    shortDescription: "Full-size grocery store in Kona town",
+    description: "The main full grocery stop for the Kona/Kohala Coast area — water, produce, and everything for a resort-kitchen breakfast.",
+    address: "75-1027 Henry St, Kailua-Kona, HI",
+    coords: [19.6444, -155.9958],
+    hours: "Daily 5:00–24:00"
+  },
+  {
+    id: "gas-h-chevron-kona",
+    name: "Chevron — Kailua-Kona",
     category: "gas",
-    region: "south",
-    base: "south",
-    shortDescription: "On the SS-1 Aurelia — fill up before/after Argentario",
-    description:
-      "On the Aurelia coastal highway near Albinia — natural fuel stop on the way to/from the Porto Santo Stefano boat day or the Argentario lagoon.",
-    address: "SS-1 Aurelia, Albinia (GR)",
-    coords: [42.5044, 11.2122],
-    hours: "Self-service 24/7"
+    region: "hawaii",
+    base: "hawaii",
+    shortDescription: "Fuel stop before the Volcanoes NP day trip",
+    description: "Fill up here before the roughly 2.5-hour drive to Hawaiʻi Volcanoes National Park — stations thin out along the way.",
+    address: "Palani Rd, Kailua-Kona, HI",
+    coords: [19.6455, -155.9968],
+    hours: "24/7"
   }
 ];
 

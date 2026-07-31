@@ -10,7 +10,6 @@ import type { POI, Category } from "../data/types";
 import Section from "./Section";
 import NavigateLinks from "./NavigateLinks";
 import { useT, type DictKey } from "../lib/dict";
-import { useLang } from "../lib/i18n";
 import { useLocalizePoi, useLocalizeWinery } from "../data/i18n";
 
 delete (L.Icon.Default.prototype as unknown as { _getIconUrl: unknown })._getIconUrl;
@@ -23,8 +22,8 @@ interface CategoryConfig {
   Icon: typeof Home;
 }
 
-/* "Tuscan terra & sea" palette — earth tones throughout with one
-   calmed dusk-blue accent for the airport. Designed to sit on top of
+/* Warm-earth & ocean palette — earth tones for the road-trip half, one
+   turquoise accent standing in for Hawaii. Designed to sit on top of
    the Stamen Watercolor base without clashing. */
 const CATEGORY_CONFIG: Record<Category, CategoryConfig> = {
   stay:        { id: "stay",        labelKey: "cat_stay",        color: "#A23E2A", bg: "#A23E2A", Icon: Home },         // warm brick
@@ -62,7 +61,7 @@ function makeIcon(cat: Category, isHero = false): L.DivIcon {
     </div>`;
   return L.divIcon({
     html,
-    className: "tuscany-marker",
+    className: "trip-marker",
     iconSize: [size, size],
     iconAnchor: [size / 2, size - 2],
     popupAnchor: [0, -size + 4]
@@ -78,18 +77,17 @@ function shade(hex: string, percent: number): string {
   return "#" + (0x1000000 + (R << 16) + (G << 8) + B).toString(16).slice(1);
 }
 
-/* Generous bounding box for "is the device currently in Italy?".
-   Includes the islands (Sicily, Sardinia) and a safety margin so we
-   don't accidentally reject a user near the border. */
-const ITALY_BBOX = { south: 35.4, north: 47.5, west: 6.4, east: 19.0 };
+/* Generous bounding boxes for "is the device currently in the US?".
+   The mainland leg (California/Nevada/Arizona) and Hawaii are far
+   enough apart that one tight box would miss one or the other, so we
+   check two boxes rather than fake a single continental+Hawaii shape. */
+const MAINLAND_BBOX = { south: 24, north: 50, west: -125, east: -66 };
+const HAWAII_BBOX = { south: 18, north: 23, west: -161, east: -154 };
 
-function isInItaly(lat: number, lon: number): boolean {
-  return (
-    lat >= ITALY_BBOX.south &&
-    lat <= ITALY_BBOX.north &&
-    lon >= ITALY_BBOX.west &&
-    lon <= ITALY_BBOX.east
-  );
+function isInUSA(lat: number, lon: number): boolean {
+  const inBox = (b: { south: number; north: number; west: number; east: number }) =>
+    lat >= b.south && lat <= b.north && lon >= b.west && lon <= b.east;
+  return inBox(MAINLAND_BBOX) || inBox(HAWAII_BBOX);
 }
 
 /* "You are here" marker — Apple-Maps-style blue dot with a soft pulsing
@@ -117,7 +115,7 @@ function makeUserLocationIcon(): L.DivIcon {
     </div>`;
   return L.divIcon({
     html,
-    className: "tuscany-user-marker",
+    className: "trip-user-marker",
     iconSize: [18, 18],
     iconAnchor: [9, 9],
     popupAnchor: [0, -10]
@@ -138,21 +136,18 @@ function categoryGlyph(cat: Category): string {
 }
 
 const AIRPORT_POI: POI = {
-  id: "fco",
-  name: "Rome Fiumicino — FCO",
+  id: "sfo",
+  name: "San Francisco — SFO",
   category: "airport",
   region: "transit",
-  description: "Leonardo da Vinci International Airport. Arrival 17 Aug, departure 26 Aug 05:00.",
-  shortDescription: "Arrival & departure airport.",
-  coords: [41.8003, 12.2389]
+  description: "San Francisco International Airport. Arrival Oct 4 14:45, final departure Oct 28 17:45.",
+  shortDescription: "Arrival & final departure airport.",
+  coords: [37.6213, -122.3790]
 };
 
-const AIRPORT_POI_HE: POI = {
-  ...AIRPORT_POI,
-  name: "רומא פיומיצ'ינו — FCO",
-  description: "נמל התעופה הבינלאומי על שם ליאונרדו דה וינצ'י. נחיתה ב־17.8, המראה ב־26.8 בשעה 05:00.",
-  shortDescription: "שדה התעופה — נחיתה והמראה."
-};
+const LAS_VEGAS_AIRPORT: [number, number] = [36.0840, -115.1537]; // LAS — inter-island jump-off point
+const MAUI_AIRPORT: [number, number] = [20.8986, -156.4306]; // OGG
+const BIG_ISLAND_AIRPORT: [number, number] = [19.7388, -156.0456]; // KOA
 
 // The trip's big movements between bases (lat, lon)
 type RouteSegment = {
@@ -161,6 +156,9 @@ type RouteSegment = {
   dayKey: DictKey;
   color: string;
   coords: [number, number][];
+  /** Flight legs render as a long dashed great-circle-ish line rather
+   *  than a road route — used for the LAS→Maui→Big Island→SFO hops. */
+  isFlight?: boolean;
 };
 
 const ROUTE_SEGMENTS: RouteSegment[] = [
@@ -171,20 +169,22 @@ const ROUTE_SEGMENTS: RouteSegment[] = [
     color: "#A23E2A", // brick — matches Stays
     coords: [
       AIRPORT_POI.coords,
-      [42.30, 12.10],
-      [43.20, 11.40],
-      [43.8267, 10.8978]
+      [37.3216, -119.6491], // Oakhurst / Yosemite gateway
+      [36.4386, -118.8987], // Three Rivers / Sequoia gateway
+      [36.4620, -116.8706], // Furnace Creek / Death Valley
+      [36.1212, -115.1697] // Las Vegas Strip
     ]
   },
   {
-    id: "transfer",
+    id: "island-hop",
     labelKey: "map_seg_transfer",
     dayKey: "map_seg_transfer_short",
     color: "#C68A2A", // bronze — matches Attractions
+    isFlight: true,
     coords: [
-      [43.8267, 10.8978],
-      [43.4720, 11.1700],
-      [42.6919, 11.5378]
+      LAS_VEGAS_AIRPORT,
+      MAUI_AIRPORT,
+      BIG_ISLAND_AIRPORT
     ]
   },
   {
@@ -192,12 +192,8 @@ const ROUTE_SEGMENTS: RouteSegment[] = [
     labelKey: "map_seg_departure",
     dayKey: "map_seg_departure_short",
     color: "#5C7244", // cypress — matches Restaurants
-    coords: [
-      [42.6919, 11.5378],
-      [42.6275, 11.7989],
-      [42.4234, 12.1053],
-      AIRPORT_POI.coords
-    ]
+    isFlight: true,
+    coords: [BIG_ISLAND_AIRPORT, AIRPORT_POI.coords]
   }
 ];
 
@@ -244,7 +240,6 @@ interface Props {
 
 export default function MapView({ registerFocus }: Props) {
   const t = useT();
-  const { lang } = useLang();
   const localizePoi = useLocalizePoi();
   const localizeWinery = useLocalizeWinery();
 
@@ -281,12 +276,8 @@ export default function MapView({ registerFocus }: Props) {
     [wineryPOIs]
   );
   const localizedPOIs = useMemo(
-    () =>
-      allPOIs.map(p => {
-        if (p.id === "fco") return lang === "he" ? AIRPORT_POI_HE : p;
-        return localizePoi(p);
-      }),
-    [allPOIs, localizePoi, lang]
+    () => allPOIs.map(p => localizePoi(p)),
+    [allPOIs, localizePoi]
   );
 
   // Default-on layers: stays, attractions, airport. Restaurants,
@@ -301,8 +292,8 @@ export default function MapView({ registerFocus }: Props) {
   // Geolocation: live "you are here" dot. We use watchPosition so the
   // marker stays current as we drive around during the trip; centering
   // the map on it only happens the first time we detect we're inside
-  // Italy (so the pre-trip view from Israel doesn't snap the map away
-  // from Tuscany).
+  // the US (so the pre-trip view from Israel doesn't snap the map away
+  // from the trip area).
   const [userLocation, setUserLocation] = useState<[number, number] | null>(
     null
   );
@@ -320,7 +311,7 @@ export default function MapView({ registerFocus }: Props) {
         ];
         setUserLocation(coords);
         setGeolocBlocked(false);
-        if (!hasAutoCentered.current && isInItaly(coords[0], coords[1])) {
+        if (!hasAutoCentered.current && isInUSA(coords[0], coords[1])) {
           hasAutoCentered.current = true;
           // Small delay so the map has finished its initial render and
           // isn't fighting our flyTo with its own center transition.
@@ -352,7 +343,7 @@ export default function MapView({ registerFocus }: Props) {
         // Manual button still respects the "only auto-centre in Italy"
         // rule — clicking it from Tel Aviv would otherwise zoom out of
         // the trip area, which isn't useful pre-trip.
-        if (isInItaly(coords[0], coords[1])) {
+        if (isInUSA(coords[0], coords[1])) {
           flyRef.current?.flyToCoords(coords, 13);
         }
       },
@@ -368,17 +359,17 @@ export default function MapView({ registerFocus }: Props) {
      half of the trip. We compute them once from the raw (unlocalized) data
      since the geometry doesn't depend on language. */
   const spokes = useMemo(() => {
-    const northBase = stays.find(s => s.region === "north");
-    const southBase = stays.find(s => s.region === "south");
+    const mainlandBase = stays.find(s => s.region === "mainland");
+    const hawaiiBase = stays.find(s => s.region === "hawaii");
     const lines: { id: string; from: [number, number]; to: [number, number]; color: string }[] = [];
     for (const a of attractions) {
-      const base = a.region === "south" ? southBase : northBase;
+      const base = a.region === "hawaii" ? hawaiiBase : mainlandBase;
       if (!base) continue;
       lines.push({
         id: `spoke-${a.id}`,
         from: base.coords,
         to: a.coords,
-        color: a.region === "south" ? "#C68A2A" : "#5C7244"
+        color: a.region === "hawaii" ? "#C68A2A" : "#5C7244"
       });
     }
     return lines;
@@ -505,13 +496,13 @@ export default function MapView({ registerFocus }: Props) {
 
       <div className="relative card-paper overflow-hidden -mx-4 sm:mx-0 rounded-none sm:rounded-2xl">
         <MapContainer
-          center={[42.95, 11.6]}
-          zoom={8}
+          center={[32, -128]}
+          zoom={3}
           scrollWheelZoom={true}
           className="h-[70svh] sm:h-[600px] w-full"
         >
           {/* CartoDB Voyager — warm, editorial off-cream tiles that pair
-              nicely with the Tuscan palette. Free for low-traffic personal
+              nicely with the trip palette. Free for low-traffic personal
               use, no API key required (Stadia's Stamen Watercolor blocks
               non-localhost without an account, which is why we moved off it). */}
           <TileLayer

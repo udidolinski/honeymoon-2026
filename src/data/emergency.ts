@@ -2,111 +2,113 @@ import type { EmergencyGroup } from "./types";
 
 export const emergencyGroups: EmergencyGroup[] = [
   {
-    title: "Italy — emergency numbers",
+    title: "United States — emergency numbers",
     items: [
-      { label: "Single emergency number (EU)", value: "112", type: "phone", detail: "Police, ambulance, fire — English available" },
-      { label: "Carabinieri (police)", value: "113", type: "phone" },
-      { label: "Fire brigade", value: "115", type: "phone" },
-      { label: "Medical emergency / ambulance", value: "118", type: "phone" },
-      { label: "Coast guard", value: "1530", type: "phone", detail: "Boat day at Argentario" },
-      { label: "Roadside assistance (ACI)", value: "803.116", type: "phone", detail: "From Italian mobile or landline" }
+      { label: "Emergency (police, fire, ambulance)", value: "911", type: "phone", detail: "The US emergency number — NOT 112. Works from any phone, English-speaking." },
+      { label: "Non-emergency police (rental car issues, etc.)", value: "311", type: "phone", detail: "Available in some cities for non-urgent local government/police matters" },
+      { label: "Poison control", value: "1-800-222-1222", type: "phone" }
     ]
   },
   {
-    title: "Hospitals & clinics — North base (Larciano)",
+    title: "Rental car — roadside assistance",
     items: [
       {
-        label: "Ospedale San Jacopo — Pistoia",
-        value: "Via Ciliegiole 97, 51100 Pistoia",
-        detail: "Main hospital, full ER. ≈ 25 min from Larciano",
-        type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=43.9285,10.9203"
-      },
-      {
-        label: "Ospedale San Luca — Lucca",
-        value: "Via Lippi-Francesconi, 55100 Lucca",
-        detail: "Major hospital with pediatric ER. ≈ 45 min west",
-        type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=43.8456,10.5394"
-      },
-      {
-        label: "Pronto Soccorso Pediatrico — Meyer (Florence)",
-        value: "Viale Pieraccini 24, 50139 Firenze",
-        detail: "Top pediatric hospital in central Italy. ≈ 1 h",
-        type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=43.8016,11.2486"
+        label: "Hertz Roadside Assistance (placeholder — match your actual rental company)",
+        value: "1-800-654-5060",
+        type: "phone",
+        detail: "Update this with the actual roadside assistance number for whichever company you book with"
       }
     ]
   },
   {
-    title: "Hospitals & clinics — South base (Manciano / Pitigliano)",
+    title: "Hospitals — mainland leg",
     items: [
       {
-        label: "Ospedale di Pitigliano — Petruccioli",
-        value: "Via Nicola Ciacci 340, 58017 Pitigliano (GR)",
-        detail: "Closest hospital to Cortevecchia. Has ER. ≈ 35 min",
+        label: "Community Regional Medical Center — Fresno",
+        value: "2823 Fresno St, Fresno, CA",
+        detail: "Major hospital nearest Oakhurst/Yosemite, full ER. ≈ 1 h from Oakhurst",
         type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=42.6383,11.6664"
+        link: "https://www.google.com/maps/dir/?api=1&destination=36.7522,-119.7864"
       },
       {
-        label: "Ospedale Misericordia — Grosseto",
-        value: "Via Senese 161, 58100 Grosseto",
-        detail: "Main hospital of the province, full services. ≈ 1 h",
+        label: "Kaweah Health Medical Center — Visalia",
+        value: "400 W Mineral King Ave, Visalia, CA",
+        detail: "Nearest major hospital to Three Rivers/Sequoia. ≈ 40 min",
         type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=42.7747,11.1086"
+        link: "https://www.google.com/maps/dir/?api=1&destination=36.3302,-119.2921"
       },
       {
-        label: "Guardia Medica Turistica",
-        value: "118 (ask)",
-        detail: "Tourist medical service in summer — call 118 to be redirected",
-        type: "phone"
+        label: "Desert View Hospital — Pahrump, NV",
+        value: "1401 W St, Pahrump, NV",
+        detail: "Nearest hospital to Death Valley/Furnace Creek. ≈ 1 h",
+        type: "address",
+        link: "https://www.google.com/maps/dir/?api=1&destination=36.2103,-115.9990"
+      },
+      {
+        label: "Sunrise Hospital — Las Vegas",
+        value: "3186 S Maryland Pkwy, Las Vegas, NV",
+        detail: "Major hospital with a Level II trauma center, close to the Strip. ≈ 10 min",
+        type: "address",
+        link: "https://www.google.com/maps/dir/?api=1&destination=36.1319,-115.1367"
       }
     ]
   },
   {
-    title: "Pharmacies (24h-rotation)",
+    title: "Hospitals — Hawaii leg",
     items: [
       {
-        label: "Farmacia Comunale — Manciano",
-        value: "Via Marsala, 58014 Manciano (GR)",
-        detail: "Closest pharmacy to Cortevecchia. Night-shift rotation posted on door.",
+        label: "Maui Health / Maui Memorial Medical Center — Wailuku",
+        value: "221 Mahalani St, Wailuku, HI",
+        detail: "Maui's main hospital with full ER. ≈ 40 min from Wailea",
         type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=42.5897,11.5161"
+        link: "https://www.google.com/maps/dir/?api=1&destination=20.8930,-156.5050"
       },
       {
-        label: "Farmacia di Larciano",
-        value: "Via Marx, Larciano (PT)",
-        detail: "Closest to the northern base. Night-shift rotation posted on door.",
+        label: "Kona Community Hospital — Kealakekua",
+        value: "79-1019 Haukapila St, Kealakekua, HI",
+        detail: "Closest hospital to the Kona/Kohala Coast base. ≈ 20–30 min",
         type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=43.8200,10.9050"
+        link: "https://www.google.com/maps/dir/?api=1&destination=19.5083,-155.9169"
       }
     ]
   },
   {
-    title: "Israeli embassy & consular help (Rome)",
+    title: "Israeli consular help",
     items: [
       {
-        label: "Embassy of Israel in Rome",
-        value: "Via Michele Mercati 14, 00197 Roma",
+        label: "Consulate General of Israel — San Francisco",
+        value: "456 Montgomery St, San Francisco, CA",
+        detail: "Covers the Pacific Northwest region, including California, Nevada and Hawaii",
         type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=41.9241,12.4856"
+        link: "https://www.google.com/maps/dir/?api=1&destination=37.7942,-122.4028"
       },
       {
-        label: "Embassy phone",
-        value: "+39 06 3619 8500",
+        label: "Consulate phone",
+        value: "+1 415-844-7500",
         type: "phone"
       },
       {
-        label: "After-hours emergency (Israelis abroad)",
+        label: "Israel MFA — Israelis abroad, after-hours emergency",
         value: "+972 3 6953 0123",
         type: "phone",
         detail: "MFA Situation Room — 24/7"
       },
       {
-        label: "Embassy website",
-        value: "embassies.gov.il/rome",
+        label: "Consulate website",
+        value: "embassies.gov.il/san-francisco",
         type: "website",
-        link: "https://embassies.gov.il/rome"
+        link: "https://embassies.gov.il/san-francisco"
+      }
+    ]
+  },
+  {
+    title: "Travel insurance",
+    items: [
+      {
+        label: "Travel insurance provider (add your policy details)",
+        value: "Policy # — fill in after booking",
+        detail: "Add your insurer's 24/7 emergency assistance number here once you've purchased a policy",
+        type: "phone"
       }
     ]
   }

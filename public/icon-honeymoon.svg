@@ -1,0 +1,44 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5EEDF"/>
+      <stop offset="55%" stop-color="#DCCBA0"/>
+      <stop offset="100%" stop-color="#2A9DAD"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2A9DAD"/>
+      <stop offset="100%" stop-color="#1c7580"/>
+    </linearGradient>
+  </defs>
+
+  <!-- full-bleed background -->
+  <rect width="512" height="512" fill="url(#sky)"/>
+
+  <!-- sun -->
+  <circle cx="256" cy="188" r="54" fill="#D68A52"/>
+
+  <!-- granite peak (Half Dome-style silhouette, left) -->
+  <path d="M -20 340 L 150 150 L 200 210 L 235 172 L 300 340 Z" fill="#55606E"/>
+  <path d="M 150 150 L 200 210 L 178 232 Z" fill="#3A3530" opacity="0.35"/>
+
+  <!-- sequoia tree, right of the peak -->
+  <path d="M 330 340 L 345 200 L 358 240 L 368 180 L 380 230 L 392 200 L 405 340 Z" fill="#3B5941"/>
+  <rect x="358" y="330" width="12" height="20" fill="#7D4420"/>
+
+  <!-- ocean band -->
+  <rect x="0" y="340" width="512" height="90" fill="url(#sea)"/>
+  <path d="M 0 350 Q 64 335 128 350 T 256 350 T 384 350 T 512 350 V 430 H 0 Z" fill="#2A9DAD" opacity="0.6"/>
+
+  <!-- palm silhouette, bottom right -->
+  <path d="M 420 430 C 415 380 430 350 452 335" stroke="#2C4331" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <g fill="#3B5941">
+    <path d="M452 335 C 430 320 405 322 388 340 C 412 336 432 340 452 335 Z"/>
+    <path d="M452 335 C 435 310 412 302 392 308 C 415 314 435 322 452 335 Z"/>
+    <path d="M452 335 C 448 305 460 285 480 278 C 465 296 458 316 452 335 Z"/>
+    <path d="M452 335 C 465 312 488 305 508 312 C 488 316 468 322 452 335 Z"/>
+    <path d="M452 335 C 462 355 484 366 508 362 C 488 356 468 346 452 335 Z"/>
+  </g>
+
+  <!-- sand/foreground strip -->
+  <rect x="0" y="430" width="512" height="82" fill="#DCCBA0"/>
+</svg>

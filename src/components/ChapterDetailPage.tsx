@@ -29,9 +29,6 @@ import {
 import { itinerary } from "../data/itinerary";
 import { getAttraction } from "../data/attractions";
 import { getService } from "../data/services";
-import WalletTicket from "./WalletTicket";
-import TicketUnlock from "./TicketUnlock";
-import { useBookingsForDay, BOOKED_DAY_NUMBERS } from "../lib/bookingsStore";
 import type {
   Day,
   DayActivity,
@@ -55,10 +52,14 @@ import PoiImage from "./PoiImage";
 import PhotoCredit from "./PhotoCredit";
 import MiniMap from "./MiniMap";
 import ListenButton from "./ListenButton";
-import ItalianWordCarousel from "./ItalianWordCarousel";
+import PhraseOfDayCarousel from "./PhraseOfDayCarousel";
 import { useCarouselSwipe } from "../lib/useCarouselSwipe";
 
-const ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
+const ROMAN = [
+  "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
+  "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX",
+  "XXI", "XXII", "XXIII", "XXIV", "XXV"
+];
 
 const TAG_KEY: Record<string, DictKey> = {
   water: "tag_water",
@@ -69,12 +70,14 @@ const TAG_KEY: Record<string, DictKey> = {
   food: "tag_food",
   view: "tag_view",
   cave: "tag_cave",
-  village: "tag_village"
+  village: "tag_village",
+  trail: "tag_trail",
+  "national-park": "tag_national_park"
 };
 
 const REGION_KEY: Record<string, DictKey> = {
-  north: "region_north_long",
-  south: "region_south_long",
+  mainland: "region_mainland_long",
+  hawaii: "region_hawaii_long",
   transit: "region_transit_long"
 };
 
@@ -354,7 +357,6 @@ function ChapterDetailContent({ day }: { day: Day }) {
   const t = useT();
   const { lang } = useLang();
   const isRTL = lang === "he";
-  const dayBookings = useBookingsForDay(day.dayNumber);
   const localizeDay = useLocalizeDay();
   const localizePoi = useLocalizePoi();
   const localizeService = useLocalizeService();
@@ -400,7 +402,7 @@ function ChapterDetailContent({ day }: { day: Day }) {
   const heroSlideMeta =
     currentSlide ??
     ({ place: undefined, credit: lead.credit } as Pick<ChapterSlide, "place" | "credit">);
-  const italianWords = localDay.italianWords ?? [];
+  const phrasesOfDay = localDay.phrasesOfDay ?? [];
   const tips = tipsForDay(day.dayNumber).map(localizeTip);
 
   // POIs visited this day, in order, localized
@@ -430,7 +432,7 @@ function ChapterDetailContent({ day }: { day: Day }) {
   };
 
   const accent =
-    day.region === "south"
+    day.region === "hawaii"
       ? "text-gold-400"
       : day.region === "transit"
       ? "text-terracotta-300"
@@ -495,7 +497,7 @@ function ChapterDetailContent({ day }: { day: Day }) {
               <PoiImage
                 src={lead.src}
                 alt={lead.alt}
-                region={localDay.region === "transit" ? "north" : localDay.region}
+                region={localDay.region === "transit" ? "mainland" : localDay.region}
                 category={lead.category}
                 tags={lead.tags}
               />
@@ -516,7 +518,7 @@ function ChapterDetailContent({ day }: { day: Day }) {
                 <PoiImage
                   src={currentSlide.src}
                   alt={currentSlide.alt}
-                  region={localDay.region === "transit" ? "north" : localDay.region}
+                  region={localDay.region === "transit" ? "mainland" : localDay.region}
                   category={currentSlide.category}
                   tags={currentSlide.tags}
                 />
@@ -624,8 +626,8 @@ function ChapterDetailContent({ day }: { day: Day }) {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-16 space-y-12 sm:space-y-16">
           {/* Italian words (carousel) — three themed flashcards per day;
               audio is on the pronunciation chip; progress is remembered. */}
-          {italianWords.length > 0 && (
-            <ItalianWordCarousel dayNumber={day.dayNumber} words={italianWords} />
+          {phrasesOfDay.length > 0 && (
+            <PhraseOfDayCarousel dayNumber={day.dayNumber} words={phrasesOfDay} />
           )}
 
           {/* Activities */}
@@ -678,25 +680,6 @@ function ChapterDetailContent({ day }: { day: Day }) {
             )}
           </section>
 
-          {/* Tickets — booked activities for this day, gated by the shared PIN.
-              Locked shows the inline unlock; unlocking here reveals it app-wide. */}
-          {BOOKED_DAY_NUMBERS.has(day.dayNumber) && (
-            <section>
-              <SectionLabel
-                eyebrow={t("bookings_eyebrow")}
-                title={t("bookings_title")}
-              />
-              {dayBookings.length > 0 ? (
-                <div className="grid gap-4 sm:gap-5 sm:max-w-md">
-                  {dayBookings.map((b, i) => (
-                    <WalletTicket key={b.id} booking={b} index={i} />
-                  ))}
-                </div>
-              ) : (
-                <TicketUnlock compact />
-              )}
-            </section>
-          )}
 
           {/* Mini map */}
           {dayPois.length > 0 && (

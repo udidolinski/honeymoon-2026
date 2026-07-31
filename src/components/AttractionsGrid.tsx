@@ -6,16 +6,16 @@ import Section from "./Section";
 import type { AttractionTag, Region } from "../data/types";
 import { useT, type DictKey } from "../lib/dict";
 
-type RegionFilter = "all" | Extract<Region, "north" | "south">;
+type RegionFilter = "all" | Extract<Region, "mainland" | "hawaii">;
 
 const REGION_TABS: { id: RegionFilter; key: DictKey; count: number }[] = [
   { id: "all", key: "attr_filter_all", count: attractions.length },
-  { id: "north", key: "attr_filter_north", count: attractions.filter(a => a.region === "north").length },
-  { id: "south", key: "attr_filter_south", count: attractions.filter(a => a.region === "south").length }
+  { id: "mainland", key: "attr_filter_mainland", count: attractions.filter(a => a.region === "mainland").length },
+  { id: "hawaii", key: "attr_filter_hawaii", count: attractions.filter(a => a.region === "hawaii").length }
 ];
 
 const ALL_TAGS: AttractionTag[] = [
-  "water", "extreme", "nature", "culture", "family", "view", "cave", "village"
+  "water", "extreme", "nature", "culture", "family", "view", "cave", "village", "trail", "national-park"
 ];
 
 const TAG_KEY: Record<string, DictKey> = {
@@ -27,7 +27,9 @@ const TAG_KEY: Record<string, DictKey> = {
   food: "tag_food",
   view: "tag_view",
   cave: "tag_cave",
-  village: "tag_village"
+  village: "tag_village",
+  trail: "tag_trail",
+  "national-park": "tag_national_park"
 };
 
 export default function AttractionsGrid() {

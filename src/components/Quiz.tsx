@@ -80,8 +80,8 @@ import {
 import { loadQuizMode, saveQuizMode } from "../lib/quiz/quizModeStorage";
 import { loadQuizMute, saveQuizMute } from "../lib/quiz/quizMute";
 import { getQuizzoIntro, getQuizzoOutro } from "../lib/quiz/quizPersona";
-import { getApiKey } from "../lib/gemininio/storage";
-import { requestOpenGemininio } from "../lib/gemininio/openEvent";
+import { getApiKey } from "../lib/kai/storage";
+import { requestOpenKai } from "../lib/kai/openEvent";
 import QuizQuestion from "./QuizQuestion";
 
 /** When the kid is at index `length - PREFETCH_AHEAD` (or beyond),
@@ -528,7 +528,7 @@ export default function Quiz({
   }
 
   function handleAskQuizzo() {
-    requestOpenGemininio();
+    requestOpenKai();
   }
 
   /** "New questions" — clear the cached offline pack (so the next

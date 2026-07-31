@@ -2,66 +2,80 @@ import type { Tip } from "./types";
 
 export const tips: Tip[] = [
   {
-    id: "ztl",
-    title: "Beware of ZTL zones — €110 fine, six months later",
+    id: "annual-pass",
+    title: "Buy the America the Beautiful annual pass at the first park",
     body:
-      "In Pisa, Lucca, Pitigliano and most Tuscan old towns the historic centre is a Zona a Traffico Limitato (ZTL). The cameras are silent — you only learn you got a ticket when it shows up six months after the trip. Always park outside the walls and walk in. Lucca: Parking Carducci or Cittadella. Pisa: Pietrasantina (free shuttle to the Tower). Pitigliano: Piazzale Gen. Orsini.",
-    severity: "critical"
-  },
-  {
-    id: "saturnia-early",
-    title: "Saturnia hot springs — be there by 07:30",
-    body:
-      "The Cascate del Mulino are free and open 24/7. Show up at 10:00 in August and you'll meet the entire internet, no parking and serious heat on top of warm sulphur water. Show up at 07:30 and you'll have steam-rising-off-the-pools, near-empty terraces and easy parking — for about 30 minutes of pure magic.",
-    severity: "warning"
-  },
-  {
-    id: "car-return-night-before",
-    title: "Return the rental car the night before",
-    body:
-      "A 5 a.m. flight after a 3 a.m. car return is a recipe for panic — queues at the rental desk, damage inspection in the dark, the constant fear of missing the plane. Drop the car at FCO around 21:00 the night before, sleep close by, and roll up to check-in calmly at 03:30.",
-    severity: "warning"
-  },
-  {
-    id: "self-service-fuel",
-    title: "Self-service vs servito at gas stations",
-    body:
-      "At Italian gas stations look for 'fai da te' (self-service) — same fuel, lower price, accepts foreign cards. 'Servito' is staff-pumped and roughly 10–20 cents per litre more. After 19:30 most stations are unmanned anyway and only self-service works.",
+      "This trip visits Yosemite, Sequoia, Death Valley and Hawaiʻi Volcanoes — all National Park Service sites where a single $80 America the Beautiful annual pass covers entrance for the whole vehicle, and pays for itself after about three parks. Buy it at the entrance station of the first park you visit. Important exception: Grand Canyon West is Hualapai tribal land, NOT part of the National Park System, so the pass does NOT cover it — expect separate tribal entry fees there.",
     severity: "info"
   },
   {
-    id: "water-shoes",
-    title: "Closed-toe water shoes — non-negotiable",
+    id: "glacier-point-closure",
+    title: "Glacier Point Road can close with little warning",
     body:
-      "At Sentierelsa, Saturnia and the Serchio you'll be walking on slick algae-covered river stones. Sandals and flip-flops will hurt and slip. Bring proper closed-toe water shoes for everyone.",
-    severity: "info"
-  },
-  {
-    id: "ferragosto-closures",
-    title: "Ferragosto — many shops are still closed for ferie",
-    body:
-      "Italians take their summer holidays in August, especially the week around Ferragosto (15 Aug). Family-run trattorie, bakeries, butchers, even some petrol stations on smaller roads shut for one or two weeks with a hand-written 'Chiuso per ferie' sign on the door. Our trip starts 17 Aug — most places will be reopening, but check Google Maps the night before for current hours, especially in the smaller villages (Larciano, Pitigliano, Manciano).",
+      "Glacier Point Road typically closes for the season with the first significant snowfall in the high country — this can happen as early as mid-to-late October some years. Check the NPS road-status page the morning you plan to drive up, and have a backup plan (Tunnel View and the valley floor stay open) if it's already closed.",
     severity: "warning"
   },
   {
-    id: "august-crowds",
-    title: "Peak season — time-shift the famous spots",
+    id: "haleakala-reservation",
+    title: "Haleakalā sunrise requires a separate advance reservation",
     body:
-      "August is the busiest month in Italy: locals on holiday plus everyone else. Pisa's Tower square, Saturnia, the Argentario beaches and Civita di Bagnoregio hit maximum density between 10:00 and 17:00. Trick: arrive just before opening or in the last 90 minutes of light. Saturnia by 07:30, Pisa at 08:00 or after 18:00, beaches before 10:00 or after 16:00 — crowds halve and the light turns honey-gold for the photos.",
+      "Watching sunrise from Haleakalā's summit requires booking a viewing reservation on recreation.gov in advance, separate from the park entrance fee — this sells out, sometimes weeks ahead. If you don't get a slot, a daytime summit visit needs no special reservation and still has the crater views.",
     severity: "warning"
   },
   {
-    id: "riposo",
-    title: "Riposo — shops and kitchens shut midday",
+    id: "antelope-canyon-booking",
+    title: "Book Antelope Canyon (and the Grand Canyon West tour) well ahead",
     body:
-      "Italians eat lunch at 13:00 sharp, then the country folds for a few hours. Smaller shops and family bakeries close 13:00–16:00 (some until 17:00). Restaurant kitchens close hard at 14:30 — turn up at 14:35 and the answer is 'la cucina è chiusa' even if other diners are still finishing. Dinner kitchens reopen at 19:30. Plan provisioning for 09:00–12:30 and meals for 12:30–14:00 or 19:30–22:00, and the day flows.",
+      "Antelope Canyon is accessible only via guided Navajo-led tours, and the popular light-beam time slots sell out weeks in advance. Since it's usually paired with Grand Canyon West as a single combo day tour from Las Vegas, book the whole package early rather than trying to assemble it last-minute.",
+    severity: "warning"
+  },
+  {
+    id: "tipping-usa",
+    title: "Tipping in the US — 15–20% is standard, unlike Israel",
+    body:
+      "Restaurant tipping in the US is expected, not optional the way it can feel in Israel — 15–20% of the pre-tax bill at sit-down restaurants is standard, 20%+ for excellent service. Bartenders expect $1–2 per drink, and hotel bellhops/housekeeping appreciate a few dollars in cash.",
     severity: "info"
   },
   {
-    id: "tipping",
-    title: "Tipping isn't really a thing — coperto already covers it",
+    id: "driving-notes-usa",
+    title: "Driving in the US — right-hand drive, desert gaps, speed limits",
     body:
-      "Italian restaurants are not the US or Israel. Most charge a 'coperto' (€2–4 per person bread / cover) printed on the menu, and the bill often says 'servizio incluso'. You don't need to leave 15–20%. Round up to the next euro for a casual lunch; leave €5–10 in cash on the folder for a great dinner you really loved. Tip in cash, after the bill is paid — most card terminals don't even ask, and the staff would rather have the cash anyway.",
+      "The US drives on the right with the steering wheel on the left, opposite Israel. Cell signal drops out for long stretches in Death Valley and other desert areas — download offline maps in advance. Fuel up before any long desert stretch; stations can be far apart. Speed limits in California and Nevada are posted in miles per hour and are strictly enforced, especially through small towns.",
+    severity: "info"
+  },
+  {
+    id: "vegas-drinking-age",
+    title: "Vegas: drinking age is 21, casino etiquette matters",
+    body:
+      "The legal drinking age across the US, including Nevada, is 21 — carry photo ID even if you're clearly of age, as many bars and clubs card everyone. On casino floors, dress codes and minimum ages (often 21) apply in gaming areas even if the resort itself welcomes all ages elsewhere.",
+    severity: "info"
+  },
+  {
+    id: "hawaii-reef-safe-sunscreen",
+    title: "Reef-safe sunscreen is required by Hawaii law",
+    body:
+      "Hawaii state law bans the sale of sunscreens containing oxybenzone and octinoxate, chemicals shown to harm coral reefs — bring reef-safe sunscreen (mineral-based, zinc oxide or titanium dioxide) from home, since it can be pricier locally, though every ABC Store stocks compliant options.",
+    severity: "info"
+  },
+  {
+    id: "hawaii-altitude-cold",
+    title: "Haleakalā and Mauna Kea are genuinely cold, despite being in Hawaii",
+    body:
+      "It's easy to forget that Hawaii has real high-altitude cold — Haleakalā's summit (10,023 ft) and Mauna Kea's summit area (13,800+ ft) can both drop to near or below freezing, especially before dawn or after dark. Pack real warm layers for both, not just a light jacket.",
+    severity: "warning"
+  },
+  {
+    id: "aloha-spirit-pace",
+    title: "'Aloha spirit' — island time runs slower, and that's the point",
+    body:
+      "Service, traffic and schedules in Hawaii run at a noticeably more relaxed pace than the mainland or Vegas — locals call it 'aloha spirit' or 'island time'. Build slack into island-day plans rather than stacking activities tightly back to back.",
+    severity: "info"
+  },
+  {
+    id: "interisland-baggage",
+    title: "Inter-island flight baggage rules can be stricter",
+    body:
+      "The LAS→Maui and Maui→Big Island legs are often on smaller aircraft with tighter baggage weight and size limits than mainland-to-Hawaii flights — check the specific airline's inter-island policy before packing, and again before the Big Island→SFO leg home.",
     severity: "info"
   }
 ];

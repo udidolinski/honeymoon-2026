@@ -14,7 +14,7 @@
  *   replays it on every subsequent Start tap so the kid can play
  *   in the car with no signal.
  *
- * Same key + endpoint Gemininio uses today, so the family already
+ * Same key + endpoint Kai uses today, so the family already
  * has everything configured (build-time key OR a per-device paste).
  */
 
@@ -37,7 +37,7 @@ export const QUESTIONS_PER_OFFLINE_PACK = 10;
 /* Offline pack storage (one entry per (day, lang), no expiry)         */
 /* ------------------------------------------------------------------ */
 
-const OFFLINE_PACK_PREFIX = "tuscany2026.quiz.offlinePack.v6";
+const OFFLINE_PACK_PREFIX = "honeymoon2026.quiz.offlinePack.v6";
 
 function offlinePackKey(dayNumber: number, lang: Lang): string {
   return `${OFFLINE_PACK_PREFIX}.day${dayNumber}.${lang}`;
@@ -188,7 +188,7 @@ export async function generateQuiz(params: GenerateQuizParams): Promise<Quiz> {
         }
       ],
       generationConfig: {
-        // Slightly higher than gemininio's 0.45 — we want the questions
+        // Slightly higher than kai's 0.45 — we want the questions
         // to feel fresh batch-to-batch in live mode rather than the
         // same five every round, but not so high the model strays from
         // the digest. Larger packs (the 10-question offline build) want

@@ -5,7 +5,7 @@
  *   node scripts/smoke-test-gemini-live.mjs <MODEL> [TEXT|AUDIO]
  *
  * Reads VITE_GEMINI_API_KEY from .env.local. Sends a minimal setup
- * payload (matches the one src/lib/gemininio/live.ts emits), then a
+ * payload (matches the one src/lib/kai/live.ts emits), then a
  * real text message, and prints every server message until the
  * model finishes its turn.
  */

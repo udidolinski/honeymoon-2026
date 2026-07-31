@@ -10,54 +10,48 @@
   isolation: isolate;
 }
 
+/* Palette anchored to the real places on this trip. Token NAMES are kept
+   from the original template (terracotta/olive/sienna/gold/ink/cream) so
+   every existing Tailwind class across the app (bg-terracotta-500, etc.)
+   still resolves — only the underlying hex values changed:
+     terracotta → Death Valley ochre/rust
+     olive      → Sierra sequoia forest green
+     sienna     → Yosemite/Sierra granite grey-blue
+     gold       → Hawaiian turquoise/ocean blue
+     ink        → volcanic black (lava) accent
+     cream      → warm sand/cream neutral for body copy */
 @theme {
-  --color-cream-50: #FBF7EC;
-  --color-cream-100: #F5EFE0;
-  --color-cream-200: #EDE3CB;
-  --color-cream-300: #DFD2B0;
-  --color-terracotta-400: #D87154;
-  --color-terracotta-500: #C45A3D;
-  --color-terracotta-600: #A8472D;
-  --color-terracotta-700: #8B3622;
-  --color-olive-400: #8A9A6B;
-  --color-olive-500: #6B7A4B;
-  --color-olive-600: #525E39;
-  --color-olive-700: #3D4729;
-  --color-sienna-500: #8B4513;
-  --color-sienna-600: #6F3710;
-  --color-ink-700: #4A3A30;
-  --color-ink-800: #2A1F1A;
-  --color-ink-900: #1A120E;
-  --color-gold-400: #D9A441;
-  --color-gold-500: #B8862C;
+  --color-cream-50: #FBF8F1;
+  --color-cream-100: #F5EEDF;
+  --color-cream-200: #EAE0C8;
+  --color-cream-300: #DCCBA0;
+  --color-terracotta-400: #D68A52;
+  --color-terracotta-500: #BF6A32;
+  --color-terracotta-600: #9E5527;
+  --color-terracotta-700: #7D4420;
+  --color-olive-400: #7A9370;
+  --color-olive-500: #4F7355;
+  --color-olive-600: #3B5941;
+  --color-olive-700: #2C4331;
+  --color-sienna-500: #6B7A8C;
+  --color-sienna-600: #55606E;
+  --color-ink-700: #3A3530;
+  --color-ink-800: #201D1B;
+  --color-ink-900: #121110;
+  --color-gold-400: #4FC1CE;
+  --color-gold-500: #2A9DAD;
 
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Cormorant Garamond", "Georgia", ui-serif, serif;
 }
 
-/* Hebrew typography — applied automatically when <html dir="rtl">.
-   Rubik is a warm, humanist Hebrew sans (used by many Israeli editorial
-   sites). Frank Ruhl Libre is the modern (2014) redrawing of the classic
-   1908 Frank-Ruhl Hebrew typeface — Haaretz uses it, and it's the
-   contemporary editorial serif of choice. It carries the same warmth as
-   Cormorant on the Latin side, without the "Word 2003 default" baggage
-   of older system serifs (David, Times, Arial). */
-html[dir="rtl"] {
-  --font-sans: "Rubik", "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Frank Ruhl Libre", "Cormorant Garamond", "Georgia", ui-serif, serif;
-}
-
-/* Always-Latin serif. Use this on numerals and any glyphs that should
-   keep their Cormorant Garamond rendering even when the page is in
-   Hebrew (e.g. the live countdown digits — Frank Ruhl Libre's tabular
-   numerals are noticeably different and break the design's continuity
-   between EN and HE). The unit labels next to those numerals can still
-   be translated; only the digits stay Latin-serif. */
+/* Always-Latin serif for numerals and glyphs that should keep their
+   Cormorant Garamond rendering (e.g. the live countdown digits). */
 .font-latin-serif {
   font-family: "Cormorant Garamond", "Georgia", ui-serif, serif;
 }
 
-/* Gemininio message list — iOS PWA / Chrome Android need an explicit
+/* Kai message list — iOS PWA / Chrome Android need an explicit
    scroll layer with touch momentum and contained overscroll so the
    swipe does not refresh the page or scroll the site behind the sheet. */
 .gem-chat-scroll {
@@ -246,14 +240,14 @@ html[dir="rtl"] .leaflet-control-attribution {
   100% { transform: scale(2.6); opacity: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .tuscany-user-marker [style*="user-location-pulse"] {
+  .trip-user-marker [style*="user-location-pulse"] {
     animation: none !important;
     transform: scale(1.6) !important;
     opacity: 0.25 !important;
   }
 }
 
-/* Gemininio "typing" indicator — three dots that wave in sequence
+/* Kai "typing" indicator — three dots that wave in sequence
    while we wait for the first token from Gemini. The negative
    animation-delays on the first two dots stagger them by ~150ms
    each, so they look like a smooth left-to-right ripple instead
@@ -285,7 +279,7 @@ html[dir="rtl"] .leaflet-control-attribution {
   }
 }
 
-/* Gemininio FAB — soft "breathing" pulse ring that gently swells
+/* Kai FAB — soft "breathing" pulse ring that gently swells
    and fades behind the launcher button to make the AI assistant
    feel alive without being distracting. ~3s cycle (slow enough
    to read as breath, fast enough to be noticed in peripheral

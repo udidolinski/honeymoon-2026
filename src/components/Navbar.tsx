@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import { useT, type DictKey } from "../lib/dict";
-import LanguageSwitcher from "./LanguageSwitcher";
 
-// Nav order requested by the user: Plan → Places → Food → Map →
-// Stays → Tips → Lists → Emergency. Services (local gas /
-// supermarket) intentionally lives on the page but not in the nav.
+// Nav order: Plan → Places → Food → Map → Stays → Tips → Lists →
+// Emergency. Services (local gas / supermarket) intentionally lives
+// on the page but not in the nav.
 const links: { id: string; key: DictKey }[] = [
   { id: "trip",        key: "nav_plan" },
-  { id: "bookings",    key: "nav_bookings" },
   { id: "attractions", key: "nav_attractions" },
   { id: "food",        key: "nav_food" },
   { id: "map",         key: "nav_map" },
@@ -69,9 +67,6 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="flex items-center gap-2">
-          <LanguageSwitcher onDark={!scrolled} />
-        </div>
       </div>
     </nav>
   );

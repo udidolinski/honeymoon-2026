@@ -20,12 +20,12 @@ import { useLocalizeDish, useLocalizeWinery } from "../data/i18n";
 import NavigateLinks from "./NavigateLinks";
 import type { DishCategory } from "../data/types";
 
-type RegionFilter = "north" | "south" | "tuscany";
+type RegionFilter = "mainland" | "hawaii" | "trip";
 
 const REGION_TABS: { id: RegionFilter; key: DictKey }[] = [
-  { id: "north", key: "food_filter_north" },
-  { id: "south", key: "food_filter_south" },
-  { id: "tuscany", key: "food_filter_tuscany" }
+  { id: "mainland", key: "food_filter_mainland" },
+  { id: "hawaii", key: "food_filter_hawaii" },
+  { id: "trip", key: "food_filter_trip" }
 ];
 
 const CATEGORY_META: Record<
@@ -44,18 +44,18 @@ export default function FoodAndWineSection() {
   const t = useT();
   const localizeDish = useLocalizeDish();
   const localizeWinery = useLocalizeWinery();
-  const [region, setRegion] = useState<RegionFilter>("north");
+  const [region, setRegion] = useState<RegionFilter>("mainland");
 
   const visibleDishes = useMemo(() => {
-    // For "north" / "south" we surface dishes flagged for that region
-    // *plus* the "tuscany" all-rounders, since they're served everywhere.
-    // For "tuscany", show only the all-rounders.
-    if (region === "tuscany") return dishes.filter(d => d.region === "tuscany");
-    return dishes.filter(d => d.region === region || d.region === "tuscany");
+    // For "mainland" / "hawaii" we surface dishes flagged for that region
+    // *plus* the "trip" all-rounders, since they're found everywhere.
+    // For "trip", show only the all-rounders.
+    if (region === "trip") return dishes.filter(d => d.region === "trip");
+    return dishes.filter(d => d.region === region || d.region === "trip");
   }, [region]);
 
   const visibleWineries = useMemo(
-    () => wineries.filter(w => region === "tuscany" || w.region === region),
+    () => wineries.filter(w => region === "trip" || w.region === region),
     [region]
   );
 
@@ -118,7 +118,7 @@ export default function FoodAndWineSection() {
                       <PoiImage
                         src={dish.image}
                         alt={dish.name}
-                        region={dish.region === "tuscany" ? "north" : dish.region}
+                        region={dish.region === "trip" ? "mainland" : dish.region}
                       />
                       {/* tiny gradient so the category chip stays legible */}
                       <div

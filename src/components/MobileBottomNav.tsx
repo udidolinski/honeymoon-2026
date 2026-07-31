@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { CalendarDays, Map, Compass, Utensils, MoreHorizontal, Download } from "lucide-react";
 import { useT, type DictKey } from "../lib/dict";
-import { useLang } from "../lib/i18n";
-import LanguageSwitcher from "./LanguageSwitcher";
 import { canShowInstallOption, triggerInstallPrompt } from "../lib/install";
 
 // Primary 4 tabs are the "exploring the trip" essentials; the rest of
@@ -16,21 +14,19 @@ const TABS: { id: string; key: DictKey; Icon: typeof CalendarDays }[] = [
 ];
 
 const MORE_LINKS: { id: string; key: DictKey }[] = [
-  { id: "bookings",  key: "nav_bookings" },
   { id: "stays",     key: "nav_stays" },
   { id: "tips",      key: "nav_tips" },
   { id: "checklist", key: "nav_checklist" },
   { id: "emergency", key: "nav_emergency" }
 ];
 
-const MORE_LABEL: Record<"en" | "he", string> = { en: "More", he: "עוד" };
+const MORE_LABEL = "More";
 
 // Every section that has an anchor on the home page (services has no
 // nav entry but still exists on the page, so we track it for active
 // highlight detection).
 const SECTION_IDS = [
   "trip",
-  "bookings",
   "map",
   "attractions",
   "services",
@@ -44,7 +40,6 @@ const SECTION_IDS = [
 // Anything that isn't a primary tab collapses to the "More" tab when
 // it's the active section while scrolling.
 const MORE_SECTION_IDS = new Set([
-  "bookings",
   "stays",
   "services",
   "tips",
@@ -54,7 +49,6 @@ const MORE_SECTION_IDS = new Set([
 
 export default function MobileBottomNav() {
   const t = useT();
-  const { lang } = useLang();
   const [active, setActive] = useState<string>("trip");
   const [moreOpen, setMoreOpen] = useState(false);
   /* Capture once on mount: whether this device/browser has a meaningful
@@ -120,9 +114,6 @@ export default function MobileBottomNav() {
                 {t("install_menu_label")}
               </button>
             )}
-            <div className="mt-3 flex justify-center">
-              <LanguageSwitcher variant="minimal" />
-            </div>
           </div>
         </div>
       )}
@@ -134,7 +125,7 @@ export default function MobileBottomNav() {
         <ul className="grid grid-cols-5 h-16">
           {TABS.map(({ id, key, Icon }) => {
             const isActive = active === id;
-            const label = id === "more" ? MORE_LABEL[lang] : t(key);
+            const label = id === "more" ? MORE_LABEL : t(key);
             return (
               <li key={id}>
                 <button

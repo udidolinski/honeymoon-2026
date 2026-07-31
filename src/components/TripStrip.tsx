@@ -92,7 +92,7 @@ export default function TripStrip({ compact = false, activeDay, onSelect }: Prop
               const isActive = activeIdx === day.dayNumber;
               const region = day.region;
               const dot =
-                region === "south"
+                region === "hawaii"
                   ? "bg-gold-500"
                   : region === "transit"
                   ? "bg-terracotta-500"
@@ -172,7 +172,7 @@ export default function TripStrip({ compact = false, activeDay, onSelect }: Prop
             const region = day.region;
 
             const accentText =
-              region === "south"
+              region === "hawaii"
                 ? "text-gold-400"
                 : region === "transit"
                 ? "text-terracotta-300"
@@ -196,7 +196,7 @@ export default function TripStrip({ compact = false, activeDay, onSelect }: Prop
                     <PoiImage
                       src={fallbackImage}
                       alt={localDay.title}
-                      region={region === "transit" ? "north" : region}
+                      region={region === "transit" ? "mainland" : region}
                       category={lead?.category}
                       tags={lead?.tags}
                     />

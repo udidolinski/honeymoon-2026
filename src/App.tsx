@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TripStats from "./components/TripStats";
 import ItinerarySection from "./components/ItinerarySection";
-import BookingsSection from "./components/BookingsSection";
 import MapView from "./components/MapView";
 import AttractionsGrid from "./components/AttractionsGrid";
 import StaysSection from "./components/StaysSection";
@@ -17,7 +16,7 @@ import MobileBottomNav from "./components/MobileBottomNav";
 import SectionOrnament from "./components/SectionOrnament";
 import ChapterDetailPage from "./components/ChapterDetailPage";
 import InstallPrompt from "./components/InstallPrompt";
-import Gemininio from "./components/Gemininio";
+import Kai from "./components/Kai";
 import { MapFocusContext } from "./lib/mapContext";
 import { useHashRoute } from "./lib/route";
 
@@ -40,7 +39,7 @@ export default function App() {
         {/* The Add-to-Home-Screen coachmark lives at the app root so it
             shows regardless of which page the user landed on. */}
         <InstallPrompt />
-        <Gemininio />
+        <Kai />
       </>
     );
   }
@@ -52,9 +51,6 @@ export default function App() {
 
       {/* The Plan — the magazine's main feature, leads everything else */}
       <ItinerarySection />
-
-      <SectionOrnament />
-      <BookingsSection />
 
       <SectionOrnament />
       <MapView registerFocus={registerFocus} />
@@ -94,9 +90,9 @@ export default function App() {
 
       <MobileBottomNav />
       <InstallPrompt />
-      {/* Gemininio occupies the floating-action slot that used to
+      {/* Kai occupies the floating-action slot that used to
           host the "scroll to map" FAB — same position, more useful. */}
-      <Gemininio />
+      <Kai />
     </MapFocusContext.Provider>
   );
 }
