@@ -17,6 +17,7 @@ import SectionOrnament from "./components/SectionOrnament";
 import ChapterDetailPage from "./components/ChapterDetailPage";
 import InstallPrompt from "./components/InstallPrompt";
 import Kai from "./components/Kai";
+import UpdateBanner from "./components/UpdateBanner";
 import { MapFocusContext } from "./lib/mapContext";
 import { useHashRoute } from "./lib/route";
 
@@ -40,6 +41,7 @@ export default function App() {
             shows regardless of which page the user landed on. */}
         <InstallPrompt />
         <Kai />
+        <UpdateBanner />
       </>
     );
   }
@@ -93,6 +95,7 @@ export default function App() {
       {/* Kai occupies the floating-action slot that used to
           host the "scroll to map" FAB — same position, more useful. */}
       <Kai />
+      <UpdateBanner />
     </MapFocusContext.Provider>
   );
 }
