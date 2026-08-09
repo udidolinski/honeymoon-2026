@@ -142,6 +142,33 @@ export const services: Service[] = [
     hours: "Daily, check current seatings"
   },
   {
+    id: "rest-m-vegas-burnt-offerings",
+    name: "Burnt Offerings (Kosher, OU)",
+    category: "restaurant",
+    region: "mainland",
+    base: "mainland",
+    shortDescription: "OU-certified kosher steakhouse, ~10 min from the Strip",
+    description:
+      "A full-service kosher steakhouse a short rideshare off the Strip — OU certified, sit-down dinners with steaks, burgers and classic deli. Closed Saturday; Friday hours are shortened for Shabbat. Call ahead or book via OpenTable, especially on weekends.",
+    website: "https://www.burntofferingslv.com/",
+    address: "3909 W Sahara Ave Suite 10, Las Vegas, NV 89102",
+    coords: [36.1450, -115.1897],
+    hours: "Mon–Thu & Sun 17:00–22:00, Fri 11:30–14:00, Sat closed"
+  },
+  {
+    id: "rest-m-vegas-judit",
+    name: "Judit Mediterranean Cuisine (Kosher)",
+    category: "restaurant",
+    region: "mainland",
+    base: "mainland",
+    shortDescription: "Glatt-kosher Mediterranean grill near the Strip",
+    description:
+      "A newer Glatt-kosher spot under Chabad of Southern Nevada / Vaad HaKashrus supervision — hummus, falafel, shawarma and salads, a short drive from the Strip. Closed Saturday.",
+    address: "2103 Western Ave, Las Vegas, NV 89102",
+    coords: [36.1590, -115.1522],
+    hours: "Sun–Thu 11:00–19:30, Fri 11:00–15:00, Sat closed"
+  },
+  {
     id: "sup-m-vegas-whole-foods",
     name: "Whole Foods Market — Las Vegas",
     category: "supermarket",
@@ -264,6 +291,21 @@ export const services: Service[] = [
     address: "Palani Rd, Kailua-Kona, HI",
     coords: [19.6455, -155.9968],
     hours: "24/7"
+  },
+
+  // ==================== TRANSIT — SFO / Bay Area ====================
+  {
+    id: "rest-t-sfo-holy-sushi",
+    name: "Holy Sushi (Kosher) — Palo Alto",
+    category: "restaurant",
+    region: "transit",
+    base: "mainland",
+    shortDescription: "Kosher-supervised sushi counter, ~35 min south of SFO",
+    description:
+      "A kosher-supervised sushi counter about 35 minutes south of the airport — the closest reliable kosher option on the SFO overnight. Daytime hours only and closed Saturday, so plan a pickup on the way in from Kona rather than a late dinner.",
+    address: "4131 El Camino Real, Palo Alto, CA 94306",
+    coords: [37.4088, -122.1180],
+    hours: "Sun–Fri 9:00–16:00, Sat closed"
   }
 ];
 

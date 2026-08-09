@@ -48,7 +48,8 @@ export const itinerary: Day[] = [
     dayTips: [
       "October daylight fades by 6:30 pm in the Sierra — aim to be off mountain roads before dark on the first night",
       "Confirm the rental car's tank policy before you drive off the lot",
-      "Cell service thins out past Fresno on CA-41 — download offline maps before you leave SFO"
+      "Cell service thins out past Fresno on CA-41 — download offline maps before you leave SFO",
+      "No kosher restaurants or kosher-certified groceries near Oakhurst, Three Rivers or Death Valley — Fresno (about an hour back toward SFO) has the nearest Chabad-supported kosher aisle if you want to stock up before the parks"
     ],
     phrasesOfDay: [
       {
@@ -330,7 +331,7 @@ export const itinerary: Day[] = [
       }
     ],
     driveNotes: "Death Valley → Las Vegas ≈ 2 h via NV-160",
-    restaurants: ["rest-m-vegas-inn-n-out"],
+    restaurants: ["rest-m-vegas-inn-n-out", "rest-m-vegas-burnt-offerings", "rest-m-vegas-judit"],
     drinkOfTheDay: {
       name: "Classic Vegas Martini",
       type: "cocktail",
@@ -394,7 +395,7 @@ export const itinerary: Day[] = [
         optional: true
       }
     ],
-    restaurants: ["rest-m-vegas-inn-n-out", "rest-m-vegas-bacchanal"],
+    restaurants: ["rest-m-vegas-inn-n-out", "rest-m-vegas-bacchanal", "rest-m-vegas-burnt-offerings", "rest-m-vegas-judit"],
     drinkOfTheDay: {
       name: "Frozen daiquiri, Strip-style",
       type: "cocktail",
@@ -446,7 +447,7 @@ export const itinerary: Day[] = [
         description: "Deliberately unscheduled — a pool afternoon or a spa treatment at the hotel. Tomorrow's Grand Canyon + Antelope Canyon tour is a long day (pre-dawn pickup, home late), so keep tonight easy and get to bed on the early side."
       }
     ],
-    restaurants: ["rest-m-vegas-bacchanal"],
+    restaurants: ["rest-m-vegas-bacchanal", "rest-m-vegas-burnt-offerings", "rest-m-vegas-judit"],
     drinkOfTheDay: {
       name: "Prickly pear margarita",
       type: "cocktail",
@@ -582,7 +583,8 @@ export const itinerary: Day[] = [
     dayTips: [
       "Confirm your exact LAS–OGG routing when booking — a Honolulu connection is common on this route",
       "Hawaii requires reef-safe sunscreen (no oxybenzone/octinoxate) by state law — pack it before you go, it can be pricier locally",
-      "Inter-island and mainland-to-Hawaii baggage rules can differ from your outbound flight — check the airline's policy"
+      "Inter-island and mainland-to-Hawaii baggage rules can differ from your outbound flight — check the airline's policy",
+      "No walk-in kosher restaurant on Maui — Chabad of Maui (jewishmaui.com) prepares kosher meals and can arrange grocery delivery to the Wailea resort with advance notice"
     ],
     phrasesOfDay: [
       {
@@ -952,7 +954,8 @@ export const itinerary: Day[] = [
     ],
     dayTips: [
       "Inter-island flights often have tighter baggage weight limits than mainland-to-Hawaii legs — check before packing",
-      "The Kona/Kohala side of the Big Island is noticeably drier and sunnier than Maui — pack accordingly"
+      "The Kona/Kohala side of the Big Island is noticeably drier and sunnier than Maui — pack accordingly",
+      "No walk-in kosher restaurant on the Big Island either — Chabad Jewish Center of the Big Island in Kailua-Kona (jewishbigisland.org) hosts Shabbat/holiday meals by reservation and arranges periodic kosher grocery shipments"
     ],
     phrasesOfDay: [
       {
@@ -1310,7 +1313,7 @@ export const itinerary: Day[] = [
         description: "Check into an airport-area hotel to rest before tomorrow's long-haul flight home, rather than pushing straight through on minimal sleep."
       }
     ],
-    restaurants: [],
+    restaurants: ["rest-t-sfo-holy-sushi"],
     drinkOfTheDay: {
       name: "Decaf coffee (non-alcoholic)",
       type: "coffee",
