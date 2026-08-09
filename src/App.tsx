@@ -18,6 +18,7 @@ import ChapterDetailPage from "./components/ChapterDetailPage";
 import InstallPrompt from "./components/InstallPrompt";
 import Kai from "./components/Kai";
 import UpdateBanner from "./components/UpdateBanner";
+import PullToRefresh from "./components/PullToRefresh";
 import { MapFocusContext } from "./lib/mapContext";
 import { useHashRoute } from "./lib/route";
 
@@ -42,6 +43,7 @@ export default function App() {
         <InstallPrompt />
         <Kai />
         <UpdateBanner />
+        <PullToRefresh />
       </>
     );
   }
@@ -96,6 +98,7 @@ export default function App() {
           host the "scroll to map" FAB — same position, more useful. */}
       <Kai />
       <UpdateBanner />
+      <PullToRefresh />
     </MapFocusContext.Provider>
   );
 }

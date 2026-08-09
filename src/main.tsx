@@ -8,6 +8,14 @@ import { LangProvider } from './lib/i18n'
 // Capture Chromium's one-shot install event before React hydrates (`install.ts`).
 bootstrapInstallPromptCapture()
 
+// Strip the pull-to-refresh cache-busting param (see PullToRefresh.tsx)
+// from the visible URL once it's done its job of forcing a fresh fetch.
+if (window.location.search.includes('_r=')) {
+  const url = new URL(window.location.href)
+  url.searchParams.delete('_r')
+  window.history.replaceState(null, '', url.toString())
+}
+
 // Minimal SW — required by Chrome installability checklist; enables reliable
 // `beforeinstallprompt`. See `public/sw.js` (network-only passes through).
 function registerMinimalServiceWorker(): void {

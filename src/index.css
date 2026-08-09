@@ -63,6 +63,14 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
+  /* Own the pull-down-at-top gesture ourselves (see PullToRefresh.tsx)
+     instead of letting Android Chrome's native pull-to-refresh fire too —
+     the native one wouldn't bypass GitHub Pages' CDN cache anyway. */
+  overscroll-behavior-y: contain;
+}
+
+body {
+  overscroll-behavior-y: contain;
 }
 
 /* Bump the base font size on mobile so all rem-based Tailwind sizes
