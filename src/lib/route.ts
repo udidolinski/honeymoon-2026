@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { itinerary } from "../data/itinerary";
 
 export type Route =
   | { kind: "home" }
@@ -8,7 +9,7 @@ export function parseHash(hash: string): Route {
   const m = hash.match(/^#chapter\/(\d+)$/);
   if (m) {
     const day = parseInt(m[1], 10);
-    if (day >= 1 && day <= 10) return { kind: "chapter", day };
+    if (day >= 1 && day <= itinerary.length) return { kind: "chapter", day };
   }
   return { kind: "home" };
 }
@@ -55,7 +56,7 @@ export function getRememberedChapter(): number | null {
     const v = sessionStorage.getItem(REMEMBERED_KEY);
     if (!v) return null;
     const n = parseInt(v, 10);
-    return n >= 1 && n <= 10 ? n : null;
+    return n >= 1 && n <= itinerary.length ? n : null;
   } catch {
     return null;
   }
