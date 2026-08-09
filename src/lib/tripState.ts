@@ -131,7 +131,12 @@ export function getTripState(now: Date = new Date()): TripState {
   if (today < start) {
     const ms = TRIP_START.getTime() - now.getTime();
     const countdown = partsFromMs(ms);
-    const daysUntil = Math.round((start.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+    /* Derive from the same exact countdown shown in the hero's big digits
+       (rather than a separate midnight-to-midnight calendar diff) so the
+       "N days" copy below the clock never contradicts the clock itself —
+       the two used to disagree by up to a day depending on the time of
+       day the page loaded. */
+    const daysUntil = countdown.days;
     return { phase: "before", daysUntil, countdown };
   }
   if (today > end) {
