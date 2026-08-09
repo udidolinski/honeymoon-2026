@@ -1,4 +1,11 @@
-import type { Day } from "./types";
+import type { Day, ImageCredit } from "./types";
+
+const wmCredit = (article: string): ImageCredit => ({
+  author: `Wikipedia/Wikimedia Commons contributors`,
+  license: "CC BY-SA",
+  source: `https://en.wikipedia.org/wiki/${article}`,
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/"
+});
 
 export const itinerary: Day[] = [
   {
@@ -9,6 +16,8 @@ export const itinerary: Day[] = [
     base: "Oakhurst, CA (Yosemite gateway)",
     title: "Land in San Francisco, drive to the Sierra",
     subtitle: "Arrive SFO 14:45, pick up the rental car, head for Yosemite's south gate",
+    leadImage: "./images/sfo-airport.jpg",
+    leadImageCredit: wmCredit("San_Francisco_International_Airport"),
     activities: [
       {
         time: "14:45",
