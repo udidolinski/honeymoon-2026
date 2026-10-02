@@ -235,9 +235,12 @@ export const DICT = {
   /* ---------- Checklist ---------- */
   checklist_eyebrow: "Before we fly",
   checklist_title: "Pre-trip checklist",
-  checklist_kicker: "Two lists: book it now, pack it later",
+  checklist_kicker: "Book it, check in, download it, set it up, pack it — tick as you go",
   checklist_booking: "Book ahead",
   checklist_packing: "Pack the bag",
+  checklist_checkin: "Check in",
+  checklist_download: "Download",
+  checklist_setup: "Set up",
   checklist_progress: "{done} of {total} done",
   checklist_urgent: "Urgent",
 

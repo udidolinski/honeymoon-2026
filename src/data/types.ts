@@ -255,6 +255,8 @@ export interface ChecklistItem {
   link?: string;
   urgent?: boolean;
   done?: boolean;
+  /** Small timing chip, e.g. "Opens Oct 10, 07:00". */
+  when?: string;
 }
 
 export interface Tip {

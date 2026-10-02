@@ -1,18 +1,34 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, AlertCircle, Briefcase, ClipboardCheck } from "lucide-react";
-import { bookingChecklist, packingChecklist } from "../data/checklist";
+import { ExternalLink, AlertCircle, Briefcase, ClipboardCheck, PlaneTakeoff, Download, Wifi, Clock } from "lucide-react";
+import {
+  bookingChecklist,
+  checkInChecklist,
+  downloadChecklist,
+  setupChecklist,
+  packingChecklist
+} from "../data/checklist";
 import Section from "./Section";
 import type { ChecklistItem } from "../data/types";
-import { useT } from "../lib/dict";
+import { useT, type DictKey } from "../lib/dict";
 import { useLocalizeChecklistItem } from "../data/i18n";
 
 const STORAGE_KEY = "honeymoon-checklist-v1";
 
+type TabId = "booking" | "checkin" | "download" | "setup" | "packing";
+
+const TABS: { id: TabId; labelKey: DictKey; Icon: typeof Briefcase; items: ChecklistItem[] }[] = [
+  { id: "booking", labelKey: "checklist_booking", Icon: ClipboardCheck, items: bookingChecklist },
+  { id: "checkin", labelKey: "checklist_checkin", Icon: PlaneTakeoff, items: checkInChecklist },
+  { id: "download", labelKey: "checklist_download", Icon: Download, items: downloadChecklist },
+  { id: "setup", labelKey: "checklist_setup", Icon: Wifi, items: setupChecklist },
+  { id: "packing", labelKey: "checklist_packing", Icon: Briefcase, items: packingChecklist }
+];
+
 /** Items marked done in the data (e.g. already-booked reservations) start
  *  checked. A user toggle is remembered and overrides this default. */
 const DEFAULT_DONE: Record<string, boolean> = Object.fromEntries(
-  [...bookingChecklist, ...packingChecklist]
+  TABS.flatMap(tab => tab.items)
     .filter(i => i.done)
     .map(i => [i.id, true])
 );
@@ -64,6 +80,11 @@ function ChecklistList({
                   >
                     {item.text}
                   </span>
+                  {item.when && (
+                    <span className="pill">
+                      <Clock size={10} /> {item.when}
+                    </span>
+                  )}
                   {item.urgent && !isDone && (
                     <span className="pill pill-terracotta">
                       <AlertCircle size={10} /> {t("checklist_urgent")}
@@ -94,7 +115,7 @@ function ChecklistList({
 
 export default function ChecklistSection() {
   const t = useT();
-  const [tab, setTab] = useState<"booking" | "packing">("booking");
+  const [tab, setTab] = useState<TabId>("booking");
   const [checked, setChecked] = useState<Record<string, boolean>>(() => loadChecked());
 
   const toggle = (id: string) => {
@@ -109,7 +130,7 @@ export default function ChecklistSection() {
     });
   };
 
-  const list = tab === "booking" ? bookingChecklist : packingChecklist;
+  const list = (TABS.find(x => x.id === tab) ?? TABS[0]).items;
   const doneCount = list.filter(i => itemDone(i.id, checked)).length;
 
   return (
@@ -121,34 +142,23 @@ export default function ChecklistSection() {
     >
       <div className="-mx-4 sm:mx-0 px-4 sm:px-0 overflow-x-auto scrollbar-hide mb-2">
         <div className="flex gap-2 min-w-max sm:min-w-0 sm:flex-wrap">
-          <button
-            onClick={() => setTab("booking")}
-            className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all flex items-center gap-2 whitespace-nowrap min-h-11 ${
-              tab === "booking"
-                ? "bg-ink-900 text-cream-50"
-                : "bg-cream-50 border border-cream-300 text-ink-800 hover:border-terracotta-500/40"
-            }`}
-          >
-            <ClipboardCheck size={14} />
-            {t("checklist_booking")}
-            <span className={`text-xs ${tab === "booking" ? "text-cream-200" : "text-ink-700/60"}`}>
-              {bookingChecklist.filter(i => itemDone(i.id, checked)).length}/{bookingChecklist.length}
-            </span>
-          </button>
-          <button
-            onClick={() => setTab("packing")}
-            className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all flex items-center gap-2 whitespace-nowrap min-h-11 ${
-              tab === "packing"
-                ? "bg-ink-900 text-cream-50"
-                : "bg-cream-50 border border-cream-300 text-ink-800 hover:border-terracotta-500/40"
-            }`}
-          >
-            <Briefcase size={14} />
-            {t("checklist_packing")}
-            <span className={`text-xs ${tab === "packing" ? "text-cream-200" : "text-ink-700/60"}`}>
-              {packingChecklist.filter(i => itemDone(i.id, checked)).length}/{packingChecklist.length}
-            </span>
-          </button>
+          {TABS.map(({ id, labelKey, Icon, items }) => (
+            <button
+              key={id}
+              onClick={() => setTab(id)}
+              className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all flex items-center gap-2 whitespace-nowrap min-h-11 ${
+                tab === id
+                  ? "bg-ink-900 text-cream-50"
+                  : "bg-cream-50 border border-cream-300 text-ink-800 hover:border-terracotta-500/40"
+              }`}
+            >
+              <Icon size={14} />
+              {t(labelKey)}
+              <span className={`text-xs ${tab === id ? "text-cream-200" : "text-ink-700/60"}`}>
+                {items.filter(i => itemDone(i.id, checked)).length}/{items.length}
+              </span>
+            </button>
+          ))}
         </div>
       </div>
 
