@@ -402,7 +402,7 @@ export const attractions: POI[] = [
     description:
       "An 80-foot roadside waterfall visible right from the highway just past Hana town — one of the easiest big-waterfall views on the whole drive, no hiking required.",
     image: "./images/wailua-falls-maui.jpg",
-    imageCredit: wmCredit("Wailua_Falls_(Maui)"),
+    imageCredit: unsplashCredit("Christian Joudrey (@cjoudrey)", "_GEx2CfrAOk"),
     address: "Hana Highway, past Hana, Maui, HI",
     coords: [20.6636, -156.0092],
     tags: ["water", "view", "family"],
@@ -417,6 +417,8 @@ export const attractions: POI[] = [
     shortDescription: "A tiny, sleepy town at the end (or midpoint) of the drive",
     description:
       "A small, quiet former plantation town on Maui's remote east end — a good lunch and leg-stretch stop, with a historic general store, a couple of food trucks, and a slower pace than anywhere else on the island.",
+    image: "./images/hana-town.jpg",
+    imageCredit: unsplashCredit("Claudio Schwarz (@purzlbaum)", "e9ncui5Jzvc"),
     website: "https://www.gohawaii.com/islands/maui/regions/hana",
     address: "Hana, Maui, HI",
     coords: [20.7584, -155.9903],
@@ -483,6 +485,8 @@ export const attractions: POI[] = [
     shortDescription: "Historic former capital of the Hawaiian Kingdom",
     description:
       "A historic whaling port and former capital of the Kingdom of Hawaiʻi, on Maui's west side. Parts of the town are still recovering from the devastating August 2023 wildfire — check current visitor guidance and respect any areas still off-limits before you go.",
+    image: "./images/lahaina-town.jpg",
+    imageCredit: unsplashCredit("Yeshi Kangrang (@omgitsyeshi)", "Kj9drpdopdU"),
     website: "https://www.gohawaii.com/islands/maui/regions/lahaina",
     address: "Lahaina, Maui, HI",
     coords: [20.8783, -156.6825],
