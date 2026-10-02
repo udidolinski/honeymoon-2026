@@ -1,4 +1,5 @@
 import type { Day } from "./types";
+import { unsplashCredit } from "./credits";
 
 export const itinerary: Day[] = [
   {
@@ -9,6 +10,8 @@ export const itinerary: Day[] = [
     base: "Las Vegas, NV",
     title: "Land in Las Vegas",
     subtitle: "Arrive LAS 18:35, straight to Paris Las Vegas — no car tonight",
+    leadImage: "./images/las-vegas-paris.jpg",
+    leadImageCredit: unsplashCredit("Parsa Mahmoudi", "PYaP4awj9Uc"),
     activities: [
       {
         time: "18:35",
@@ -152,6 +155,8 @@ export const itinerary: Day[] = [
     base: "Independence, CA (Eastern Sierra)",
     title: "Death Valley, then north to Independence",
     subtitle: "Badwater, Artist's Palette and Zabriskie Point, then out the west side to US-395",
+    leadImage: "./images/mesquite-flat-dunes.jpg",
+    leadImageCredit: unsplashCredit("Steve Gribble (@steve_g_)", "iZirkCavoSY"),
     activities: [
       {
         time: "Morning",
@@ -241,6 +246,8 @@ export const itinerary: Day[] = [
     base: "Incline, NV (Lake Tahoe)",
     title: "US-395 north to Yosemite's east entrance",
     subtitle: "Eastern Sierra scenery, Tioga Pass and the high country — then on to Incline",
+    leadImage: "./images/lake-tahoe.jpg",
+    leadImageCredit: unsplashCredit("Austin Schmid", "pp0Joqv3Y4s"),
     activities: [
       {
         time: "Morning",
@@ -393,6 +400,8 @@ export const itinerary: Day[] = [
     base: "San Francisco, CA (Union Square)",
     title: "Drive to San Francisco",
     subtitle: "Return the Alamo car at Union Square by 18:00, then check in at the Hilton",
+    leadImage: "./images/san-francisco-cable-car.jpg",
+    leadImageCredit: unsplashCredit("Amogh Manjunath (@therealamogh)", "HksFlo1t8iA"),
     activities: [
       {
         time: "Morning",
@@ -445,6 +454,8 @@ export const itinerary: Day[] = [
     base: "San Francisco, CA (Union Square)",
     title: "A free day in San Francisco",
     subtitle: "No car, no schedule — pick from the list below",
+    leadImage: "./images/san-francisco-cable-car.jpg",
+    leadImageCredit: unsplashCredit("Amogh Manjunath (@therealamogh)", "HksFlo1t8iA"),
     activities: [
       {
         time: "Morning",

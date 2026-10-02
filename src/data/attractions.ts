@@ -1,4 +1,5 @@
 import type { POI, ImageCredit } from "./types";
+import { unsplashCredit } from "./credits";
 
 const wmCredit = (article: string): ImageCredit => ({
   author: `Wikipedia/Wikimedia Commons contributors`,
@@ -18,7 +19,7 @@ export const attractions: POI[] = [
     description:
       "A roadside overlook just past the Wawona Tunnel that frames El Capitan, Bridalveil Fall and Half Dome in one iconic view — the photo that made Yosemite famous, reproduced by Ansel Adams and millions since. Easiest and most photographed vista in the park.",
     image: "./images/yosemite-tunnel-view.jpg",
-    imageCredit: wmCredit("Tunnel_View"),
+    imageCredit: unsplashCredit("jms (@jmsdono)", "kFHz9Xh3PPU"),
     website: "https://www.nps.gov/yose/",
     address: "Wawona Road, Yosemite National Park, CA",
     coords: [37.7150, -119.7076],
@@ -190,7 +191,7 @@ export const attractions: POI[] = [
     description:
       "A field of rolling sand dunes reaching about 100 feet high near Stovepipe Wells — the most accessible dune field in the park, with no marked trail, so visitors wander freely across the sand. Sunrise and early morning give the softest light and coolest sand.",
     image: "./images/mesquite-flat-dunes.jpg",
-    imageCredit: wmCredit("Mesquite_Flat_Sand_Dunes"),
+    imageCredit: unsplashCredit("Steve Gribble (@steve_g_)", "iZirkCavoSY"),
     website: "https://www.nps.gov/deva/planyourvisit/mesquite-flat-sand-dunes.htm",
     address: "Near Stovepipe Wells, Death Valley National Park, CA",
     coords: [36.6058, -117.1219],
@@ -432,7 +433,7 @@ export const attractions: POI[] = [
     description:
       "The summit of Maui's dormant shield volcano, its vast reddish crater looking almost lunar. Sunrise here is a bucket-list experience — watching dawn break from above a sea of clouds — but requires a separate advance reservation from the National Park Service for the 3:00–7:00 am viewing window, on top of the standard park entrance fee.",
     image: "./images/haleakala-summit.jpg",
-    imageCredit: wmCredit("Haleakal%C4%81"),
+    imageCredit: unsplashCredit("Tevin Trinh", "ygfYm0C1yrg"),
     website: "https://www.nps.gov/hale/planyourvisit/sunrise.htm",
     address: "Haleakalā National Park, Maui, HI",
     coords: [20.7097, -156.2533],
@@ -521,7 +522,7 @@ export const attractions: POI[] = [
     description:
       "Sections of the Crater Rim Trail overlook the vast Kīlauea caldera at the heart of Hawaiʻi Volcanoes National Park, with roadside steam vents nearby where groundwater meets hot volcanic rock and rises as visible steam.",
     image: "./images/kilauea-crater.jpg",
-    imageCredit: wmCredit("K%C4%ABlauea"),
+    imageCredit: unsplashCredit("James Lee (@picsbyjameslee)", "iujjIfsPBqE"),
     website: "https://www.nps.gov/havo/",
     address: "Hawaiʻi Volcanoes National Park, HI",
     coords: [19.4194, -155.2885],

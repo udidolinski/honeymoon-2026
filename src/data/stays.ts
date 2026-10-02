@@ -1,4 +1,5 @@
 import type { Stay } from "./types";
+import { unsplashCredit } from "./credits";
 
 export const stays: Stay[] = [
   {
@@ -9,6 +10,8 @@ export const stays: Stay[] = [
     shortDescription: "Strip hotel with the Eiffel Tower replica, across from the Bellagio Fountains",
     description:
       "Two nights at Paris Las Vegas, right on the central Strip, across the street from the Bellagio Fountains and next to Horseshoe and Caesars Palace. Walking distance to most of the Strip's classic sights.",
+    image: "./images/las-vegas-paris.jpg",
+    imageCredit: unsplashCredit("Parsa Mahmoudi", "PYaP4awj9Uc"),
     website: "https://www.parislasvegas.com/",
     address: "3655 S Las Vegas Blvd, Las Vegas, NV",
     coords: [36.1125, -115.1707],
@@ -50,6 +53,8 @@ export const stays: Stay[] = [
     shortDescription: "North Lake Tahoe, Nevada side — two nights, hotel TBD",
     description:
       "Hotel to be confirmed. Incline Village sits on the north shore of Lake Tahoe on the Nevada side. It is about 3 h from Yosemite's Tioga Pass entrance, so both Yosemite days involve long drives.",
+    image: "./images/lake-tahoe.jpg",
+    imageCredit: unsplashCredit("Austin Schmid", "pp0Joqv3Y4s"),
     address: "Incline Village, NV",
     coords: [39.2513, -119.9526],
     checkIn: "2026-10-07",
@@ -70,6 +75,8 @@ export const stays: Stay[] = [
     shortDescription: "Downtown hotel steps from Union Square and the cable cars",
     description:
       "Two nights at the Hilton San Francisco Union Square in the heart of downtown. The rental car is returned at the Union Square location by 18:00 on Oct 9, so no car is needed from here on.",
+    image: "./images/san-francisco-cable-car.jpg",
+    imageCredit: unsplashCredit("Amogh Manjunath (@therealamogh)", "HksFlo1t8iA"),
     website: "https://www.hilton.com/en/hotels/sfofhhh-hilton-san-francisco-union-square/",
     address: "333 O'Farrell St, San Francisco, CA",
     coords: [37.7861, -122.4104],
@@ -91,6 +98,8 @@ export const stays: Stay[] = [
     shortDescription: "Kona/Kohala Coast resort area — a suggested pick",
     description:
       "A suggested pick — confirm and book your own property. The Kona/Kohala Coast is the Big Island's dry, sunny resort belt — a good base for the coffee farms, Volcanoes National Park day trip, and the manta ray and Mauna Kea tours. A Budget rental car is picked up at Kona airport and returned there on Oct 19.",
+    image: "./images/kilauea-crater.jpg",
+    imageCredit: unsplashCredit("James Lee (@picsbyjameslee)", "iujjIfsPBqE"),
     address: "Kohala Coast, HI",
     coords: [19.9107, -155.8681],
     checkIn: "2026-10-11",
@@ -111,6 +120,8 @@ export const stays: Stay[] = [
     shortDescription: "South-shore Maui resort corridor — a suggested pick",
     description:
       "A suggested pick — confirm and book your own property. Wailea is Maui's upscale south-shore resort strip, fronting a string of golden-sand beaches with generally calm swimming and good snorkeling. A Budget rental car is picked up at Kahului airport and returned there on Oct 27.",
+    image: "./images/haleakala-summit.jpg",
+    imageCredit: unsplashCredit("Tevin Trinh", "ygfYm0C1yrg"),
     address: "Wailea, Maui, HI",
     coords: [20.6867, -156.4406],
     checkIn: "2026-10-19",
