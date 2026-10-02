@@ -1,67 +1,100 @@
 /**
- * Place-aware deep links to Google Maps and Waze.
+ * Deep links to Google Maps, Apple Maps and Waze.
  *
- * Old behaviour was to launch each app in **active turn-by-turn nav
- * mode** straight from coordinates. That was useful in the car but
- * skipped the "let me see what this place actually is" step — hours,
- * photos, reviews, the actual address. The new builders open the
- * **place's listing** in each app and let the user tap "Directions"
- * (Maps) or "Go" (Waze) themselves once they've decided.
+ * Two modes:
+ *   - "place" (default): open the place's listing so the user can see
+ *     hours, photos, reviews and the address, then tap Directions / Go.
+ *   - "directions": jump straight to directions to the place. Used for
+ *     hotels and airports, where the only thing you want is to get there.
  *
  * Strategy:
- *   - With a name → search by "<name>, <address-or-Italy>". Google
- *     Maps usually opens directly to the top hit's place card; Waze
- *     opens search results with the place pinned.
- *   - Without a name → drop a plain coord pin. The user still sees
- *     the location on the map and can tap nav themselves.
+ *   - With an address → search "<name>, <address>".
+ *   - With only a name → search the name (and pass the coordinates as a
+ *     hint where the app supports it).
+ *   - `byCoords` (a place we have no confirmed name for yet, such as a
+ *     hotel that is not booked) → use the lat/lon only.
  */
 
 export interface NavTarget {
   /** Place name (used in the search query). */
   name: string;
-  /** Lat, lon. Used when no name is available. */
+  /** Lat, lon. Used when no name is available, or with `byCoords`. */
   coords: [number, number];
-  /** Optional street address. Sharpens the search; if absent we
-   *  fall back to "<name>, Italy" which is still usually enough. */
+  /** Optional street address. Sharpens the search. */
   address?: string;
+  /** Ignore the name/address and navigate to the coordinates. */
+  byCoords?: boolean;
+}
+
+export type NavMode = "place" | "directions";
+
+function coordText(target: NavTarget): string {
+  return `${target.coords[0]},${target.coords[1]}`;
 }
 
 function buildSearchQuery(target: NavTarget): string {
-  const trimmedName = target.name.trim();
+  if (target.byCoords) return coordText(target);
+  const name = target.name.trim();
   const addr = target.address?.trim();
-  return addr ? `${trimmedName}, ${addr}` : `${trimmedName}, Italy`;
+  return addr ? `${name}, ${addr}` : name;
 }
 
 /**
- * Build a Google Maps URL that opens the place's listing (card with
- * photos, hours, reviews, "Directions" button). The user reviews the
- * place first, then taps "Directions" themselves.
- *
- * Pass a coord tuple for the rare cases where we only know lat/lon —
- * Maps will drop a pin instead of opening a card.
+ * Google Maps. "place" opens the listing; "directions" opens the route
+ * from the user's current location.
  */
-export function googleMapsPlaceUrl(target: NavTarget | [number, number]): string {
-  if (Array.isArray(target)) {
-    const [lat, lon] = target;
-    return `https://www.google.com/maps/?q=${lat},${lon}`;
+export function googleMapsPlaceUrl(
+  target: NavTarget | [number, number],
+  mode: NavMode = "place"
+): string {
+  const t: NavTarget = Array.isArray(target)
+    ? { name: "", coords: target, byCoords: true }
+    : target;
+  const query = encodeURIComponent(buildSearchQuery(t));
+  if (mode === "directions") {
+    return `https://www.google.com/maps/dir/?api=1&destination=${query}&travelmode=driving`;
   }
-  const query = encodeURIComponent(buildSearchQuery(target));
   return `https://www.google.com/maps/search/?api=1&query=${query}`;
 }
 
 /**
- * Build a Waze URL that opens search results for the place (or drops
- * a pin when only coords are known). `navigate=no` keeps Waze from
- * auto-starting nav so the user picks the right result and taps Go
- * themselves.
+ * Apple Maps. Opens the Maps app on iPhone/Mac; on other devices it falls
+ * back to Apple's web maps.
  */
-export function wazePlaceUrl(target: NavTarget | [number, number]): string {
-  if (Array.isArray(target)) {
-    const [lat, lon] = target;
-    return `https://waze.com/ul?ll=${lat},${lon}&navigate=no`;
+export function appleMapsUrl(
+  target: NavTarget | [number, number],
+  mode: NavMode = "place"
+): string {
+  const t: NavTarget = Array.isArray(target)
+    ? { name: "", coords: target, byCoords: true }
+    : target;
+  const query = encodeURIComponent(buildSearchQuery(t));
+  const ll = `${t.coords[0]},${t.coords[1]}`;
+  if (mode === "directions") {
+    return `https://maps.apple.com/?daddr=${query}&dirflg=d`;
   }
-  const query = encodeURIComponent(buildSearchQuery(target));
-  return `https://waze.com/ul?q=${query}&navigate=no`;
+  return t.byCoords
+    ? `https://maps.apple.com/?ll=${ll}&q=${encodeURIComponent(t.name || "Pin")}`
+    : `https://maps.apple.com/?q=${query}&ll=${ll}`;
+}
+
+/**
+ * Waze. "place" shows the result without starting navigation (`navigate=no`);
+ * "directions" starts navigation.
+ */
+export function wazePlaceUrl(
+  target: NavTarget | [number, number],
+  mode: NavMode = "place"
+): string {
+  const t: NavTarget = Array.isArray(target)
+    ? { name: "", coords: target, byCoords: true }
+    : target;
+  const navigate = mode === "directions" ? "yes" : "no";
+  if (t.byCoords) {
+    return `https://waze.com/ul?ll=${t.coords[0]},${t.coords[1]}&navigate=${navigate}`;
+  }
+  const query = encodeURIComponent(buildSearchQuery(t));
+  return `https://waze.com/ul?q=${query}&ll=${t.coords[0]},${t.coords[1]}&navigate=${navigate}`;
 }
 
 /* ------------------------------------------------------------------ */
@@ -69,8 +102,7 @@ export function wazePlaceUrl(target: NavTarget | [number, number]): string {
 /* New code should use googleMapsPlaceUrl / wazePlaceUrl instead.      */
 /* ------------------------------------------------------------------ */
 
-/** @deprecated Use {@link googleMapsPlaceUrl} so the user lands on the
- *  place card instead of being thrown straight into navigation. */
+/** @deprecated Use {@link googleMapsPlaceUrl}. */
 export function googleMapsNavUrl(coords: [number, number]): string {
   return googleMapsPlaceUrl(coords);
 }

@@ -82,6 +82,10 @@ export interface Stay extends POI {
   checkIn: string;
   checkOut: string;
   /** Hotel's check-in / check-out clock times, e.g. "15:00". */
+  /** True once the property is booked (so navigation can search by its name). */
+  confirmed?: boolean;
+  /** Clean name for map searches (the display name may carry a suffix). */
+  navName?: string;
   checkInTime?: string;
   checkOutTime?: string;
   nights: number;

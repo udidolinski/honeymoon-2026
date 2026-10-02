@@ -132,10 +132,14 @@ export const DICT = {
 
   /* Map popup */
   navigate: "Navigate",
-  navigate_google: "Maps",
+  navigate_google: "Google",
+  navigate_apple: "Apple",
   navigate_waze: "Waze",
-  navigate_google_aria: "Open in Google Maps and start navigating",
-  navigate_waze_aria: "Open in Waze and start navigating",
+  navigate_google_full: "Google Maps",
+  navigate_apple_full: "Apple Maps",
+  navigate_google_aria: "Open in Google Maps",
+  navigate_apple_aria: "Open in Apple Maps",
+  navigate_waze_aria: "Open in Waze",
   website: "Website",
   show_on_map: "Show on the map",
   on_the_map_short: "On the map",
@@ -195,6 +199,10 @@ export const DICT = {
   stay_highlights: "Why we picked it",
   stay_warnings: "Worth knowing",
   stay_open_booking: "Open booking",
+  stay_navigate: "Navigate",
+  stay_not_booked: "Hotel not confirmed yet — navigation points to the area. Add the hotel name once you book.",
+  airports_title: "Airports & car pickup",
+  airports_kicker: "Tap an app to start directions",
 
   /* ---------- TripStats ---------- */
   trip_stats_eyebrow: "By the numbers",

@@ -2,6 +2,7 @@ import { ExternalLink, MapPin, AlertTriangle, Check } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useMemo, useState, useCallback } from "react";
 import { stays } from "../data/stays";
+import { airports } from "../data/airports";
 import type { Stay } from "../data/types";
 import Section from "./Section";
 import { useMapFocus } from "../lib/mapContext";
@@ -219,15 +220,59 @@ export default function StaysSection() {
                     <ExternalLink size={13} /> {t("stay_open_booking")}
                   </a>
                 )}
-                <NavigateLinks name={s.name} coords={s.coords} address={s.address} size={13} />
                 <button onClick={() => focusOn(s.id)} className="icon-link">
                   <MapPin size={13} /> {t("show_on_map")}
                 </button>
+              </div>
+              <div className="mt-4">
+                <div className="text-xs uppercase tracking-wide text-ink-700/60 mb-2">{t("stay_navigate")}</div>
+                <NavigateLinks
+                  name={s.navName ?? s.name}
+                  coords={s.coords}
+                  address={s.address}
+                  byCoords={!s.confirmed}
+                  mode="directions"
+                  variant="buttons"
+                  size={14}
+                />
+                {!s.confirmed && (
+                  <p className="mt-2 text-xs text-ink-700/70">{t("stay_not_booked")}</p>
+                )}
               </div>
             </div>
           </article>
           );
         })}
+      </div>
+
+      <div className="mt-14">
+        <h3 className="font-serif text-2xl text-ink-900">{t("airports_title")}</h3>
+        <p className="text-sm text-ink-700/80 mt-1 mb-5">{t("airports_kicker")}</p>
+        <div className="grid gap-5 lg:grid-cols-2">
+          {airports.map(a => (
+            <article key={a.id} className="card-paper p-5 flex flex-col">
+              <div className="flex items-start justify-between gap-3">
+                <h4 className="font-serif text-xl text-ink-900 leading-tight">{a.name}</h4>
+                <span className="pill pill-ink shrink-0">{a.code}</span>
+              </div>
+              <div className="mt-1 text-sm text-terracotta-600 font-medium">{a.usedOn}</div>
+              <div className="mt-1 text-xs text-ink-700/70 flex items-center gap-1">
+                <MapPin size={11} /> {a.address}
+              </div>
+              {a.note && <p className="mt-2 text-sm text-ink-700/85 leading-relaxed">{a.note}</p>}
+              <div className="mt-4 pt-4 border-t border-cream-300/60">
+                <NavigateLinks
+                  name={a.name}
+                  coords={a.coords}
+                  address={a.address}
+                  mode="directions"
+                  variant="buttons"
+                  size={14}
+                />
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </Section>
   );
