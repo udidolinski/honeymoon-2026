@@ -72,6 +72,20 @@ export const tips: Tip[] = [
     severity: "info"
   },
   {
+    id: "kosher-mainland",
+    title: "Kosher food is sparse on the mainland leg — plan around Vegas",
+    body:
+      "Oakhurst, Three Rivers and Death Valley have no kosher restaurants or kosher-certified groceries at all — Fresno, about an hour from Oakhurst, is the nearest town with a Chabad-supported kosher aisle if you want to stock up before the parks. Las Vegas is the bright spot: roughly 15–18 kosher-supervised restaurants cluster on the west side of the valley, a 15–20 minute rideshare from the Strip, including Burnt Offerings (OU-certified steakhouse) and Judit Mediterranean Cuisine (Glatt, closer to the Strip) — both close on Saturday, so plan around Shabbat. There's no dedicated 'kosher hotel' on the Strip; Chabad of Southern Nevada (chabadlv.org) keeps the most current restaurant list and can help arrange Shabbat meals or lower-floor rooms at your hotel.",
+    severity: "info"
+  },
+  {
+    id: "kosher-hawaii",
+    title: "No walk-in kosher restaurant in Hawaii — book through Chabad instead",
+    body:
+      "Neither Maui nor the Big Island has a stand-alone kosher restaurant. Chabad of Maui (jewishmaui.com) prepares fresh kosher meals and Shabbat dinners by request from their Maui Mitzvah Center, and can arrange kosher grocery delivery straight to the Wailea resort. On the Big Island, Chabad Jewish Center of the Big Island in Kailua-Kona (jewishbigisland.org) hosts Shabbat and holiday meals by reservation and receives periodic kosher shipments (meat, chicken, Cholov Yisroel dairy) from the mainland. Email either Chabad house a few weeks ahead — this runs on advance reservations, not walk-in service.",
+    severity: "info"
+  },
+  {
     id: "interisland-baggage",
     title: "Inter-island flight baggage rules can be stricter",
     body:

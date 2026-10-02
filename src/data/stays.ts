@@ -18,7 +18,8 @@ export const stays: Stay[] = [
     highlights: [
       "Central Strip location, across from the Bellagio Fountains",
       "Short rideshare from LAS (about 20 minutes)",
-      "Alamo rental car is picked up on Oct 5 evening after the tour"
+      "Alamo rental car is picked up on Oct 5 evening after the tour",
+      "No on-site kosher dining — certified kosher restaurants (Burnt Offerings, Judit Mediterranean Cuisine) are a 15–20 min rideshare away, see Tips"
     ]
   },
   {
@@ -98,7 +99,8 @@ export const stays: Stay[] = [
     highlights: [
       "A suggested pick — confirm and book your own property",
       "Central for Kona town, coffee farms and Kahaluʻu Beach Park",
-      "Departure point for the Volcanoes NP, manta ray and Mauna Kea tours"
+      "Departure point for the Volcanoes NP, manta ray and Mauna Kea tours",
+      "No kosher restaurant on-site — Chabad Jewish Center of the Big Island (Kailua-Kona) arranges Shabbat/holiday meals by reservation, see Tips"
     ]
   },
   {
@@ -117,7 +119,8 @@ export const stays: Stay[] = [
     highlights: [
       "A suggested pick — confirm and book your own property",
       "Fronts Wailea Beach, walkable to several resort beaches",
-      "Central for the Road to Hana, Haleakalā and Molokini day trips"
+      "Central for the Road to Hana, Haleakalā and Molokini day trips",
+      "No kosher restaurant on-site — Chabad of Maui arranges kosher meals and grocery delivery to the resort with advance notice, see Tips"
     ]
   },
   {
@@ -136,7 +139,8 @@ export const stays: Stay[] = [
     highlights: [
       "A suggested pick — confirm and book your own property",
       "Free airport shuttle is worth prioritizing",
-      "Land 18:30, then a very early check-in the next morning (flight 08:55)"
+      "Land 18:30, then a very early check-in the next morning (flight 08:55)",
+      "Holy Sushi (kosher, Palo Alto) is about 35 min south if you want a kosher bite before the flight home"
     ]
   }
 ];

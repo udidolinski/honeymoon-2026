@@ -31,7 +31,7 @@ export const itinerary: Day[] = [
       }
     ],
     driveNotes: "LAS → Paris Las Vegas ≈ 20 min by rideshare/taxi",
-    restaurants: ["rest-m-vegas-inn-n-out"],
+    restaurants: ["rest-m-vegas-inn-n-out", "rest-m-vegas-burnt-offerings", "rest-m-vegas-judit"],
     drinkOfTheDay: {
       name: "Classic Vegas Martini",
       type: "cocktail",
@@ -105,7 +105,7 @@ export const itinerary: Day[] = [
         description: "Alamo is at the Harry Reid Rent-A-Car Center, a short shuttle/rideshare from the terminal. Have the driver's licence and a credit card in the driver's name ready, check the car over, and confirm the one-way drop-off in San Francisco (Oct 9). Then back to Paris Las Vegas for the second night."
       }
     ],
-    restaurants: ["rest-m-vegas-bacchanal"],
+    restaurants: ["rest-m-vegas-bacchanal", "rest-m-vegas-burnt-offerings", "rest-m-vegas-judit"],
     drinkOfTheDay: {
       name: "Iced coffee (non-alcoholic)",
       type: "coffee",
@@ -211,7 +211,8 @@ export const itinerary: Day[] = [
       "Fill up on gas before entering (Pahrump) and again at Stovepipe Wells; the nearest towns outside the park are far apart",
       "October days can still hit 90+°F at Badwater — carry more water than you think you'll need",
       "The drive out to Independence is long and finishes after dark — leave the park by about 15:30",
-      "America the Beautiful annual pass covers the Death Valley entrance fee and pays for itself with 3+ parks"
+      "America the Beautiful annual pass covers the Death Valley entrance fee and pays for itself with 3+ parks",
+      "No kosher restaurants or kosher-certified groceries in Death Valley, Independence or Incline — stock up in Las Vegas (Burnt Offerings or Judit Mediterranean Cuisine) before you leave"
     ],
     phrasesOfDay: [
       {
@@ -524,7 +525,8 @@ export const itinerary: Day[] = [
     dayTips: [
       "Hawaii is 3 hours behind San Francisco in October — the clocks go back on arrival, so you land earlier than you left",
       "Hawaii requires reef-safe sunscreen (no oxybenzone/octinoxate) by state law — pack it before you go, it can be pricier locally",
-      "The Kona/Kohala side of the Big Island is noticeably drier and sunnier than the windward side — pack accordingly"
+      "The Kona/Kohala side of the Big Island is noticeably drier and sunnier than the windward side — pack accordingly",
+      "No walk-in kosher restaurant on the Big Island — Chabad Jewish Center of the Big Island in Kailua-Kona (jewishbigisland.org) hosts Shabbat/holiday meals by reservation and arranges periodic kosher grocery shipments"
     ],
     phrasesOfDay: [
       {
@@ -923,7 +925,8 @@ export const itinerary: Day[] = [
     dayTips: [
       "Inter-island flights often have tighter baggage weight limits than mainland-to-Hawaii legs — check before packing",
       "Return the Kona rental car with a full tank and allow extra time for the shuttle to the terminal",
-      "Maui is windier and wetter on the east side and in the mountains — pack a light rain layer"
+      "Maui is windier and wetter on the east side and in the mountains — pack a light rain layer",
+      "No walk-in kosher restaurant on Maui — Chabad of Maui (jewishmaui.com) prepares kosher meals and can arrange grocery delivery to the Wailea resort with advance notice"
     ],
     phrasesOfDay: [
       {
@@ -1326,7 +1329,7 @@ export const itinerary: Day[] = [
         description: "Check into an airport-area hotel to rest before tomorrow's early long-haul flight home, rather than pushing straight through on minimal sleep."
       }
     ],
-    restaurants: [],
+    restaurants: ["rest-t-sfo-holy-sushi"],
     drinkOfTheDay: {
       name: "Decaf coffee (non-alcoholic)",
       type: "coffee",
