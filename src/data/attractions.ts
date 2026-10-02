@@ -105,91 +105,6 @@ export const attractions: POI[] = [
     ]
   },
 
-  // ---------- MAINLAND: SEQUOIA & KINGS CANYON ----------
-  {
-    id: "general-sherman-tree",
-    name: "General Sherman Tree",
-    category: "attraction",
-    region: "mainland",
-    shortDescription: "The largest tree on Earth by volume",
-    description:
-      "A giant sequoia in the Giant Forest, measured at roughly 275 feet tall, about 36 feet in diameter at its base, and an estimated trunk volume near 52,500 cubic feet — making it the largest known living single-stem tree on Earth by volume. Reached by a short, paved half-mile trail from the main parking area.",
-    image: "./images/general-sherman-tree.jpg",
-    imageCredit: wmCredit("General_Sherman_(tree)"),
-    website: "https://www.nps.gov/seki/planyourvisit/gse.htm",
-    address: "Giant Forest, Sequoia National Park, CA",
-    coords: [36.5786, -118.7752],
-    tags: ["nature", "family", "trail"],
-    difficulty: "easy",
-    tips: [
-      "The main trail down to the tree is paved but drops about 200 feet — the walk back up is the real workout",
-      "A wheelchair-accessible route exists from the upper parking area",
-      "Arrive early to avoid the mid-day tour-bus crowds"
-    ],
-    quizFacts: [
-      {
-        question: "By what measure is General Sherman the largest tree on Earth?",
-        correctAnswer: "Total trunk volume",
-        distractors: ["Height", "Trunk diameter alone", "Age"]
-      },
-      {
-        question: "Roughly how tall is the General Sherman Tree?",
-        correctAnswer: "About 275 feet",
-        distractors: ["About 50 feet", "About 1,000 feet", "About 700 feet"]
-      }
-    ]
-  },
-  {
-    id: "giant-forest-museum",
-    name: "Giant Forest Museum",
-    category: "attraction",
-    region: "mainland",
-    shortDescription: "A small museum on sequoia biology and fire ecology",
-    description:
-      "A compact National Park Service museum inside a historic 1920s market building, covering how giant sequoias grow, survive fire, and reproduce — a good grounding stop between tree groves.",
-    image: "./images/giant-forest-museum.jpg",
-    imageCredit: wmCredit("Sequoia_National_Park"),
-    website: "https://www.nps.gov/seki/planyourvisit/gfm.htm",
-    address: "Generals Highway, Sequoia National Park, CA",
-    coords: [36.5622, -118.7691],
-    tags: ["culture", "nature"],
-    difficulty: "easy",
-    tips: ["Free with park entry", "Good rainy-day or midday-heat alternative to the trails outside"]
-  },
-  {
-    id: "moro-rock",
-    name: "Moro Rock",
-    category: "attraction",
-    region: "mainland",
-    shortDescription: "350 steep steps to a 360-degree Sierra panorama",
-    description:
-      "A granite dome rising above the Giant Forest, climbed via a steep stairway of about 350 steps carved into the rock in the 1930s, gaining roughly 300 feet in a quarter mile. The summit delivers a sweeping view of the Great Western Divide. Narrow in places with real drop-offs — not for anyone with a fear of heights.",
-    image: "./images/moro-rock.jpg",
-    imageCredit: wmCredit("Moro_Rock"),
-    website: "https://www.nps.gov/seki/planyourvisit/moro-rock.htm",
-    address: "Moro Rock Road, Sequoia National Park, CA",
-    coords: [36.5459, -118.7686],
-    tags: ["view", "trail", "extreme"],
-    difficulty: "challenging",
-    tips: [
-      "350 steps up a narrow staircase with sheer drop-offs in places — skip it if anyone in your party has vertigo",
-      "Can ice over even in October at this elevation — check conditions at the visitor center first",
-      "Best light for the Great Western Divide view is late afternoon"
-    ],
-    quizFacts: [
-      {
-        question: "About how many steps does the Moro Rock stairway have?",
-        correctAnswer: "Around 350",
-        distractors: ["About 10", "Over 5,000", "Exactly 100"]
-      },
-      {
-        question: "What mountain range comes into view from the top of Moro Rock?",
-        correctAnswer: "The Great Western Divide",
-        distractors: ["The Rocky Mountains", "The Cascades", "The Andes"]
-      }
-    ]
-  },
-
   // ---------- MAINLAND: DEATH VALLEY ----------
   {
     id: "badwater-basin",
@@ -290,21 +205,6 @@ export const attractions: POI[] = [
   },
 
   // ---------- MAINLAND: LAS VEGAS ----------
-  {
-    id: "the-venetian-resort",
-    name: "The Venetian Resort",
-    category: "attraction",
-    region: "mainland",
-    shortDescription: "Central-Strip hotel with indoor gondola canals — a suggested pick",
-    description:
-      "A Venice-themed mega-resort near the center of the Strip, with indoor canals, gondoliers, and an enormous casino and shopping arcade. Listed here as a suggested pick — swap it for whichever Strip hotel you actually book.",
-    website: "https://www.venetianlasvegas.com/",
-    address: "3355 S Las Vegas Blvd, Las Vegas, NV",
-    coords: [36.1212, -115.1697],
-    tags: ["culture", "family"],
-    difficulty: "easy",
-    tips: ["A suggested pick — confirm and book your own Strip hotel"]
-  },
   {
     id: "bellagio-fountains",
     name: "Bellagio Fountains",

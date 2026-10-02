@@ -36,70 +36,70 @@ const HERO_PHOTOS: HeroPhoto[] = [
     place: "Tunnel View · Yosemite National Park",
     credit: "placeholder — add your own photo",
     source: "#",
-    dayNumber: 2
+    dayNumber: 5
   },
   {
     src: "./images/hero/badwater-basin-salt-flats.jpg",
     place: "Badwater Basin · Death Valley",
     credit: "placeholder — add your own photo",
     source: "#",
-    dayNumber: 4
+    dayNumber: 3
   },
   {
     src: "./images/hero/vegas-strip-night.jpg",
     place: "The Strip at night · Las Vegas",
     credit: "placeholder — add your own photo",
     source: "#",
-    dayNumber: 5
+    dayNumber: 1
   },
   {
     src: "./images/hero/antelope-canyon-light-beam.jpg",
     place: "Antelope Canyon · light beams",
     credit: "placeholder — add your own photo",
     source: "#",
-    dayNumber: 8
+    dayNumber: 2
   },
   {
     src: "./images/hero/wailea-beach-sunset.jpg",
     place: "Wailea Beach · Maui",
     credit: "placeholder — add your own photo",
     source: "#",
-    dayNumber: 10
+    dayNumber: 17
   },
   {
     src: "./images/hero/road-to-hana-waterfall.jpg",
     place: "Road to Hana · Maui",
     credit: "placeholder — add your own photo",
     source: "#",
-    dayNumber: 11
+    dayNumber: 18
   },
   {
     src: "./images/hero/haleakala-sunrise-clouds.jpg",
     place: "Haleakalā summit · above the clouds",
     credit: "placeholder — add your own photo",
     source: "#",
-    dayNumber: 12
+    dayNumber: 19
   },
   {
     src: "./images/hero/kilauea-crater-steam.jpg",
     place: "Kīlauea Crater · Hawaiʻi Volcanoes NP",
     credit: "placeholder — add your own photo",
     source: "#",
-    dayNumber: 18
+    dayNumber: 10
   },
   {
     src: "./images/hero/punaluu-black-sand-turtle.jpg",
     place: "Punaluʻu Black Sand Beach · Big Island",
     credit: "placeholder — add your own photo",
     source: "#",
-    dayNumber: 19
+    dayNumber: 11
   },
   {
     src: "./images/hero/mauna-kea-stars.jpg",
     place: "Mauna Kea · stargazing",
     credit: "placeholder — add your own photo",
     source: "#",
-    dayNumber: 21
+    dayNumber: 13
   }
 ];
 
@@ -295,7 +295,7 @@ export default function Hero() {
    *  - "before": the curated screensaver-style HERO_PHOTOS (anticipation).
    *  - "during": photos of the *featured* day's actual stops, so the hero
    *    shows what the family is doing today (or tomorrow, after 20:00).
-   *    Falls back to HERO_PHOTOS if a sparse day (Day 1 land, Day 10 fly)
+   *    Falls back to HERO_PHOTOS if a sparse day (Day 1 land, Day 26 home)
    *    happens to have no attraction photos at all.
    *  - "after":  back to HERO_PHOTOS as a memorial of all the places. */
   const photos = useMemo<HeroPhoto[]>(() => {

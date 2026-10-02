@@ -1,6 +1,6 @@
 # USA Honeymoon 2026 — Udi &amp; Miriam
 
-A static, mobile-first trip companion for Udi &amp; Miriam's honeymoon across the American West and Hawaii, **4 – 28 October 2026**. Itinerary, interactive map, attractions, stays, restaurants/supermarkets/gas stations, weather, food &amp; drink, packing/booking checklists, and an AI trip-guide chat (**Kai**). Built to be opened on the phone during the trip.
+A static, mobile-first trip companion for Udi &amp; Miriam's honeymoon across the American West and Hawaii, **4 – 29 October 2026**. Itinerary, interactive map, attractions, stays, restaurants/supermarkets/gas stations, weather, food &amp; drink, packing/booking checklists, and an AI trip-guide chat (**Kai**). Built to be opened on the phone during the trip.
 
 **This build is local-only** — there is no deployment configured. Run it with `npm run dev` and open it in a browser.
 
@@ -42,7 +42,7 @@ All content lives in plain TypeScript files under `src/data/` — no CMS, no dat
 | --- | --- |
 | `src/data/itinerary.ts` | The 25-day plan (`dayTips`, gear, drink/phrase of the day, etc.) |
 | `src/data/attractions.ts` | All sights with description, coords, official link, image path |
-| `src/data/stays.ts` | The seven trip bases (Sierra lodges, Vegas, Maui, Big Island, SFO) |
+| `src/data/stays.ts` | The seven trip bases (Vegas, Independence, Incline, San Francisco, Big Island, Maui, SFO airport) |
 | `src/data/services.ts` | Restaurants, supermarkets, gas stations near each base |
 | `src/data/dishes.ts` / `wineries.ts` | Food & drink catalog + local flavor stops (own section + map layer) |
 | `src/data/tips.ts` | Local know-how and warnings (national park pass, tipping, reef-safe sunscreen, etc.) |

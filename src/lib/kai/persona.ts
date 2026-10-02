@@ -22,16 +22,16 @@ import { formatRecentChatBlock, type ChatTurn } from "./chatHistory";
 
 const TRIP_FACTS = {
   startDate: "2026-10-04",
-  endDate: "2026-10-28",
+  endDate: "2026-10-29",
   travellers: "Udi and Miriam, honeymooners",
-  cars: "Rental car picked up at SFO, dropped off in Las Vegas",
+  cars: "Alamo rental picked up at Las Vegas airport on Oct 5 evening and dropped off at San Francisco Union Square by 18:00 on Oct 9; Budget rentals at Kona airport (Oct 11–19) and Kahului airport (Oct 19–27)",
   bases: [
-    "Oakhurst, CA (Yosemite gateway)",
-    "Three Rivers, CA (Sequoia gateway)",
-    "Furnace Creek, Death Valley",
-    "Las Vegas Strip, NV",
-    "Wailea, Maui",
+    "Paris Las Vegas, NV",
+    "Independence, CA (Eastern Sierra)",
+    "Incline Village, NV (Lake Tahoe)",
+    "Hilton San Francisco Union Square",
     "Kohala Coast, Big Island",
+    "Wailea, Maui",
     "SFO airport area"
   ],
   // Per-trip facts that AREN'T derivable from the itinerary data —
@@ -236,7 +236,7 @@ export function buildSystemPrompt(_lang: Lang): string {
     persona,
     "",
     trip,
-    `  - Dates: ${TRIP_FACTS.startDate} to ${TRIP_FACTS.endDate} (25 days, 24 nights)`,
+    `  - Dates: ${TRIP_FACTS.startDate} to ${TRIP_FACTS.endDate} (26 days, 25 nights)`,
     `  - Travellers: ${TRIP_FACTS.travellers}`,
     `  - Wheels: ${TRIP_FACTS.cars}`,
     `  - Bases: ${TRIP_FACTS.bases.join(" → ")}`,

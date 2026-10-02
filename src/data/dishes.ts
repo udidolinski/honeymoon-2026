@@ -40,8 +40,8 @@ export const dishes: Dish[] = [
     region: "mainland",
     category: "snack",
     description:
-      "The road-trip staple through Yosemite, Sequoia and Death Valley — nuts, dried fruit and beef jerky from any gas-station or general-store stop, the fuel that gets you between trailheads.",
-    tryIt: "General stores at Oakhurst, Three Rivers and Furnace Creek"
+      "The road-trip staple through Yosemite and Death Valley — nuts, dried fruit and beef jerky from any gas-station or general-store stop, the fuel that gets you between trailheads.",
+    tryIt: "General stores along US-395 and at Furnace Creek"
   },
   {
     id: "vegas-buffet-spread",

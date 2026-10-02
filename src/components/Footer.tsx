@@ -20,7 +20,7 @@ export default function Footer() {
             <span className="font-serif">{t("brand_short")}</span>
             <span className="font-serif italic text-terracotta-600">{t("brand_year")}</span>
             <span aria-hidden>·</span>
-            <span>4 — 28 October 2026</span>
+            <span>4 — 29 October 2026</span>
             <span aria-hidden>·</span>
             <span className="inline-flex items-center gap-1">
               built with <Heart size={10} className="text-terracotta-500 fill-terracotta-500" />

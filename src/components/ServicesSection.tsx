@@ -22,12 +22,12 @@ const BASES: {
   {
     id: "mainland",
     key: "services_filter_mainland",
-    sub: "Oct 4–12 · Road trip & Vegas"
+    sub: "Oct 4–11 · Vegas, Sierra & SF"
   },
   {
     id: "hawaii",
     key: "services_filter_hawaii",
-    sub: "Oct 12–27 · Maui & Big Island"
+    sub: "Oct 11–27 · Big Island & Maui"
   }
 ];
 

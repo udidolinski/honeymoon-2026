@@ -140,12 +140,12 @@ const AIRPORT_POI: POI = {
   name: "San Francisco — SFO",
   category: "airport",
   region: "transit",
-  description: "San Francisco International Airport. Arrival Oct 4 14:45, final departure Oct 28 17:45.",
-  shortDescription: "Arrival & final departure airport.",
+  description: "San Francisco International Airport. Fly to Kona Oct 11 at 07:00, back from Maui Oct 27 (land 18:30), and home to Tel Aviv Oct 28 at 08:55.",
+  shortDescription: "Hawaii departure & final departure airport.",
   coords: [37.6213, -122.3790]
 };
 
-const LAS_VEGAS_AIRPORT: [number, number] = [36.0840, -115.1537]; // LAS — inter-island jump-off point
+const LAS_VEGAS_AIRPORT: [number, number] = [36.0840, -115.1537]; // LAS — arrival airport (Oct 4, 18:35)
 const MAUI_AIRPORT: [number, number] = [20.8986, -156.4306]; // OGG
 const BIG_ISLAND_AIRPORT: [number, number] = [19.7388, -156.0456]; // KOA
 
@@ -157,7 +157,7 @@ type RouteSegment = {
   color: string;
   coords: [number, number][];
   /** Flight legs render as a long dashed great-circle-ish line rather
-   *  than a road route — used for the LAS→Maui→Big Island→SFO hops. */
+   *  than a road route — used for the SFO→Big Island→Maui→SFO hops. */
   isFlight?: boolean;
 };
 
@@ -168,11 +168,13 @@ const ROUTE_SEGMENTS: RouteSegment[] = [
     dayKey: "map_seg_arrival_short",
     color: "#A23E2A", // brick — matches Stays
     coords: [
-      AIRPORT_POI.coords,
-      [37.3216, -119.6491], // Oakhurst / Yosemite gateway
-      [36.4386, -118.8987], // Three Rivers / Sequoia gateway
-      [36.4620, -116.8706], // Furnace Creek / Death Valley
-      [36.1212, -115.1697] // Las Vegas Strip
+      LAS_VEGAS_AIRPORT,
+      [36.1125, -115.1707], // Paris Las Vegas
+      [36.4620, -116.8706], // Death Valley
+      [36.8010, -118.1996], // Independence
+      [37.9500, -119.1000], // Tioga Pass / Yosemite east
+      [39.2513, -119.9526], // Incline Village
+      [37.7861, -122.4104] // Hilton Union Square, San Francisco
     ]
   },
   {
@@ -182,9 +184,9 @@ const ROUTE_SEGMENTS: RouteSegment[] = [
     color: "#C68A2A", // bronze — matches Attractions
     isFlight: true,
     coords: [
-      LAS_VEGAS_AIRPORT,
-      MAUI_AIRPORT,
-      BIG_ISLAND_AIRPORT
+      AIRPORT_POI.coords,
+      BIG_ISLAND_AIRPORT,
+      MAUI_AIRPORT
     ]
   },
   {
@@ -193,7 +195,7 @@ const ROUTE_SEGMENTS: RouteSegment[] = [
     dayKey: "map_seg_departure_short",
     color: "#5C7244", // cypress — matches Restaurants
     isFlight: true,
-    coords: [BIG_ISLAND_AIRPORT, AIRPORT_POI.coords]
+    coords: [MAUI_AIRPORT, AIRPORT_POI.coords]
   }
 ];
 

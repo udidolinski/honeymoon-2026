@@ -161,7 +161,7 @@ function buildQ(opts: {
 const TRIP_CULTURE_FACTS: AttractionQuizFact[] = [
   {
     question: "How many US national parks does this trip visit?",
-    correctAnswer: "Four — Yosemite, Sequoia, Death Valley, and Hawaiʻi Volcanoes",
+    correctAnswer: "Three — Yosemite, Death Valley, and Hawaiʻi Volcanoes",
     distractors: ["Just one", "Ten", "None — they're all state parks"]
   },
   {

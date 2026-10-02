@@ -1,8 +1,8 @@
 import { itinerary } from "../data/itinerary";
 import type { Day } from "../data/types";
 
-export const TRIP_START = new Date("2026-08-17T00:00:00+02:00");
-export const TRIP_END = new Date("2026-08-26T23:59:59+02:00");
+export const TRIP_START = new Date("2026-10-04T18:35:00-07:00");
+export const TRIP_END = new Date("2026-10-29T23:59:59+02:00");
 
 export interface CountdownParts {
   totalMs: number;
@@ -39,12 +39,12 @@ function startOfDayLocal(d: Date): Date {
   return new Date(d.getFullYear(), d.getMonth(), d.getDate());
 }
 
-/** The trip is structured as 10 day-chapters, each centered on the
+/** The trip is structured as 26 day-chapters, each centered on the
  *  morning + afternoon. By 20:00 local time the day's plan is essentially
  *  done — dinner is starting, the family is winding down — so the hero
  *  flips from "Today" to "Tomorrow" so you wake up to the next chapter
  *  already on screen. The local hour matches what the family experiences
- *  on the ground (in Italy during the trip; "before"/"after" never use
+ *  on the ground (in the US during the trip; "before"/"after" never use
  *  this anyway). */
 function isAfterEveningCutoff(now: Date): boolean {
   return now.getHours() >= 20;

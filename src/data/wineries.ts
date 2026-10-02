@@ -7,18 +7,6 @@ import type { Winery } from "./types";
 export const wineries: Winery[] = [
   // ============== MAINLAND ==============
   {
-    id: "flavor-m-south-gate-brewing",
-    name: "South Gate Brewing Co.",
-    region: "mainland",
-    appellation: "Sierra Nevada foothills craft beer",
-    description:
-      "A locally-owned brewery in Oakhurst, right at Yosemite's south gate — a relaxed first or last stop of the mainland leg, pairing house-brewed pale ales and IPAs with a solid pub kitchen.",
-    website: "https://www.southgatebrewco.com/",
-    address: "40233 Enterprise Dr, Oakhurst, CA",
-    coords: [37.3211, -119.6508],
-    bookingNote: "Walk-ins welcome, no reservation needed."
-  },
-  {
     id: "flavor-m-vegas-cocktail-bar",
     name: "Classic Vegas cocktail lounge",
     region: "mainland",

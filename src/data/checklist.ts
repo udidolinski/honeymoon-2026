@@ -19,7 +19,7 @@ export const bookingChecklist: ChecklistItem[] = [
   {
     id: "annual-pass-plan",
     text: "Plan to buy the America the Beautiful annual pass at the first park",
-    detail: "Covers Yosemite, Sequoia, Death Valley and Hawaiʻi Volcanoes — $80 for the vehicle, pays for itself after about three park entries. Not valid at Grand Canyon West (tribal land, separate fees)."
+    detail: "Covers Yosemite, Death Valley and Hawaiʻi Volcanoes — $80 for the vehicle, pays for itself after about three park entries (Yosemite and Death Valley are the two mainland parks on this route). Not valid at Grand Canyon West (tribal land, separate fees)."
   },
   {
     id: "us-license-check",
@@ -28,8 +28,8 @@ export const bookingChecklist: ChecklistItem[] = [
   },
   {
     id: "rental-car-confirm",
-    text: "Confirm the SFO rental car booking",
-    detail: "Pickup at SFO on day 1, drop-off in Las Vegas before day 8 — confirm the one-way drop-off fee and that the driver's card matches the reservation name."
+    text: "Confirm the Alamo (Las Vegas → San Francisco) and Budget (Kona, Maui) rental bookings",
+    detail: "Alamo pickup at Las Vegas airport on Oct 5 evening, one-way drop-off at San Francisco Union Square by 18:00 on Oct 9 — confirm the one-way fee and Union Square location hours. Budget at Kona airport (Oct 11–19) and Kahului airport (Oct 19–27), each returned at the same airport. The driver's card must match the reservation name."
   },
   {
     id: "grand-canyon-antelope-tour",
@@ -44,7 +44,7 @@ export const bookingChecklist: ChecklistItem[] = [
   {
     id: "interisland-flights",
     text: "Book the inter-island and return flights",
-    detail: "Las Vegas → Maui (likely via Honolulu), Maui → Big Island, and Big Island → San Francisco — confirm routing and baggage allowances for each leg."
+    detail: "San Francisco → Kona (Oct 11, 07:00–09:30), Kona → Maui (Oct 19, 12:50–13:30), and Maui → San Francisco (Oct 27, 10:30–18:30), then SFO → Tel Aviv (Oct 28, 08:55, landing Oct 29 at 14:15) — confirm baggage allowances for each leg."
   },
   {
     id: "manta-ray-tour",
@@ -102,7 +102,7 @@ export const packingChecklist: ChecklistItem[] = [
   {
     id: "hiking-shoes",
     text: "Sturdy walking/hiking shoes",
-    detail: "For the Yosemite valley floor, Moro Rock's stairs, and any Road to Hana wading."
+    detail: "For the Yosemite valley floor, Death Valley's salt flats, and any Road to Hana wading."
   },
   {
     id: "swimwear",

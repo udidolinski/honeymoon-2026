@@ -5,7 +5,7 @@ export const tips: Tip[] = [
     id: "annual-pass",
     title: "Buy the America the Beautiful annual pass at the first park",
     body:
-      "This trip visits Yosemite, Sequoia, Death Valley and Hawaiʻi Volcanoes — all National Park Service sites where a single $80 America the Beautiful annual pass covers entrance for the whole vehicle, and pays for itself after about three parks. Buy it at the entrance station of the first park you visit. Important exception: Grand Canyon West is Hualapai tribal land, NOT part of the National Park System, so the pass does NOT cover it — expect separate tribal entry fees there.",
+      "This trip visits Yosemite, Death Valley and Hawaiʻi Volcanoes — all National Park Service sites where a single $80 America the Beautiful annual pass covers entrance for the whole vehicle, and pays for itself after about three parks (Grand Canyon West is tribal land and not included). Buy it at the entrance station of the first park you visit. Important exception: Grand Canyon West is Hualapai tribal land, NOT part of the National Park System, so the pass does NOT cover it — expect separate tribal entry fees there.",
     severity: "info"
   },
   {

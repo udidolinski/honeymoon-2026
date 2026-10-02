@@ -24,18 +24,18 @@ export const emergencyGroups: EmergencyGroup[] = [
     title: "Hospitals — mainland leg",
     items: [
       {
-        label: "Community Regional Medical Center — Fresno",
-        value: "2823 Fresno St, Fresno, CA",
-        detail: "Major hospital nearest Oakhurst/Yosemite, full ER. ≈ 1 h from Oakhurst",
+        label: "Incline Village Community Hospital",
+        value: "880 Alder Ave, Incline Village, NV",
+        detail: "Nearest hospital to the Incline Village / Lake Tahoe stay",
         type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=36.7522,-119.7864"
+        link: "https://www.google.com/maps/search/?api=1&query=Incline+Village+Community+Hospital"
       },
       {
-        label: "Kaweah Health Medical Center — Visalia",
-        value: "400 W Mineral King Ave, Visalia, CA",
-        detail: "Nearest major hospital to Three Rivers/Sequoia. ≈ 40 min",
+        label: "Southern Inyo Hospital — Lone Pine",
+        value: "501 E Locust St, Lone Pine, CA",
+        detail: "Nearest hospital to Independence on US-395. ≈ 30 min south",
         type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=36.3302,-119.2921"
+        link: "https://www.google.com/maps/search/?api=1&query=Southern+Inyo+Hospital+Lone+Pine"
       },
       {
         label: "Desert View Hospital — Pahrump, NV",
