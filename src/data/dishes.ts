@@ -1,4 +1,5 @@
 import type { Dish } from "./types";
+import { unsplashCredit } from "./credits";
 
 /** Food & drink worth chasing on this trip. "mainland" = the road-trip +
  *  Vegas leg, "hawaii" = Maui + Big Island, "trip" = found on both halves. */
@@ -13,11 +14,7 @@ export const dishes: Dish[] = [
       "A thick milkshake blended with medjool dates — a Mojave/Coachella Valley classic, sold at roadside stands near desert date farms. Cool, sweet, and exactly what you want after a hot walk on the Badwater salt flats.",
     tryIt: "Roadside stands near Death Valley and along the desert highways",
     image: "./images/food-date-shake.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Milkshake"
-    }
+    imageCredit: unsplashCredit("Sebastian Coman Photography (@sebastiancoman)", "rwBJaJdesGg")
   },
   {
     id: "in-n-out-double-double",
@@ -28,11 +25,7 @@ export const dishes: Dish[] = [
       "The classic California/Nevada road-trip burger — two patties, two slices of cheese, a simple 'animal style' upgrade if you know to ask. A fun, un-fussy American stop between national parks.",
     tryIt: "In-N-Out Burger, Las Vegas Strip location",
     image: "./images/food-in-n-out.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/In-N-Out_Burger"
-    }
+    imageCredit: unsplashCredit("Thomas Habr (@thomashabr)", "MjMLAst5pUI")
   },
   {
     id: "sierra-trail-mix",
@@ -64,11 +57,7 @@ export const dishes: Dish[] = [
       "Diced raw fish (usually ahi tuna) tossed in soy, sesame oil and scallions over rice — Hawaii's signature everyday dish, sold at grocery stores, gas stations and dedicated poke shops alike.",
     tryIt: "Da Poke Shack, Kailua-Kona",
     image: "./images/food-poke.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Poke_(dish)"
-    }
+    imageCredit: unsplashCredit("Sebastian Doll (@sebonbali)", "liRzVVBbxnM")
   },
   {
     id: "shave-ice",
@@ -79,11 +68,7 @@ export const dishes: Dish[] = [
       "Finely shaved ice soaked in bright tropical syrups — not to be confused with a mainland snow cone, the texture is famously fluffy and fine. A classic hot-day treat on both Maui and the Big Island.",
     tryIt: "Roadside shave ice stands, Kihei and Kailua-Kona",
     image: "./images/food-shave-ice.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Shave_ice"
-    }
+    imageCredit: unsplashCredit("Maria Klichik (@switchinglanes)", "s6x3z_vDciw")
   },
   {
     id: "malasada",
@@ -94,11 +79,7 @@ export const dishes: Dish[] = [
       "A Portuguese-Hawaiian fried doughnut, egg-rich and rolled in sugar, no hole in the middle. A beloved local sweet treat and a fun grab on a Lahaina or Kona walk.",
     tryIt: "Bakeries in Lahaina and Kailua-Kona",
     image: "./images/food-malasada.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Malasada"
-    }
+    imageCredit: unsplashCredit("Gerold Hinzen (@geroldhinzen)", "9Dc427INvlI")
   },
   {
     id: "loco-moco",

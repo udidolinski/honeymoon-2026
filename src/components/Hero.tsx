@@ -26,80 +26,91 @@ interface HeroPhoto {
   dayNumber?: number;
 }
 
-// Placeholder filenames matching the destination's real POIs — the actual
-// photo files aren't included in this build (see public/images/README.md).
-// PoiImage renders a styled gradient fallback for any missing src, so the
-// hero degrades gracefully until real photos are dropped in.
+// Home-page carousel shown before and after the trip. The first photo is the
+// "special" main image; the rest are places on the route (all Unsplash).
 const HERO_PHOTOS: HeroPhoto[] = [
   {
-    src: "./images/hero/yosemite-tunnel-view-sunrise.jpg",
+    src: "./images/hero/main-honeymoon.jpg",
+    place: "Haleakalā sunrise · Maui",
+    credit: "Tevin Trinh · Unsplash License",
+    source: "https://unsplash.com/photos/ygfYm0C1yrg"
+  },
+  {
+    src: "./images/yosemite-tunnel-view.jpg",
     place: "Tunnel View · Yosemite National Park",
-    credit: "placeholder — add your own photo",
-    source: "#",
+    credit: "jms (@jmsdono) · Unsplash License",
+    source: "https://unsplash.com/photos/kFHz9Xh3PPU",
     dayNumber: 5
   },
   {
-    src: "./images/hero/badwater-basin-salt-flats.jpg",
-    place: "Badwater Basin · Death Valley",
-    credit: "placeholder — add your own photo",
-    source: "#",
+    src: "./images/mesquite-flat-dunes.jpg",
+    place: "Mesquite Flat Dunes · Death Valley",
+    credit: "Steve Gribble (@steve_g_) · Unsplash License",
+    source: "https://unsplash.com/photos/iZirkCavoSY",
     dayNumber: 3
   },
   {
-    src: "./images/hero/vegas-strip-night.jpg",
-    place: "The Strip at night · Las Vegas",
-    credit: "placeholder — add your own photo",
-    source: "#",
+    src: "./images/las-vegas-paris.jpg",
+    place: "Paris Las Vegas · the Strip at night",
+    credit: "Parsa Mahmoudi · Unsplash License",
+    source: "https://unsplash.com/photos/PYaP4awj9Uc",
     dayNumber: 1
   },
   {
-    src: "./images/hero/antelope-canyon-light-beam.jpg",
-    place: "Antelope Canyon · light beams",
-    credit: "placeholder — add your own photo",
-    source: "#",
+    src: "./images/antelope-canyon.jpg",
+    place: "Antelope Canyon",
+    credit: "Donald Giannatti (@wizwow) · Unsplash License",
+    source: "https://unsplash.com/photos/nBSzDA8qZzA",
     dayNumber: 2
   },
   {
-    src: "./images/hero/wailea-beach-sunset.jpg",
-    place: "Wailea Beach · Maui",
-    credit: "placeholder — add your own photo",
-    source: "#",
-    dayNumber: 17
+    src: "./images/lake-tahoe.jpg",
+    place: "Lake Tahoe · Incline Village",
+    credit: "Austin Schmid · Unsplash License",
+    source: "https://unsplash.com/photos/pp0Joqv3Y4s",
+    dayNumber: 4
+  },
+  {
+    src: "./images/san-francisco-cable-car.jpg",
+    place: "San Francisco · cable car",
+    credit: "Amogh Manjunath (@therealamogh) · Unsplash License",
+    source: "https://unsplash.com/photos/HksFlo1t8iA",
+    dayNumber: 6
+  },
+  {
+    src: "./images/punaluu-black-sand-beach.jpg",
+    place: "Punaluʻu Black Sand Beach · Big Island",
+    credit: "John Ko (@jko001) · Unsplash License",
+    source: "https://unsplash.com/photos/8h_i2gTa6Ps",
+    dayNumber: 11
+  },
+  {
+    src: "./images/kilauea-crater.jpg",
+    place: "Kīlauea · Hawaiʻi Volcanoes NP",
+    credit: "James Lee (@picsbyjameslee) · Unsplash License",
+    source: "https://unsplash.com/photos/iujjIfsPBqE",
+    dayNumber: 10
+  },
+  {
+    src: "./images/mauna-kea-summit.jpg",
+    place: "Mauna Kea · above the clouds",
+    credit: "Alex Eckermann (@alexeckermann) · Unsplash License",
+    source: "https://unsplash.com/photos/eLjFKlrv3iU",
+    dayNumber: 13
   },
   {
     src: "./images/hero/road-to-hana-waterfall.jpg",
     place: "Road to Hana · Maui",
-    credit: "placeholder — add your own photo",
-    source: "#",
+    credit: "Roberto Nickson (@rpnickson) · Unsplash License",
+    source: "https://unsplash.com/photos/aBGaNV3E0Mc",
     dayNumber: 18
   },
   {
-    src: "./images/hero/haleakala-sunrise-clouds.jpg",
-    place: "Haleakalā summit · above the clouds",
-    credit: "placeholder — add your own photo",
-    source: "#",
-    dayNumber: 19
-  },
-  {
-    src: "./images/hero/kilauea-crater-steam.jpg",
-    place: "Kīlauea Crater · Hawaiʻi Volcanoes NP",
-    credit: "placeholder — add your own photo",
-    source: "#",
-    dayNumber: 10
-  },
-  {
-    src: "./images/hero/punaluu-black-sand-turtle.jpg",
-    place: "Punaluʻu Black Sand Beach · Big Island",
-    credit: "placeholder — add your own photo",
-    source: "#",
-    dayNumber: 11
-  },
-  {
-    src: "./images/hero/mauna-kea-stars.jpg",
-    place: "Mauna Kea · stargazing",
-    credit: "placeholder — add your own photo",
-    source: "#",
-    dayNumber: 13
+    src: "./images/wailea-beach.jpg",
+    place: "Maui south shore at sunset",
+    credit: "Ganapathy Kumar (@gkumar2175) · Unsplash License",
+    source: "https://unsplash.com/photos/7782WXBriyM",
+    dayNumber: 17
   }
 ];
 

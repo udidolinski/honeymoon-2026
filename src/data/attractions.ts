@@ -52,7 +52,7 @@ export const attractions: POI[] = [
     description:
       "The seven-mile-long glacially carved valley at the heart of the park — open meadows ringed by sheer granite walls thousands of feet high, with a free shuttle looping between trailheads, viewpoints and campgrounds.",
     image: "./images/yosemite-valley-floor.jpg",
-    imageCredit: wmCredit("Yosemite_Valley"),
+    imageCredit: unsplashCredit("Bailey Zindel (@baileyzindel)", "NRQV-hBF10M"),
     website: "https://www.nps.gov/yose/planyourvisit/valleyshuttle.htm",
     address: "Yosemite Valley, Yosemite National Park, CA",
     coords: [37.7459, -119.5936],
@@ -72,7 +72,7 @@ export const attractions: POI[] = [
     description:
       "A 620-foot waterfall at the valley's western end, reachable via a short, easy paved path. Flow varies enormously by season — a thundering, wind-blown veil in spring snowmelt, often reduced to a trickle or dry by October.",
     image: "./images/bridalveil-fall.jpg",
-    imageCredit: wmCredit("Bridalveil_Fall"),
+    imageCredit: unsplashCredit("Michael & Diane Weidner (@michaelbweidner)", "Q5vyZMKEoSw"),
     website: "https://www.nps.gov/yose/planyourvisit/bridalveil.htm",
     address: "Bridalveil Fall Trail, Yosemite National Park, CA",
     coords: [37.7168, -119.6483],
@@ -93,7 +93,7 @@ export const attractions: POI[] = [
     description:
       "A dramatic overlook above the valley, face-to-face with Half Dome and looking down onto Vernal and Nevada Falls. Glacier Point Road typically closes for the season with the first significant snowfall — sometimes as early as late October, so check conditions before the drive.",
     image: "./images/glacier-point.jpg",
-    imageCredit: wmCredit("Glacier_Point"),
+    imageCredit: unsplashCredit("Aniket Deole (@anik3t)", "K8whBKGYjZQ"),
     website: "https://www.nps.gov/yose/planyourvisit/glacierpoint.htm",
     address: "Glacier Point Road, Yosemite National Park, CA",
     coords: [37.7290, -119.5742],
@@ -116,7 +116,7 @@ export const attractions: POI[] = [
     description:
       "A vast basin of crusted salt flats sitting 282 feet below sea level, the lowest point in North America. A boardwalk leads out onto the salt crust, with the Panamint Range rising across the valley and a small sign on the cliff above marking sea level, far overhead.",
     image: "./images/badwater-basin.jpg",
-    imageCredit: wmCredit("Badwater_Basin"),
+    imageCredit: unsplashCredit("Aveedibya Dey (@aveedibya)", "bGgVmTWjHIQ"),
     website: "https://www.nps.gov/deva/planyourvisit/badwater-basin.htm",
     address: "Badwater Road, Death Valley National Park, CA",
     coords: [36.2500, -116.8258],
@@ -149,7 +149,7 @@ export const attractions: POI[] = [
     description:
       "A one-way scenic drive (Artist's Drive) through hills colored by oxidized volcanic and metamorphic minerals — iron oxides for red and pink, chlorite for green, manganese for purple. Best seen in the softer light of late afternoon.",
     image: "./images/artists-palette.jpg",
-    imageCredit: wmCredit("Artist%27s_Palette"),
+    imageCredit: unsplashCredit("Zoshua Colah (@zoshuacolah)", "XcNrtTFiCHg"),
     website: "https://www.nps.gov/deva/planyourvisit/artists-drive.htm",
     address: "Artist's Drive, Death Valley National Park, CA",
     coords: [36.3894, -116.8394],
@@ -170,7 +170,7 @@ export const attractions: POI[] = [
     description:
       "A short paved path climbs to an overlook above a maze of eroded golden and brown badlands, with Manly Beacon's distinctive spire rising from the foreground. One of Death Valley's most photographed sunset locations.",
     image: "./images/zabriskie-point.jpg",
-    imageCredit: wmCredit("Zabriskie_Point"),
+    imageCredit: unsplashCredit("Valeriia Neganova (@neganova)", "Sn9-Q6Z18z0"),
     website: "https://www.nps.gov/deva/planyourvisit/zabriskie-point.htm",
     address: "CA-190, Death Valley National Park, CA",
     coords: [36.4269, -116.8117],
@@ -215,7 +215,7 @@ export const attractions: POI[] = [
     description:
       "A free, choreographed water, light and music show on the eight-acre lake in front of the Bellagio hotel — jets shoot up to 460 feet in time with the soundtrack, running every 15–30 minutes through the afternoon and evening.",
     image: "./images/bellagio-fountains.jpg",
-    imageCredit: wmCredit("Fountains_of_Bellagio"),
+    imageCredit: unsplashCredit("Fabio Sasso (@abduzeedo)", "aHMc5GQbaqo"),
     website: "https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html",
     address: "3600 S Las Vegas Blvd, Las Vegas, NV",
     coords: [36.1126, -115.1767],
@@ -235,7 +235,7 @@ export const attractions: POI[] = [
     description:
       "The historic downtown core of Las Vegas, now a pedestrian mall covered by a massive curved LED canopy that runs free light-and-sound shows on the hour after dark — a grittier, more old-school contrast to the polished modern Strip.",
     image: "./images/fremont-street-experience.jpg",
-    imageCredit: wmCredit("Fremont_Street_Experience"),
+    imageCredit: unsplashCredit("Jordi Vich Navarro (@jvich)", "CjAYVcDb5qg"),
     website: "https://www.vegasexperience.com/",
     address: "Fremont Street, Las Vegas, NV",
     coords: [36.1699, -115.1436],
@@ -252,7 +252,7 @@ export const attractions: POI[] = [
     description:
       "A striking sandstone escarpment about 25 minutes from the Strip, managed by the Bureau of Land Management (not the National Park Service). A 13-mile one-way scenic drive winds past red and white striped cliffs, with pullouts for short hikes and photos.",
     image: "./images/red-rock-canyon.jpg",
-    imageCredit: wmCredit("Red_Rock_Canyon_National_Conservation_Area"),
+    imageCredit: unsplashCredit("Daniel Halseth (@dhalseth)", "Db6_B6K71wQ"),
     website: "https://www.blm.gov/visit/red-rock-canyon",
     address: "Red Rock Canyon Scenic Dr, Las Vegas, NV",
     coords: [36.1357, -115.4269],
@@ -274,7 +274,7 @@ export const attractions: POI[] = [
     description:
       "A section of the western Grand Canyon rim managed by the Hualapai Tribe, not the National Park Service — Eagle Point's overlooks are named for a rock formation resembling an eagle in flight, with the Skywalk glass bridge available as a paid add-on for those who want to walk out over the canyon edge.",
     image: "./images/grand-canyon-west.jpg",
-    imageCredit: wmCredit("Grand_Canyon_West"),
+    imageCredit: unsplashCredit("Tim Hart (@timhart0421)", "MMEryLDqkXY"),
     website: "https://grandcanyonwest.com/",
     address: "Grand Canyon West, Peach Springs, AZ",
     coords: [35.9743, -113.8114],
@@ -308,7 +308,7 @@ export const attractions: POI[] = [
     description:
       "A narrow, deep sandstone slot canyon on Navajo land near Page, Arizona, carved over millennia by flash floods. Light beams stream down through narrow openings at certain times of day, especially prized in Upper Antelope Canyon. Access is only via guided Navajo-led tours, which sell out well in advance.",
     image: "./images/antelope-canyon.jpg",
-    imageCredit: wmCredit("Antelope_Canyon"),
+    imageCredit: unsplashCredit("Donald Giannatti (@wizwow)", "nBSzDA8qZzA"),
     website: "https://www.navajonationparks.org/tribal-parks/antelope-canyon/",
     address: "Antelope Canyon, near Page, AZ",
     coords: [36.8619, -111.3743],
@@ -344,7 +344,7 @@ export const attractions: POI[] = [
     description:
       "A broad, gently sloping gold-sand beach along Maui's south shore, fronting the Wailea resort strip — generally calm swimming with good snorkeling near the rocky points at either end.",
     image: "./images/wailea-beach.jpg",
-    imageCredit: wmCredit("Wailea,_Hawaii"),
+    imageCredit: unsplashCredit("Ganapathy Kumar (@gkumar2175)", "7782WXBriyM"),
     website: "https://www.gohawaii.com/islands/maui/regions/wailea",
     address: "Wailea Beach, Wailea, Maui, HI",
     coords: [20.6867, -156.4406],
@@ -364,7 +364,7 @@ export const attractions: POI[] = [
     description:
       "The first major waterfall stop on the Hana Highway, reached by a short, easy walk from a roadside fruit stand — a gentle introduction to the jungle scenery of the drive ahead, with a swimmable pool below the falls.",
     image: "./images/twin-falls-maui.jpg",
-    imageCredit: wmCredit("Twin_Falls_(Hawaii)"),
+    imageCredit: unsplashCredit("Rina Miele (@honeydesign)", "zu9R0_7CD3E"),
     address: "Hana Highway, Haiku, Maui, HI",
     coords: [20.9308, -156.2308],
     tags: ["water", "family", "trail"],
@@ -380,7 +380,7 @@ export const attractions: POI[] = [
     description:
       "A striking black-sand beach formed from cooled lava, framed by a sea arch and a lava-tube sea cave, plus a short section of the ancient King's Highway coastal trail. Hawaii state parks require an advance reservation for both parking and entry.",
     image: "./images/waianapanapa-black-sand.jpg",
-    imageCredit: wmCredit("Waianapanapa_State_Park"),
+    imageCredit: unsplashCredit("Zane Persaud (@zapsizzle)", "u-9j-dlWVJQ"),
     website: "https://dlnr.hawaii.gov/dsp/parks/maui/waianapanapa-state-park/",
     address: "Waiʻānapanapa State Park, Hana, Maui, HI",
     coords: [20.7864, -156.0011],
@@ -467,7 +467,7 @@ export const attractions: POI[] = [
     description:
       "A crescent-shaped, partially submerged volcanic crater about three miles off Maui's coast, protected as a marine life conservation district. Its sheltered, exceptionally clear water makes it one of Maui's best snorkel and dive sites, reached only by boat.",
     image: "./images/molokini-crater.jpg",
-    imageCredit: wmCredit("Molokini"),
+    imageCredit: unsplashCredit("Yale Cohen (@coheny)", "9lgHTAvxO0U"),
     website: "https://dlnr.hawaii.gov/dar/marine-managed-areas/molokini-shoal-marine-life-conservation-district/",
     address: "Molokini, off Maui, HI",
     coords: [20.6317, -156.4972],
@@ -502,7 +502,7 @@ export const attractions: POI[] = [
     description:
       "A tour of a working coffee farm on the narrow volcanic-slope strip between roughly 800 and 2,500 feet elevation known as the Kona coffee belt — the only place in the United States where coffee is grown commercially at scale. Tours typically end with a tasting.",
     image: "./images/kona-coffee-farm.jpg",
-    imageCredit: wmCredit("Kona_coffee"),
+    imageCredit: unsplashCredit("Clint McKoy (@clintmckoy)", "h28p96ICizo"),
     website: "https://www.konacoffeefarmers.org/",
     address: "Kona coffee belt, Holualoa, HI",
     coords: [19.6208, -155.9411],
@@ -566,7 +566,7 @@ export const attractions: POI[] = [
     description:
       "A striking beach of black sand formed from fragmented cooled lava, on the Big Island's southeast coast — also one of the best-known places to see Hawaiian green sea turtles (honu) resting on the shore. Keep a respectful distance; touching or approaching them is illegal.",
     image: "./images/punaluu-black-sand-beach.jpg",
-    imageCredit: wmCredit("Punalu%CA%BBu_Beach"),
+    imageCredit: unsplashCredit("John Ko (@jko001)", "8h_i2gTa6Ps"),
     website: "https://www.gohawaii.com/islands/hawaii-big-island/regions/kau/punaluu-beach-park",
     address: "Punaluʻu Beach Rd, Naalehu, HI",
     coords: [19.1372, -155.5006],
@@ -583,7 +583,7 @@ export const attractions: POI[] = [
     description:
       "Ka Lae (South Point) is the southernmost point in the United States. Nearby, a long walk or rough 4WD track leads to Papakōlea Green Sand Beach, one of only a handful of green-sand beaches in the world, colored by olivine crystals eroded from a volcanic cinder cone.",
     image: "./images/south-point-green-sand.jpg",
-    imageCredit: wmCredit("Papak%C5%8Dlea_Beach"),
+    imageCredit: unsplashCredit("David Clark (@forawin)", "LREnG2DXq4U"),
     address: "South Point Rd, Naalehu, HI",
     coords: [18.9105, -155.6811],
     tags: ["nature", "extreme", "view"],
@@ -602,7 +602,7 @@ export const attractions: POI[] = [
     description:
       "The Big Island's signature nighttime ocean experience — boats anchor off the Kona coast after dark and shine lights into the water, drawing plankton and, in turn, giant manta rays that glide and loop just beneath snorkelers holding onto a lit surface float.",
     image: "./images/manta-ray-night-snorkel.jpg",
-    imageCredit: wmCredit("Manta_ray"),
+    imageCredit: unsplashCredit("Kinø", "-nTYiNWjXk0"),
     website: "https://www.gohawaii.com/islands/hawaii-big-island/things-do",
     address: "Off Keauhou Bay, Kona, HI",
     coords: [19.5586, -155.9678],
@@ -620,7 +620,7 @@ export const attractions: POI[] = [
     description:
       "The Big Island's tallest peak and one of the best astronomical observing sites on Earth. The Visitor Information Station sits at 9,200 feet, the highest point most visitors can drive to without 4WD; the true summit and observatories above require a 4WD vehicle, and a guided tour is strongly recommended over self-driving given the altitude, cold and darkness.",
     image: "./images/mauna-kea-summit.jpg",
-    imageCredit: wmCredit("Mauna_Kea"),
+    imageCredit: unsplashCredit("Alex Eckermann (@alexeckermann)", "eLjFKlrv3iU"),
     website: "https://www.imiloahawaii.org/maunakeavisitorcenter",
     address: "Mauna Kea Access Rd, Hilo, HI",
     coords: [19.8207, -155.4681],
@@ -649,7 +649,7 @@ export const attractions: POI[] = [
     description:
       "A calm, shallow, reef-protected beach right off the Kona coast road — full of tropical reef fish and commonly visited by resting honu (green sea turtles), with lifeguards on duty and easy shore access, making it one of the best beginner snorkel spots on the island.",
     image: "./images/kahaluu-beach-park.jpg",
-    imageCredit: wmCredit("Kahalu%CA%BBu_Beach_Park"),
+    imageCredit: unsplashCredit("Sarah Lee (@hisarahlee)", "PkHEqZiIYoo"),
     address: "78-6710 Alii Dr, Kailua-Kona, HI",
     coords: [19.5661, -155.9683],
     tags: ["water", "family"],
