@@ -27,8 +27,8 @@ const TRIP_FACTS = {
   cars: "Alamo rental picked up at Las Vegas airport on Oct 5 evening and dropped off at San Francisco Union Square by 18:00 on Oct 9; Budget rentals at Kona airport (Oct 11–19) and Kahului airport (Oct 19–27)",
   bases: [
     "Paris Las Vegas, NV",
-    "Independence, CA (Eastern Sierra)",
-    "Incline Village, NV (Lake Tahoe)",
+    "Winnedumah Hotel, Independence, CA (Oct 6, check-in 15:00, check-out 11:00)",
+    "Cedar Lodge, El Portal, CA at Yosemite west gate (Oct 7-9, check-in 16:00, check-out 11:00)",
     "Hilton San Francisco Union Square",
     "Kohala Coast, Big Island",
     "Wailea, Maui",

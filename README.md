@@ -42,7 +42,7 @@ All content lives in plain TypeScript files under `src/data/` — no CMS, no dat
 | --- | --- |
 | `src/data/itinerary.ts` | The 25-day plan (`dayTips`, gear, drink/phrase of the day, etc.) |
 | `src/data/attractions.ts` | All sights with description, coords, official link, image path |
-| `src/data/stays.ts` | The seven trip bases (Vegas, Independence, Incline, San Francisco, Big Island, Maui, SFO airport) |
+| `src/data/stays.ts` | The seven trip bases (Vegas, Independence, El Portal, San Francisco, Big Island, Maui, SFO airport) |
 | `src/data/services.ts` | Restaurants, supermarkets, gas stations near each base |
 | `src/data/dishes.ts` / `wineries.ts` | Food & drink catalog + local flavor stops (own section + map layer) |
 | `src/data/tips.ts` | Local know-how and warnings (national park pass, tipping, reef-safe sunscreen, etc.) |

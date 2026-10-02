@@ -64,11 +64,11 @@ const HERO_PHOTOS: HeroPhoto[] = [
     dayNumber: 2
   },
   {
-    src: "./images/lake-tahoe.jpg",
-    place: "Lake Tahoe · Incline Village",
-    credit: "Austin Schmid · Unsplash License",
-    source: "https://unsplash.com/photos/pp0Joqv3Y4s",
-    dayNumber: 4
+    src: "./images/yosemite-valley-floor.jpg",
+    place: "Yosemite Valley · Merced River",
+    credit: "Bailey Zindel (@baileyzindel) · Unsplash License",
+    source: "https://unsplash.com/photos/NRQV-hBF10M",
+    dayNumber: 5
   },
   {
     src: "./images/san-francisco-cable-car.jpg",

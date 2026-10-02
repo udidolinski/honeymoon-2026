@@ -81,6 +81,9 @@ export interface Stay extends POI {
   category: "stay";
   checkIn: string;
   checkOut: string;
+  /** Hotel's check-in / check-out clock times, e.g. "15:00". */
+  checkInTime?: string;
+  checkOutTime?: string;
   nights: number;
   bookingLink?: string;
   highlights: string[];
@@ -257,6 +260,8 @@ export interface ChecklistItem {
   done?: boolean;
   /** Small timing chip, e.g. "Opens Oct 10, 07:00". */
   when?: string;
+  /** When it must be done by: ISO date or local datetime, e.g. "2026-10-03" or "2026-10-03T18:00". */
+  due?: string;
 }
 
 export interface Tip {

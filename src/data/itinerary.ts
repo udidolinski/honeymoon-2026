@@ -152,7 +152,7 @@ export const itinerary: Day[] = [
     departureTime: "08:00",
     rideToFirst: { duration: "2 h", note: "Paris Las Vegas → Death Valley (Badwater) via Pahrump" },
     region: "mainland",
-    base: "Independence, CA (Eastern Sierra)",
+    base: "Winnedumah Hotel, Independence, CA",
     title: "Death Valley, then north to Independence",
     subtitle: "Badwater, Artist's Palette and Zabriskie Point, then out the west side to US-395",
     leadImage: "./images/mesquite-flat-dunes.jpg",
@@ -193,8 +193,8 @@ export const itinerary: Day[] = [
       },
       {
         time: "Evening",
-        title: "Arrive in Independence",
-        description: "A small, quiet Eastern Sierra town on US-395 with the Sierra crest as a backdrop. Dinner, then an early night."
+        title: "Check in at the Winnedumah Hotel",
+        description: "Check-in is from 15:00; you will arrive around 18:00-19:00, so let the hotel know. A small, quiet Eastern Sierra town on US-395 with the Sierra crest as a backdrop. Dinner, then an early night."
       }
     ],
     driveNotes: "Las Vegas → Badwater ≈ 2 h · Badwater → Stovepipe Wells ≈ 1 h 15 · Stovepipe Wells → Independence ≈ 2 h 30 via CA-190 and US-395",
@@ -215,9 +215,9 @@ export const itinerary: Day[] = [
       "Cell service is minimal to nonexistent inside Death Valley — download offline maps and tell someone your route before you go",
       "Fill up on gas before entering (Pahrump) and again at Stovepipe Wells; the nearest towns outside the park are far apart",
       "October days can still hit 90+°F at Badwater — carry more water than you think you'll need",
-      "The drive out to Independence is long and finishes after dark — leave the park by about 15:30",
+      "The drive out to Independence is long and finishes after dark — leave the park by about 15:30; the Winnedumah checks in from 15:00 and checks out by 11:00 tomorrow",
       "America the Beautiful annual pass covers the Death Valley entrance fee and pays for itself with 3+ parks",
-      "No kosher restaurants or kosher-certified groceries in Death Valley, Independence or Incline — stock up in Las Vegas (Burnt Offerings or Judit Mediterranean Cuisine) before you leave"
+      "No kosher restaurants or kosher-certified groceries in Death Valley, Independence, El Portal or Yosemite — stock up in Las Vegas (Burnt Offerings or Judit Mediterranean Cuisine) before you leave"
     ],
     phrasesOfDay: [
       {
@@ -243,16 +243,16 @@ export const itinerary: Day[] = [
     departureTime: "08:00",
     rideToFirst: { duration: "2 h 30", note: "Independence → Lee Vining via US-395" },
     region: "mainland",
-    base: "Incline, NV (Lake Tahoe)",
-    title: "US-395 north to Yosemite's east entrance",
-    subtitle: "Eastern Sierra scenery, Tioga Pass and the high country — then on to Incline",
-    leadImage: "./images/lake-tahoe.jpg",
-    leadImageCredit: unsplashCredit("Austin Schmid", "pp0Joqv3Y4s"),
+    base: "Cedar Lodge, El Portal (Yosemite west gate)",
+    title: "US-395 north, then across Yosemite on Tioga Road",
+    subtitle: "Check out of the Winnedumah by 11:00, cross the park from the east side and check in at Cedar Lodge from 16:00",
+    leadImage: "./images/yosemite-valley-floor.jpg",
+    leadImageCredit: unsplashCredit("Bailey Zindel (@baileyzindel)", "NRQV-hBF10M"),
     activities: [
       {
         time: "Morning",
         title: "Drive US-395 north",
-        description: "One of America's great road-trip highways, with the Sierra crest on your left the whole way. Fuel up in Bishop or Mammoth.",
+        description: "One of America's great road-trip highways, with the Sierra crest on your left the whole way. Leave Independence by about 08:00 (check-out is 11:00). Fuel up in Bishop or Mammoth.",
         rideToNext: { duration: "2 h 30", note: "Independence → Lee Vining on US-395" }
       },
       {
@@ -264,18 +264,18 @@ export const itinerary: Day[] = [
       },
       {
         time: "Midday",
-        title: "Tioga Pass entrance and Tioga Road",
-        description: "Enter Yosemite from the east at Tioga Pass (9,943 ft). Drive the high country: Tuolumne Meadows, Tenaya Lake and Olmsted Point, with Half Dome in the distance. Tioga Road usually closes with the first big snow — check the NPS road status the day before.",
+        title: "Tioga Pass and the high country",
+        description: "Enter Yosemite from the east at Tioga Pass (9,943 ft) and drive Tioga Road west: Tuolumne Meadows, Tenaya Lake and Olmsted Point, with Half Dome in the distance. Tioga Road usually closes with the first big snow — check the NPS road status the morning of.",
         tag: "view",
-        rideToNext: { duration: "3 h", note: "Back out via Tioga Pass → US-395 north → Carson Valley → Incline", departAt: "15:30" }
+        rideToNext: { duration: "2 h 15", note: "Tioga Pass → Crane Flat → CA-140 → El Portal, without stops", departAt: "13:30" }
       },
       {
-        time: "Evening",
-        title: "Arrive in Incline Village",
-        description: "North end of Lake Tahoe on the Nevada side. Dinner, then rest before a full Yosemite day tomorrow."
+        time: "16:00",
+        title: "Check in at Cedar Lodge, El Portal",
+        description: "Check-in is from 16:00. El Portal sits on the Merced River just outside the park, about 25 minutes from Yosemite Valley. Dinner, then rest before a full valley day tomorrow."
       }
     ],
-    driveNotes: "Independence → Lee Vining ≈ 2 h 30 · Lee Vining → Tioga Pass ≈ 20 min · Tioga Pass → Incline ≈ 3 h via US-395 and NV-28",
+    driveNotes: "Independence → Lee Vining ≈ 2 h 30 · Lee Vining → Tioga Pass ≈ 20 min · Tioga Pass → El Portal ≈ 2 h 15 without stops (Tioga Road and CA-140)",
     drinkOfTheDay: {
       name: "Craft IPA",
       type: "beer",
@@ -289,9 +289,9 @@ export const itinerary: Day[] = [
       { item: "A full tank of gas — there is no fuel inside the park on Tioga Road east of Crane Flat" }
     ],
     dayTips: [
-      "Tioga Road and Tioga Pass close for the season with the first major snow — check NPS road conditions before you set out, and have a plan B (lower elevations, or stay on US-395)",
-      "Daylight fades around 18:15 — plan to be out of the park by about 15:30 for the drive to Incline",
-      "Incline Village is about 3 h from Tioga Pass — a long driving day with a late arrival is expected"
+      "Tioga Road and Tioga Pass close for the season with the first major snow — check NPS road conditions before you set out. Plan B if it is closed: drive around via the foothills (US-395 → CA-108 Sonora Pass, if open, or back via Fresno), which adds several hours",
+      "Daylight fades around 18:15 — you should be at Cedar Lodge by about 16:00-17:00, well before dark",
+      "Winnedumah check-out is 11:00 and Cedar Lodge check-in is 16:00, so the day's timing works with a 08:00 start"
     ],
     phrasesOfDay: [
       {
@@ -314,12 +314,12 @@ export const itinerary: Day[] = [
     dayNumber: 5,
     date: "2026-10-08",
     weekday: "Thursday",
-    departureTime: "06:30",
-    rideToFirst: { duration: "3 h", note: "Incline → Tioga Pass entrance (east side)" },
+    departureTime: "08:00",
+    rideToFirst: { duration: "35 min", note: "El Portal → Tunnel View via CA-140 and Wawona Road" },
     region: "mainland",
-    base: "Incline, NV (Lake Tahoe)",
+    base: "Cedar Lodge, El Portal (Yosemite west gate)",
     title: "A full day in Yosemite National Park",
-    subtitle: "Tunnel View, the valley floor and the waterfalls — a long day from Incline",
+    subtitle: "Tunnel View, the valley floor and the waterfalls — only 25 minutes from your lodge",
     activities: [
       {
         time: "Morning",
@@ -354,7 +354,7 @@ export const itinerary: Day[] = [
         optional: true
       }
     ],
-    driveNotes: "Incline → Tioga Pass ≈ 3 h · Tioga Pass → Yosemite Valley ≈ 2 h via Tioga Road · return the same way, so this is a very long day",
+    driveNotes: "El Portal → Yosemite Valley ≈ 25 min · Valley → Tunnel View ≈ 15 min · Valley → Glacier Point ≈ 45 min",
     drinkOfTheDay: {
       name: "Central Valley Zinfandel",
       type: "wine",
@@ -368,10 +368,10 @@ export const itinerary: Day[] = [
       { item: "Camera or phone with a wide lens for Tunnel View" }
     ],
     dayTips: [
-      "Incline is far from the valley: about 3 h to Tioga Pass plus 2 h along Tioga Road, each way. Consider spending the day in the high country (Tuolumne Meadows, Tenaya Lake) or moving the second night to a base closer to the park",
-      "Check the NPS Tioga Road and Glacier Point Road status the morning of — both close for the season with the first real snow",
+      "Check the NPS Glacier Point Road status the morning of — it closes for the season with the first real snow",
       "October waterfalls are often reduced to a trickle or dry entirely — don't expect the springtime roar",
-      "Free shuttle buses loop the valley floor; parking fills up by mid-morning"
+      "Free shuttle buses loop the valley floor; parking fills up by mid-morning",
+      "You sleep at Cedar Lodge again tonight (check-out is tomorrow at 11:00), so no need to pack the car"
     ],
     phrasesOfDay: [
       {
@@ -394,20 +394,20 @@ export const itinerary: Day[] = [
     dayNumber: 6,
     date: "2026-10-09",
     weekday: "Friday",
-    departureTime: "09:30",
-    rideToFirst: { duration: "4 h 15", note: "Incline → San Francisco via I-80" },
+    departureTime: "10:30",
+    rideToFirst: { duration: "4 h", note: "El Portal → San Francisco via CA-140 and I-580" },
     region: "mainland",
     base: "San Francisco, CA (Union Square)",
     title: "Drive to San Francisco",
-    subtitle: "Return the Alamo car at Union Square by 18:00, then check in at the Hilton",
+    subtitle: "Check out of Cedar Lodge by 11:00, return the Alamo car at Union Square by 18:00, then check in at the Hilton",
     leadImage: "./images/san-francisco-cable-car.jpg",
     leadImageCredit: unsplashCredit("Amogh Manjunath (@therealamogh)", "HksFlo1t8iA"),
     activities: [
       {
-        time: "Morning",
-        title: "Drive Incline → San Francisco",
-        description: "Down over Donner Summit on I-80 through Truckee and Sacramento to the Bay. Fill the tank before the city — gas is much pricier in SF.",
-        rideToNext: { duration: "4 h 15", note: "Incline → San Francisco via I-80; allow extra time for Friday traffic", departAt: "09:30" }
+        time: "10:30",
+        title: "Check out and drive El Portal → San Francisco",
+        description: "Check-out is 11:00. Out through Mariposa and the Central Valley and over the Altamont to the Bay. Fill the tank before the city — gas is much pricier in SF.",
+        rideToNext: { duration: "4 h", note: "El Portal → San Francisco; allow extra time for Friday traffic", departAt: "10:30" }
       },
       {
         time: "Before 18:00",
@@ -420,7 +420,7 @@ export const itinerary: Day[] = [
         description: "Two nights (Oct 9–11) at the Hilton on Union Square. Walk to dinner; no car needed from here on."
       }
     ],
-    driveNotes: "Incline → San Francisco ≈ 4 h 15 via I-80 · allow extra for Friday traffic",
+    driveNotes: "El Portal → San Francisco ≈ 4 h via CA-140 and I-580 · allow extra for Friday traffic",
     drinkOfTheDay: {
       name: "Irish coffee, SF-style",
       type: "coffee",
@@ -432,7 +432,7 @@ export const itinerary: Day[] = [
       { item: "Rental car paperwork, and photos of the car's condition at drop-off" }
     ],
     dayTips: [
-      "Keep the rental-car return deadline (18:00) in mind: leave Incline by about 09:30 to allow for traffic and a fuel stop",
+      "Keep the rental-car return deadline (18:00) in mind: leave El Portal by 10:30-11:00 to allow for traffic and a fuel stop",
       "Parking in SF is expensive — the Hilton is walkable to everything, so you won't need a car after drop-off",
       "Cable cars run from Powell Street, right next to Union Square"
     ],

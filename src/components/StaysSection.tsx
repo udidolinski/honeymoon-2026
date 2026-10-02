@@ -164,6 +164,13 @@ export default function StaysSection() {
               <div className="mt-1 text-sm text-terracotta-600 font-medium">
                 {localizeShortDate(s.checkIn, lang)} → {localizeShortDate(s.checkOut, lang)}
               </div>
+              {(s.checkInTime || s.checkOutTime) && (
+                <div className="mt-0.5 text-xs text-ink-700/80">
+                  {s.checkInTime && <>{t("stay_check_in")} {s.checkInTime}</>}
+                  {s.checkInTime && s.checkOutTime && " · "}
+                  {s.checkOutTime && <>{t("stay_check_out")} {s.checkOutTime}</>}
+                </div>
+              )}
               {s.address && (
                 <div className="mt-1 text-xs text-ink-700/70 flex items-center gap-1">
                   <MapPin size={11} /> {s.address}

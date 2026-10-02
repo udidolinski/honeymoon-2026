@@ -75,7 +75,7 @@ export const tips: Tip[] = [
     id: "kosher-mainland",
     title: "Kosher food is sparse on the mainland leg — plan around Vegas",
     body:
-      "Las Vegas is the first and best stop, so stock up there before you leave: Death Valley, Independence, Yosemite and Incline have no kosher restaurants or kosher-certified groceries at all, and the Eastern Sierra leg (Oct 6–9) is long stretches between towns. Las Vegas is the bright spot: roughly 15–18 kosher-supervised restaurants cluster on the west side of the valley, a 15–20 minute rideshare from the Strip, including Burnt Offerings (OU-certified steakhouse) and Judit Mediterranean Cuisine (Glatt, closer to the Strip) — both close on Saturday, so plan around Shabbat. There's no dedicated 'kosher hotel' on the Strip; Chabad of Southern Nevada (chabadlv.org) keeps the most current restaurant list and can help arrange Shabbat meals or lower-floor rooms at your hotel.",
+      "Las Vegas is the first and best stop, so stock up there before you leave: Death Valley, Independence, El Portal and Yosemite have no kosher restaurants or kosher-certified groceries at all, and the Eastern Sierra leg (Oct 6–9) is long stretches between towns. Las Vegas is the bright spot: roughly 15–18 kosher-supervised restaurants cluster on the west side of the valley, a 15–20 minute rideshare from the Strip, including Burnt Offerings (OU-certified steakhouse) and Judit Mediterranean Cuisine (Glatt, closer to the Strip) — both close on Saturday, so plan around Shabbat. There's no dedicated 'kosher hotel' on the Strip; Chabad of Southern Nevada (chabadlv.org) keeps the most current restaurant list and can help arrange Shabbat meals or lower-floor rooms at your hotel.",
     severity: "info"
   },
   {

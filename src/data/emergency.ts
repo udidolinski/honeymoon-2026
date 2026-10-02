@@ -24,11 +24,11 @@ export const emergencyGroups: EmergencyGroup[] = [
     title: "Hospitals — mainland leg",
     items: [
       {
-        label: "Incline Village Community Hospital",
-        value: "880 Alder Ave, Incline Village, NV",
-        detail: "Nearest hospital to the Incline Village / Lake Tahoe stay",
+        label: "John C. Fremont Hospital — Mariposa",
+        value: "5189 Hospital Rd, Mariposa, CA",
+        detail: "Nearest hospital to El Portal / Yosemite west gate. ≈ 45 min from Cedar Lodge",
         type: "address",
-        link: "https://www.google.com/maps/search/?api=1&query=Incline+Village+Community+Hospital"
+        link: "https://www.google.com/maps/search/?api=1&query=John+C.+Fremont+Hospital+Mariposa"
       },
       {
         label: "Southern Inyo Hospital — Lone Pine",

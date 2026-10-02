@@ -173,7 +173,7 @@ const ROUTE_SEGMENTS: RouteSegment[] = [
       [36.4620, -116.8706], // Death Valley
       [36.8010, -118.1996], // Independence
       [37.9500, -119.1000], // Tioga Pass / Yosemite east
-      [39.2513, -119.9526], // Incline Village
+      [37.6741, -119.7824], // Cedar Lodge, El Portal
       [37.7861, -122.4104] // Hilton Union Square, San Francisco
     ]
   },

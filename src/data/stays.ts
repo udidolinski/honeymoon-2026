@@ -26,46 +26,50 @@ export const stays: Stay[] = [
     ]
   },
   {
-    id: "stay-independence",
-    name: "Independence, CA — Eastern Sierra",
+    id: "stay-winnedumah",
+    name: "Winnedumah Hotel — Independence",
     category: "stay",
     region: "mainland",
-    shortDescription: "Small town on US-395 below the Sierra crest — a suggested base, hotel TBD",
+    shortDescription: "Historic small-town hotel on US-395 below the Sierra crest",
     description:
-      "Hotel to be confirmed. Independence is a small town on US-395 in the Owens Valley, about 2 h 30 from the Death Valley exit at Stovepipe Wells, with the Sierra crest and Mt. Whitney region to the west. A quiet overnight between Death Valley and Yosemite's east entrance.",
-    address: "Independence, CA",
+      "One night at the Winnedumah Hotel in Independence, a small town on US-395 in the Owens Valley, about 2 h 30 from the Death Valley exit at Stovepipe Wells, with the Sierra crest to the west. A quiet overnight between Death Valley and Yosemite's east entrance.",
+    address: "211 N Edward St, Independence, CA",
     coords: [36.801, -118.1996],
     checkIn: "2026-10-06",
     checkOut: "2026-10-07",
+    checkInTime: "15:00",
+    checkOutTime: "11:00",
     nights: 1,
     highlights: [
-      "Hotel still to be confirmed",
+      "Check-in from 15:00, check-out by 11:00",
       "On US-395 — the natural overnight between Death Valley and Tioga Pass",
-      "Limited dining options — plan dinner before you arrive"
+      "Limited dining options in town — plan dinner before you arrive"
     ],
-    warnings: ["Small town — book early and confirm check-in hours before a late arrival"]
+    warnings: ["Small town — tell the hotel you will arrive around 18:00-19:00 after Death Valley"]
   },
   {
-    id: "stay-incline",
-    name: "Incline Village — Lake Tahoe",
+    id: "stay-cedar-lodge",
+    name: "Cedar Lodge — El Portal (Yosemite west gate)",
     category: "stay",
     region: "mainland",
-    shortDescription: "North Lake Tahoe, Nevada side — two nights, hotel TBD",
+    shortDescription: "Lodge on CA-140 just outside Yosemite, about 25 minutes from the valley",
     description:
-      "Hotel to be confirmed. Incline Village sits on the north shore of Lake Tahoe on the Nevada side. It is about 3 h from Yosemite's Tioga Pass entrance, so both Yosemite days involve long drives.",
-    image: "./images/lake-tahoe.jpg",
-    imageCredit: unsplashCredit("Austin Schmid", "pp0Joqv3Y4s"),
-    address: "Incline Village, NV",
-    coords: [39.2513, -119.9526],
+      "Two nights at Cedar Lodge in El Portal, on the Merced River at Yosemite's west entrance. About 25 minutes from Yosemite Valley, so Oct 8 is a short hop to Tunnel View and the valley floor. On Oct 7 you arrive by driving the whole length of Tioga Road.",
+    image: "./images/yosemite-valley-floor.jpg",
+    imageCredit: unsplashCredit("Bailey Zindel (@baileyzindel)", "NRQV-hBF10M"),
+    address: "CA-140, El Portal, CA",
+    coords: [37.6741, -119.7824],
     checkIn: "2026-10-07",
     checkOut: "2026-10-09",
+    checkInTime: "16:00",
+    checkOutTime: "11:00",
     nights: 2,
     highlights: [
-      "Hotel still to be confirmed",
-      "Lake Tahoe scenery on the way to San Francisco",
-      "About 3 h from Tioga Pass — expect long drives on both Yosemite days"
+      "Check-in from 16:00, check-out by 11:00",
+      "Minutes from the Arch Rock entrance, about 25 min from Yosemite Valley",
+      "El Portal to San Francisco is about 4 h — leave by 10:30 on Oct 9 to return the car by 18:00"
     ],
-    warnings: ["Yosemite's valley is roughly 5 h away — consider whether a base closer to the park would suit better"]
+    warnings: ["Tioga Road may close for snow — check NPS road status before Oct 7"]
   },
   {
     id: "stay-hilton-union-square",
