@@ -418,8 +418,14 @@ export const itinerary: Day[] = [
         time: "Evening",
         title: "Check in at Hilton Union Square",
         description: "Two nights (Oct 9–11) at the Hilton on Union Square. Walk to dinner; no car needed from here on."
+      },
+      {
+        time: "19:00",
+        title: "Kabbalat Shabbat and dinner at Chabad of SF",
+        description: "Friday-night services followed by Shabbat dinner at 873 Sutter St, about a 15 minute walk uphill from the Hilton. RSVP with Chabad first and confirm the time — Shabbat starts about 18:10, so it's a walk, not a rideshare."
       }
     ],
+    restaurants: ["rest-m-sf-chabad-nob-hill"],
     driveNotes: "El Portal → San Francisco ≈ 4 h via CA-140 and I-580 · allow extra for Friday traffic",
     drinkOfTheDay: {
       name: "Irish coffee, SF-style",
@@ -457,7 +463,13 @@ export const itinerary: Day[] = [
     subtitle: "No car, no schedule — pick from the list below",
     leadImage: "./images/san-francisco-cable-car.jpg",
     leadImageCredit: unsplashCredit("Amogh Manjunath (@therealamogh)", "HksFlo1t8iA"),
+    restaurants: ["rest-m-sf-chabad-nob-hill"],
     activities: [
+      {
+        time: "10:00",
+        title: "Shabbat morning services and lunch at Chabad of SF",
+        description: "Shacharit at 10:00, followed by Kiddush and Shabbat lunch, at 873 Sutter St (about a 15 minute walk from the Hilton). Confirm the times and RSVP with Chabad."
+      },
       {
         time: "Morning",
         title: "Golden Gate Bridge or a cable-car ride",
@@ -781,9 +793,15 @@ export const itinerary: Day[] = [
         time: "Sunset & night",
         title: "Sunset and stargazing",
         description: "A guided tour is strongly recommended over self-driving — the road above the visitor station requires 4WD and the altitude, cold, and darkness are no joke. Watch sunset from altitude, then stargaze at one of the world's best astronomical sites."
+      },
+      {
+        time: "Evening",
+        title: "Friday Shabbat dinner, Nani Kailua Dr",
+        description: "Shabbat dinner at 75-353 Nani Kailua Dr, Kailua-Kona. Reserve ahead through Chabad Jewish Center of the Big Island. Note that this clashes with the Mauna Kea sunset and stargazing tour above, so pick one for tonight.",
+        optional: false
       }
     ],
-    restaurants: ["rest-h-kona-fish-shack"],
+    restaurants: ["rest-h-kona-shabbat-dinner", "rest-h-kona-fish-shack"],
     drinkOfTheDay: {
       name: "Hot cocoa or hot toddy (non-alcoholic option available)",
       type: "other",
@@ -819,6 +837,11 @@ export const itinerary: Day[] = [
     title: "Free beach day — Kahaluʻu",
     activities: [
       {
+        time: "Midday",
+        title: "Shabbat lunch at Pines Plaza, Nani Kailua Dr",
+        description: "Shabbat lunch at Pines Plaza, 75-240 Nani Kailua Dr, Kailua-Kona. Confirm the start time and reserve through Chabad Jewish Center of the Big Island."
+      },
+      {
         time: "All day",
         title: "Kahaluʻu Beach Park",
         description: "One of the Big Island's best easy snorkel spots right off the sand — calm, shallow, and full of reef fish, with lifeguards on duty and honu (sea turtles) commonly resting nearby.",
@@ -826,7 +849,7 @@ export const itinerary: Day[] = [
         tag: "water"
       }
     ],
-    restaurants: ["rest-h-kona-fish-shack"],
+    restaurants: ["rest-h-kona-shabbat-lunch", "rest-h-kona-fish-shack"],
     drinkOfTheDay: {
       name: "POG juice (non-alcoholic)",
       type: "other",

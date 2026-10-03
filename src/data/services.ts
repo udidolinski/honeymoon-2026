@@ -244,6 +244,47 @@ export const services: Service[] = [
     address: "2 New Montgomery St, San Francisco, CA 94105",
     coords: [37.7873, -122.4005],
     hours: "Mon–Fri 11:00–20:00, Sat 12:00–17:00, Sun closed (confirm before going)"
+  },
+  {
+    id: "rest-m-sf-chabad-nob-hill",
+    name: "Chabad of SF (Knesset Israel, Nob Hill) — Shabbat",
+    category: "restaurant",
+    region: "mainland",
+    base: "mainland",
+    shortDescription: "Shabbat services and meals, about a 15 min walk uphill from Union Square",
+    description:
+      "Chabad of SF at 873 Sutter St, a short walk from Union Square. Listed Shabbat schedule: Kabbalat Shabbat at 19:00 on Friday followed by Shabbat dinner, and Shacharit at 10:00 on Saturday followed by Kiddush and Shabbat lunch. Meals normally need an RSVP, so call (415) 668-6178 or check chabadsf.org before Oct 9, and confirm the times for that week.",
+    address: "873 Sutter St, San Francisco, CA 94109",
+    coords: [37.7886, -122.4149],
+    hours: "Fri 19:00 services + dinner, Sat 10:00 services + lunch (confirm)"
+  },
+
+  // ==================== HAWAII — Big Island (Kailua-Kona) ====================
+  {
+    id: "rest-h-kona-shabbat-dinner",
+    name: "Friday Shabbat dinner — 75-353 Nani Kailua Dr",
+    category: "restaurant",
+    region: "hawaii",
+    base: "hawaii",
+    shortDescription: "Friday-night Shabbat dinner in Kailua-Kona, Oct 16",
+    description:
+      "Friday evening Shabbat dinner at 75-353 Nani Kailua Dr, Kailua-Kona. Chabad Jewish Center of the Big Island (jewishbigisland.org) hosts Shabbat meals by reservation, so confirm the time and book ahead.",
+    address: "75-353 Nani Kailua Dr, Kailua-Kona, HI 96740",
+    coords: [19.6416, -155.9946],
+    hours: "Fri evening, by reservation"
+  },
+  {
+    id: "rest-h-kona-shabbat-lunch",
+    name: "Shabbat lunch — Pines Plaza, 75-240 Nani Kailua Dr",
+    category: "restaurant",
+    region: "hawaii",
+    base: "hawaii",
+    shortDescription: "Saturday Shabbat lunch in Kailua-Kona, Oct 17",
+    description:
+      "Shabbat lunch at Pines Plaza, 75-240 Nani Kailua Dr, Kailua-Kona. Confirm the start time and reserve through Chabad Jewish Center of the Big Island (jewishbigisland.org).",
+    address: "75-240 Nani Kailua Dr, Kailua-Kona, HI 96740",
+    coords: [19.6401, -155.9961],
+    hours: "Sat midday, by reservation"
   }
 ];
 
