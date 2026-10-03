@@ -86,7 +86,7 @@ export const bookingChecklist: ChecklistItem[] = [
     id: "rental-car-confirm",
     due: "2026-10-02",
     text: "Confirm the Alamo (Las Vegas → San Francisco) and Budget (Kona, Maui) rental bookings",
-    detail: "Alamo pickup at Las Vegas airport on Oct 5 evening, one-way drop-off at San Francisco Union Square by 18:00 on Oct 9 — confirm the one-way fee and Union Square location hours. Budget at Kona airport (Oct 11–19) and Kahului airport (Oct 19–27), each returned at the same airport. The driver's card must match the reservation name."
+    detail: "Alamo pickup at Las Vegas airport on Oct 5 evening, one-way drop-off at San Francisco Union Square by 18:00 on Oct 9 — confirm the one-way fee and the Union Square hours; the car goes back to 233 Ellis St, not the O'Farrell St counter. Budget at Kona airport (Oct 11–19) and Kahului airport (Oct 19–27), each returned at the same airport. The driver's card must match the reservation name."
   },
   {
     id: "grand-canyon-antelope-tour",
@@ -392,7 +392,7 @@ export const dayOfChecklist: ChecklistItem[] = [
   {
     id: "day-oct9-car-return",
     text: "Return the Alamo car at Union Square",
-    detail: "Deadline 18:00. Fill the tank first and photograph the car. Then check in at the Hilton Union Square, 2 nights.",
+    detail: "Deadline 18:00. Return it to 233 Ellis St (the counter is at 340 O'Farrell St, but returns go to Ellis St). Fill the tank first and photograph the car. Then check in at the Hilton Union Square, 2 nights.",
     due: "2026-10-09T18:00",
     when: "Oct 9 · by 18:00",
     urgent: true

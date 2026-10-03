@@ -201,7 +201,7 @@ export const DICT = {
   stay_open_booking: "Open booking",
   stay_navigate: "Navigate",
   stay_not_booked: "Hotel not confirmed yet — navigation points to the area. Add the hotel name once you book.",
-  airports_title: "Airports & car pickup",
+  airports_title: "Airports & rental cars",
   airports_kicker: "Tap an app to start directions",
 
   /* ---------- TripStats ---------- */

@@ -41,6 +41,15 @@ export const airports: Airport[] = [
     note: "The rental center is a separate site near the airport, reached by shuttle from the terminal or by rideshare from the Strip."
   },
   {
+    id: "rental-sf",
+    code: "CAR",
+    name: "Alamo car return — San Francisco Union Square",
+    address: "233 Ellis St, San Francisco, CA 94102",
+    coords: [37.7846, -122.4088],
+    usedOn: "Return the Alamo car on Oct 9, by 18:00",
+    note: "Alamo's counter is at 340 O'Farrell St, but the car goes back to 233 Ellis St. Phone +1 888-826-6893. Friday hours were listed as 7:30-18:00, so confirm with Alamo. A few minutes' walk from the Hilton."
+  },
+  {
     id: "airport-sfo",
     code: "SFO",
     name: "San Francisco International Airport",

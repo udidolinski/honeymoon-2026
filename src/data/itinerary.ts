@@ -412,7 +412,7 @@ export const itinerary: Day[] = [
       {
         time: "Before 18:00",
         title: "Return the rental car at Union Square",
-        description: "Drop the Alamo car at the Union Square location by 18:00. Fill the tank first and take photos of the car's condition. Allow extra time — Friday-afternoon traffic into downtown SF is heavy."
+        description: "Drop the Alamo car at 233 Ellis St (the Union Square return point; the counter itself is at 340 O'Farrell St) by 18:00. Fill the tank first and take photos of the car's condition. Allow extra time — Friday-afternoon traffic into downtown SF is heavy."
       },
       {
         time: "Evening",

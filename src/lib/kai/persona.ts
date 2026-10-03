@@ -24,7 +24,7 @@ const TRIP_FACTS = {
   startDate: "2026-10-04",
   endDate: "2026-10-29",
   travellers: "Udi and Miriam, honeymooners",
-  cars: "Alamo rental picked up at Las Vegas airport on Oct 5 evening and dropped off at San Francisco Union Square by 18:00 on Oct 9; Budget rentals at Kona airport (Oct 11–19) and Kahului airport (Oct 19–27)",
+  cars: "Alamo rental picked up at Las Vegas airport on Oct 5 evening and dropped off at 233 Ellis St, San Francisco Union Square (counter at 340 O'Farrell St) by 18:00 on Oct 9; Budget rentals at Kona airport (Oct 11–19) and Kahului airport (Oct 19–27)",
   bases: [
     "Paris Las Vegas, NV",
     "Winnedumah Hotel, Independence, CA (Oct 6, check-in 15:00, check-out 11:00)",
