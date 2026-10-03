@@ -16,6 +16,13 @@ export const bookingChecklist: ChecklistItem[] = [
     when: "Oct 9-11 · 2 nights"
   },
   {
+    id: "kosher-wine-sf",
+    due: "2026-10-07",
+    text: "Order kosher wine (Covenant) for the Hilton in San Francisco",
+    detail: "Flatiron Wines & Spirits SF (2 New Montgomery St, (415) 780-1405) stocks Covenant. They close at 20:00 on Friday, but the car is due back by 18:00, Shabbat starts about 18:10 on Oct 9, and they are closed Sunday. Order for local delivery to the Hilton, or order from covenantwines.com, and ask the Hilton to hold the package. Pack bottles in checked bags.",
+    when: "Order by Oct 7 · deliver Oct 9-10"
+  },
+  {
     id: "hotel-big-island",
     due: "2026-10-02",
     text: "Book the Big Island resort (Kohala Coast)",

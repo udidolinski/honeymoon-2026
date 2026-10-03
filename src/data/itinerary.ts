@@ -434,7 +434,8 @@ export const itinerary: Day[] = [
     dayTips: [
       "Keep the rental-car return deadline (18:00) in mind: leave El Portal by 10:30-11:00 to allow for traffic and a fuel stop",
       "Parking in SF is expensive — the Hilton is walkable to everything, so you won't need a car after drop-off",
-      "Cable cars run from Powell Street, right next to Union Square"
+      "Cable cars run from Powell Street, right next to Union Square",
+      "Kosher wine: Flatiron Wines (2 New Montgomery St) stocks Covenant, but Shabbat starts about 18:10 and the car is due back by 18:00 — order ahead for delivery to the Hilton rather than shopping tonight"
     ],
     phrasesOfDay: [
       {

@@ -229,6 +229,21 @@ export const services: Service[] = [
     address: "4131 El Camino Real, Palo Alto, CA 94306",
     coords: [37.4088, -122.1180],
     hours: "Sun–Fri 9:00–16:00, Sat closed"
+  },
+
+  // ==================== MAINLAND — San Francisco (Union Square) ====================
+  {
+    id: "sup-m-sf-flatiron-wines",
+    name: "Flatiron Wines & Spirits — San Francisco (Covenant kosher wine)",
+    category: "supermarket",
+    region: "mainland",
+    base: "mainland",
+    shortDescription: "Wine shop about a 15 min walk from Union Square that stocks Covenant kosher wines",
+    description:
+      "Covenant is the Bay Area's kosher winery (Berkeley, OU supervised, all wines kosher for Passover). Flatiron's SF shop carries a Covenant collection, including the Cabernet Sauvignon and the Red C Red Blend. Stock changes, so check the Covenant page on sf.flatiron-wines.com or call (415) 780-1405 before you go. Shabbat timing is the catch: the shop closes at 20:00 on Friday, but Shabbat begins about 18:10 and the Alamo car is due back by 18:00, so order online for local delivery or pickup, or ask the Hilton to hold a delivery. It is open Saturday 12:00-17:00 and closed Sunday, and you leave for SFO at 04:30 on Sunday. Covenant also ships direct at covenantwines.com.",
+    address: "2 New Montgomery St, San Francisco, CA 94105",
+    coords: [37.7873, -122.4005],
+    hours: "Mon–Fri 11:00–20:00, Sat 12:00–17:00, Sun closed (confirm before going)"
   }
 ];
 

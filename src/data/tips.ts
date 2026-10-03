@@ -79,6 +79,13 @@ export const tips: Tip[] = [
     severity: "info"
   },
   {
+    id: "kosher-wine-sf",
+    title: "Kosher wine in San Francisco — Covenant at Flatiron",
+    body:
+      "Covenant is the Bay Area's kosher winery (Berkeley, OU supervised). Flatiron Wines & Spirits, 2 New Montgomery St (about a 15 minute walk from Union Square), carries a Covenant collection — check stock at sf.flatiron-wines.com or call (415) 780-1405. The timing is tight: the shop is open until 20:00 on Friday, but you return the car by 18:00 and Shabbat starts about 18:10 on Oct 9, it is closed on Sunday, and you leave for SFO at 04:30 on Oct 11. Easiest fix: order online a few days ahead for local delivery to the Hilton, or order direct from covenantwines.com. Pack bottles in checked bags, wrapped in clothes or a wine sleeve, and check the duty-free allowance for alcohol into Israel.",
+    severity: "info"
+  },
+  {
     id: "kosher-hawaii",
     title: "No walk-in kosher restaurant in Hawaii — book through Chabad instead",
     body:
