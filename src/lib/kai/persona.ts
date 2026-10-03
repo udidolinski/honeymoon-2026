@@ -31,7 +31,9 @@ const TRIP_FACTS = {
     "Cedar Lodge, El Portal, CA at Yosemite west gate (Oct 7-9, check-in 16:00, check-out 11:00)",
     "Hilton San Francisco Union Square",
     "Kohala Coast, Big Island",
-    "Wailea, Maui",
+    "Banyan Tree Bed & Breakfast, Makawao, Maui (Oct 19-21, check-in 15:00, check-out 11:00)",
+    "Courtyard by Marriott Maui Kahului Airport (Oct 21-23, check-in 15:00, check-out 12:00)",
+    "Maui Coast Hotel, Kihei, Maui (Oct 23-27, check-in 16:00, check-out 11:00)",
     "SFO airport area"
   ],
   // Per-trip facts that AREN'T derivable from the itinerary data —

@@ -59,7 +59,7 @@ export const emergencyGroups: EmergencyGroup[] = [
       {
         label: "Maui Health / Maui Memorial Medical Center — Wailuku",
         value: "221 Mahalani St, Wailuku, HI",
-        detail: "Maui's main hospital with full ER. ≈ 40 min from Wailea",
+        detail: "Maui's main hospital with full ER. ≈ 10 min from Kahului, 25 min from Kihei, 30 min from Makawao",
         type: "address",
         link: "https://www.google.com/maps/dir/?api=1&destination=20.8930,-156.5050"
       },

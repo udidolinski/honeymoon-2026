@@ -125,26 +125,80 @@ export const stays: Stay[] = [
     ]
   },
   {
-    id: "stay-maui-wailea",
-    name: "Resort in Wailea — Maui",
+    id: "stay-banyan-tree-bb",
+    name: "Banyan Tree Bed & Breakfast — Makawao (Upcountry Maui)",
     category: "stay",
     region: "hawaii",
-    shortDescription: "South-shore Maui resort corridor — a suggested pick",
+    shortDescription: "Upcountry B&B on the green slopes of Haleakalā, about 25 minutes from Kahului airport",
     description:
-      "A suggested pick — confirm and book your own property. Wailea is Maui's upscale south-shore resort strip, fronting a string of golden-sand beaches with generally calm swimming and good snorkeling. A Budget rental car is picked up at Kahului airport and returned there on Oct 27.",
+      "Two nights at the Banyan Tree Bed & Breakfast Retreat in Makawao, on the cool, green slopes of Haleakalā. About 15 minutes from Paia and the start of the Road to Hana, and nearer to Haleakalā than the coastal resorts. A quiet, small-scale base for your first nights on Maui.",
+    website: "https://www.bed-breakfast-maui.com/",
     image: "./images/haleakala-summit.jpg",
     imageCredit: unsplashCredit("Tevin Trinh", "ygfYm0C1yrg"),
-    address: "Wailea, Maui, HI",
-    coords: [20.6867, -156.4406],
+    address: "3265 Baldwin Ave, Makawao, HI 96768",
+    coords: [20.8553, -156.3103],
+    navName: "Banyan Tree Bed & Breakfast Retreat",
+    confirmed: true,
     checkIn: "2026-10-19",
-    checkOut: "2026-10-27",
-    nights: 8,
+    checkOut: "2026-10-21",
+    checkInTime: "15:00",
+    checkOutTime: "11:00",
+    nights: 2,
     highlights: [
-      "A suggested pick — confirm and book your own property",
-      "Fronts Wailea Beach, walkable to several resort beaches",
-      "Central for the Road to Hana, Haleakalā and Molokini day trips",
-      "No kosher restaurant on-site — Chabad of Maui arranges kosher meals and grocery delivery to the resort with advance notice, see Tips"
+      "Check-in 15:00 (listings say until 21:00), check-out by 11:00 — confirm in your booking",
+      "About 25 min from Kahului airport; you land at 13:30 so you arrive well within the check-in window",
+      "About 15 min from Paia and the Road to Hana, so Oct 21 starts close to the road",
+      "Phone (808) 866-6225 as listed — call if you will be late"
+    ],
+    warnings: ["Upcountry is cooler and wetter than the coast — bring a light jacket"]
+  },
+  {
+    id: "stay-courtyard-maui",
+    name: "Courtyard by Marriott Maui Kahului Airport",
+    category: "stay",
+    region: "hawaii",
+    shortDescription: "Practical airport-side hotel in Kahului, a few minutes from the airport",
+    description:
+      "Two nights at the Courtyard by Marriott in Kahului, close to the airport and the central valley. A convenient base for the Road to Hana loop and for the pre-dawn Haleakalā sunrise drive.",
+    website: "https://www.marriott.com/en-us/hotels/hnmmk-courtyard-maui-kahului-airport/overview/",
+    address: "532 Keolani Pl, Kahului, HI 96732",
+    coords: [20.8905, -156.4355],
+    navName: "Courtyard by Marriott Maui Kahului Airport",
+    confirmed: true,
+    checkIn: "2026-10-21",
+    checkOut: "2026-10-23",
+    checkInTime: "15:00",
+    checkOutTime: "12:00",
+    nights: 2,
+    highlights: [
+      "Check-in from 15:00, check-out by 12:00 — confirm in your booking",
+      "A few minutes from Kahului airport; Haleakalā summit is about 1 h 30-1 h 45 away for the sunrise start",
+      "Phone +1 808-871-1800 as listed"
     ]
+  },
+  {
+    id: "stay-maui-coast",
+    name: "Maui Coast Hotel — Kihei",
+    category: "stay",
+    region: "hawaii",
+    shortDescription: "South-shore Kihei hotel, close to Wailea's beaches and Maalaea Harbor",
+    description:
+      "Four nights at the Maui Coast Hotel in Kihei on Maui's sunny south shore. About 15 minutes from the Wailea beaches and about 20 minutes from Maalaea Harbor, where the Molokini cruise leaves. Your base for the last stretch, including the early airport run on Oct 27.",
+    address: "2259 S Kihei Rd, Kihei, HI 96753",
+    coords: [20.7591, -156.4581],
+    navName: "Maui Coast Hotel",
+    confirmed: true,
+    checkIn: "2026-10-23",
+    checkOut: "2026-10-27",
+    checkInTime: "16:00",
+    checkOutTime: "11:00",
+    nights: 4,
+    highlights: [
+      "Check-in from 16:00, check-out by 11:00 — confirm in your booking",
+      "About 15 min to Wailea Beach and about 20 min to Maalaea Harbor for the Molokini cruise",
+      "Oct 27: flight at 10:30 and the Budget car back at Kahului by about 08:00, so check out and leave around 06:30"
+    ],
+    warnings: ["Oct 23: check out of the Courtyard by 12:00 but you cannot check in here until 16:00 — keep your bags in the car during the Molokini cruise"]
   },
   {
     id: "stay-sfo-airport",

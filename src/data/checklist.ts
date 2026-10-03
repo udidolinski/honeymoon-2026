@@ -24,14 +24,6 @@ export const bookingChecklist: ChecklistItem[] = [
     urgent: true
   },
   {
-    id: "hotel-maui",
-    due: "2026-10-02",
-    text: "Book the Maui resort (Wailea)",
-    detail: "Oct 19-27, 8 nights. You land at 13:30 and pick up the Budget car at Kahului, so standard mid-afternoon check-in works.",
-    when: "Oct 19-27 · 8 nights",
-    urgent: true
-  },
-  {
     id: "hotel-sfo-airport",
     due: "2026-10-02",
     text: "Book an SFO airport hotel for Oct 27",
@@ -245,7 +237,7 @@ export const downloadChecklist: ChecklistItem[] = [
     id: "dl-maps-hawaii",
     due: "2026-10-10",
     text: "Offline maps: Big Island and Maui",
-    detail: "Download the whole Big Island (Kona, Kohala, Volcanoes National Park, Mauna Kea) and Maui (Wailea, Road to Hana, Haleakalā). Coverage is patchy on the Hana road and in the Volcanoes park."
+    detail: "Download the whole Big Island (Kona, Kohala, Volcanoes National Park, Mauna Kea) and Maui (Makawao, Kahului, Kihei, Road to Hana, Haleakalā). Coverage is patchy on the Hana road and in the Volcanoes park."
   },
   {
     id: "dl-music-roads",
@@ -421,14 +413,49 @@ export const dayOfChecklist: ChecklistItem[] = [
   {
     id: "day-oct19-budget-ogg",
     text: "Pick up the Budget car at Kahului (OGG)",
-    detail: "Land 13:30. Return it at the same airport on Oct 27.",
+    detail: "Land 13:30. Return it at the same airport on Oct 27. Then drive to the Banyan Tree B&B in Makawao, about 25 minutes.",
     due: "2026-10-19T14:00",
     when: "Oct 19 · after 13:30"
   },
+{
+    id: "day-oct19-banyan-checkin",
+    text: "Check in at the Banyan Tree Bed & Breakfast, Makawao",
+    detail: "Check-in from 15:00 (listings say until 21:00); check-out Oct 21 by 11:00. 3265 Baldwin Ave. Phone (808) 866-6225 as listed.",
+    due: "2026-10-19T15:00",
+    when: "Oct 19 · check-in 15:00"
+  },
+  {
+    id: "day-oct21-banyan-checkout",
+    text: "Check out of the Banyan Tree B&B and start the Road to Hana",
+    detail: "Check-out is 11:00, but the Road to Hana starts about 07:00, so pack the car before you leave. You will not be back here tonight.",
+    due: "2026-10-21T07:00",
+    when: "Oct 21 · check-out 11:00"
+  },
+  {
+    id: "day-oct21-courtyard-checkin",
+    text: "Check in at the Courtyard by Marriott Maui Kahului Airport",
+    detail: "Check-in from 15:00; check-out Oct 23 by 12:00. 532 Keolani Pl, Kahului. Phone +1 808-871-1800 as listed.",
+    due: "2026-10-21T15:00",
+    when: "Oct 21 · check-in 15:00"
+  },
+  {
+    id: "day-oct23-courtyard-checkout",
+    text: "Check out of the Courtyard and head to the Molokini cruise",
+    detail: "Check-out is 12:00 but the cruise leaves early from Maalaea; keep your bags in the car because Maui Coast check-in is only from 16:00.",
+    due: "2026-10-23T06:00",
+    when: "Oct 23 · check-out 12:00"
+  },
+  {
+    id: "day-oct23-mauicoast-checkin",
+    text: "Check in at the Maui Coast Hotel, Kihei",
+    detail: "Check-in from 16:00; check-out Oct 27 by 11:00, but you leave around 06:30 for the 10:30 flight. 2259 S Kihei Rd.",
+    due: "2026-10-23T16:00",
+    when: "Oct 23 · check-in 16:00"
+  },
   {
     id: "day-oct27-return-ogg",
-    text: "Return the Budget car at Kahului and fly to San Francisco",
-    detail: "Flight at 10:30; return the car with a full tank by about 08:00. Land 18:30 and go to the airport hotel.",
+    text: "Check out of the Maui Coast Hotel, return the Budget car and fly to San Francisco",
+    detail: "Flight at 10:30; leave Kihei about 06:30 and return the car with a full tank by about 08:00. Land 18:30 and go to the airport hotel.",
     due: "2026-10-27T08:00",
     when: "Oct 27 · by 08:00"
   },

@@ -189,9 +189,9 @@ export const DICT = {
 
   /* ---------- Stays section ---------- */
   stays_eyebrow: "Where we sleep",
-  stays_title: "Seven bases, one honeymoon",
+  stays_title: "Nine bases, one honeymoon",
   stays_kicker: "From Sierra lodges to a Strip hotel to island resorts",
-  stays_intro: "The mainland leg moves fast — Vegas, then a new base every night or two through the desert, the Eastern Sierra, Yosemite and San Francisco. The islands slow way down, with eight nights on the Big Island and eight on Maui. Hawaii and airport hotels are suggested picks — confirm and book your own.",
+  stays_intro: "The mainland leg moves fast — Vegas, then a new base every night or two through the desert, the Eastern Sierra, Yosemite and San Francisco. The islands slow way down, with eight nights on the Big Island and eight on Maui across three hotels. Hawaii and airport hotels are suggested picks — confirm and book your own.",
   stay_check_in: "Check in",
   stay_check_out: "Check out",
   stay_nights_one: "{n} night",

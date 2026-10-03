@@ -887,9 +887,9 @@ export const itinerary: Day[] = [
     weekday: "Monday",
     departureTime: "10:30",
     region: "hawaii",
-    base: "Wailea, Maui",
+    base: "Banyan Tree B&B, Makawao (Upcountry Maui)",
     title: "Inter-island hop to Maui",
-    subtitle: "Kona (KOA) → Maui (OGG), depart 12:50, land 13:30 — Budget rental car",
+    subtitle: "Kona (KOA) → Maui (OGG), depart 12:50, land 13:30 — Budget rental car, then to the Banyan Tree B&B in Makawao",
     activities: [
       {
         time: "Morning",
@@ -906,22 +906,19 @@ export const itinerary: Day[] = [
         time: "Afternoon",
         title: "Pick up the Budget rental car at OGG",
         description: "Budget rents from the Kahului airport. Collect the car and return it at the same airport on Oct 27.",
-        rideToNext: { duration: "35 min", note: "Kahului airport → Wailea via Pilani Hwy / HI-31" }
+        rideToNext: { duration: "25 min", note: "Kahului airport → Makawao via Hana Hwy and Baldwin Ave" }
       },
       {
         time: "Late afternoon",
-        title: "Check into the resort in Wailea",
-        description: "Settle in on Maui's upscale south shore — a lush, green contrast to the dry Kona coast.",
-        attractionId: "wailea-beach",
-        tag: "family"
+        title: "Check in at the Banyan Tree Bed & Breakfast, Makawao",
+        description: "Check-in is from 15:00 (listings say until 21:00); you land at 13:30, so you arrive well within the window. Upcountry Maui is cool, green and quiet — a lush contrast to the dry Kona coast. Check-out is 11:00 on Oct 21."
       },
       {
         time: "Evening",
-        title: "Sunset by the water",
-        description: "No plans tonight beyond watching the sun go down over the Pacific — a gentle first evening on Maui."
+        title: "Dinner in Makawao",
+        description: "No plans tonight beyond a relaxed dinner in Makawao town and an early night — a gentle first evening on Maui."
       }
     ],
-    restaurants: ["rest-h-wailea-grill"],
     drinkOfTheDay: {
       name: "Mai Tai",
       type: "cocktail",
@@ -937,7 +934,7 @@ export const itinerary: Day[] = [
       "Inter-island flights often have tighter baggage weight limits than mainland-to-Hawaii legs — check before packing",
       "Return the Kona rental car with a full tank and allow extra time for the shuttle to the terminal",
       "Maui is windier and wetter on the east side and in the mountains — pack a light rain layer",
-      "No walk-in kosher restaurant on Maui — Chabad of Maui (jewishmaui.com) prepares kosher meals and can arrange grocery delivery to the Wailea resort with advance notice"
+      "No walk-in kosher restaurant on Maui — Chabad of Maui (jewishmaui.com) prepares kosher meals and can arrange grocery delivery to your Maui hotel with advance notice"
     ],
     phrasesOfDay: [
       {
@@ -953,8 +950,9 @@ export const itinerary: Day[] = [
     dayNumber: 17,
     date: "2026-10-20",
     weekday: "Tuesday",
+    rideToFirst: { duration: "50 min", note: "Makawao → Wailea Beach" },
     region: "hawaii",
-    base: "Wailea, Maui",
+    base: "Banyan Tree B&B, Makawao (Upcountry Maui)",
     title: "Beach day at Wailea",
     activities: [
       {
@@ -1003,9 +1001,9 @@ export const itinerary: Day[] = [
     date: "2026-10-21",
     weekday: "Wednesday",
     departureTime: "07:00",
-    rideToFirst: { duration: "1 h 30", note: "Wailea → Road to Hana start (Kahului/Paia)" },
+    rideToFirst: { duration: "15 min", note: "Makawao → Paia, the start of the Road to Hana" },
     region: "hawaii",
-    base: "Wailea, Maui",
+    base: "Courtyard by Marriott Maui Kahului Airport",
     title: "The Road to Hana",
     subtitle: "A full day, roughly 10 hours round trip — waterfalls, black sand, and 600 curves",
     activities: [
@@ -1042,7 +1040,7 @@ export const itinerary: Day[] = [
         optional: true
       }
     ],
-    driveNotes: "Road to Hana ≈ 10 hours round trip from Wailea, including stops — over 600 curves and 50+ one-lane bridges",
+    driveNotes: "Road to Hana ≈ 10 hours round trip from Paia, including stops — over 600 curves and 50+ one-lane bridges",
     restaurants: ["rest-h-hana-town-stand"],
     drinkOfTheDay: {
       name: "Fresh coconut water (non-alcoholic)",
@@ -1084,9 +1082,9 @@ export const itinerary: Day[] = [
     date: "2026-10-22",
     weekday: "Thursday",
     departureTime: "03:00",
-    rideToFirst: { duration: "1 h 30", note: "Wailea → Haleakalā summit" },
+    rideToFirst: { duration: "1 h 30", note: "Courtyard, Kahului → Haleakalā summit (allow up to 1 h 45)" },
     region: "hawaii",
-    base: "Wailea, Maui",
+    base: "Courtyard by Marriott Maui Kahului Airport",
     title: "Sunrise above the clouds — Haleakalā",
     subtitle: "Requires an advance sunrise-viewing reservation, booked separately from park entry",
     activities: [
@@ -1096,12 +1094,12 @@ export const itinerary: Day[] = [
         description: "Watch dawn break over the volcanic crater from 10,023 feet — a genuinely otherworldly, above-the-clouds sunrise. The National Park Service requires a separate advance reservation for the sunrise viewing area (3:00–7:00 am), on top of the standard park entrance fee. If sunrise isn't for you, a relaxed daytime summit visit skips the reservation requirement and still delivers the crater views.",
         attractionId: "haleakala-summit",
         tag: "view",
-        rideToNext: { duration: "1 h 30", note: "descend back to Wailea for the day" }
+        rideToNext: { duration: "1 h 30", note: "descend back to Kahului for the day" }
       },
       {
         time: "Rest of the day",
-        title: "Recover, resort time",
-        description: "A short night — plan a relaxed afternoon back at the resort after the early start."
+        title: "Recover at the hotel",
+        description: "A short night — plan a relaxed afternoon back at the hotel after the early start."
       }
     ],
     restaurants: ["rest-h-wailea-grill"],
@@ -1144,9 +1142,9 @@ export const itinerary: Day[] = [
     date: "2026-10-23",
     weekday: "Friday",
     departureTime: "06:30",
-    rideToFirst: { duration: "20 min", note: "Wailea → Maalaea Harbor" },
+    rideToFirst: { duration: "25 min", note: "Courtyard, Kahului → Maalaea Harbor" },
     region: "hawaii",
-    base: "Wailea, Maui",
+    base: "Maui Coast Hotel, Kihei",
     title: "Molokini Crater snorkel cruise",
     activities: [
       {
@@ -1155,12 +1153,12 @@ export const itinerary: Day[] = [
         description: "A half-day boat trip out to the partially-submerged volcanic crescent of Molokini, a marine preserve with some of Maui's clearest water and richest reef fish. Book the boat in advance.",
         attractionId: "molokini-crater",
         tag: "water",
-        rideToNext: { duration: "20 min", note: "back to Wailea for the afternoon" }
+        rideToNext: { duration: "20 min", note: "Maalaea → the Maui Coast Hotel in Kihei" }
       },
       {
         time: "Afternoon",
         title: "Free afternoon / spa",
-        description: "A relaxed second half of the day — pool time or a couples spa treatment back at the resort."
+        description: "A relaxed second half of the day. Check out of the Courtyard by 12:00 (bags in the car during the cruise) and check in at the Maui Coast Hotel from 16:00; then pool time or a couples spa treatment."
       }
     ],
     restaurants: ["rest-h-wailea-grill"],
@@ -1194,7 +1192,7 @@ export const itinerary: Day[] = [
     date: "2026-10-24",
     weekday: "Saturday",
     region: "hawaii",
-    base: "Wailea, Maui",
+    base: "Maui Coast Hotel, Kihei",
     title: "Lahaina & a sunset luau",
     activities: [
       {
@@ -1203,7 +1201,7 @@ export const itinerary: Day[] = [
         description: "The former capital of the Hawaiian Kingdom and a historic whaling port. Check current visitor guidance before you go, as parts of the town have been recovering from the 2023 wildfire.",
         attractionId: "lahaina-town",
         tag: "culture",
-        rideToNext: { duration: "30 min", note: "Lahaina → Wailea for the evening" }
+        rideToNext: { duration: "30 min", note: "Lahaina → Kihei for the evening" }
       },
       {
         time: "Evening",
@@ -1237,12 +1235,12 @@ export const itinerary: Day[] = [
     date: "2026-10-25",
     weekday: "Sunday",
     region: "hawaii",
-    base: "Wailea, Maui",
-    title: "Free day — resort time",
+    base: "Maui Coast Hotel, Kihei",
+    title: "Free day — beach and pool time",
     activities: [
       {
         time: "All day",
-        title: "Relax at the resort",
+        title: "Relax at the beach or pool",
         description: "A deliberately empty day — pool, beach, and a couples spa treatment if you haven't already."
       }
     ],
@@ -1254,7 +1252,7 @@ export const itinerary: Day[] = [
       servingNote: "Ice-cold, straight up, no garnish needed"
     },
     dayTips: [
-      "A good day to book that couples massage if you haven't yet — resort spas fill up on weekends"
+      "A good day to book that couples massage if you haven't yet — hotel spas fill up on weekends"
     ],
     phrasesOfDay: [
       {
@@ -1271,7 +1269,7 @@ export const itinerary: Day[] = [
     date: "2026-10-26",
     weekday: "Monday",
     region: "hawaii",
-    base: "Wailea, Maui",
+    base: "Maui Coast Hotel, Kihei",
     title: "Last full day — beach, pack, and a farewell dinner",
     subtitle: "No fixed plans — the flight to the mainland is tomorrow morning",
     activities: [
@@ -1301,6 +1299,7 @@ export const itinerary: Day[] = [
       servingNote: "Over crushed ice, floated dark rum, a mint sprig and lime wheel"
     },
     dayTips: [
+      "Tomorrow: check out of the Maui Coast Hotel and leave Kihei by about 06:30 so the Budget car is back at Kahului by 08:00 for the 10:30 flight",
       "Return the Budget rental at OGG tomorrow before the 10:30 flight — plan to fuel up tonight",
       "Check agricultural inspection rules for anything you're taking off the islands"
     ],
@@ -1327,7 +1326,7 @@ export const itinerary: Day[] = [
       {
         time: "Morning",
         title: "Return the Budget car at Kahului (OGG)",
-        description: "Fuel up and return the Maui rental car at the airport, then check in and clear security. Allow generous time — Hawaii's agricultural inspection applies on the way out."
+        description: "Check out of the Maui Coast Hotel around 06:30, fuel up and return the Maui rental car at the airport, then check in and clear security. Allow generous time — Hawaii's agricultural inspection applies on the way out."
       },
       {
         time: "10:30",

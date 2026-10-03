@@ -13,7 +13,7 @@ interface Stat {
 const STATS: Stat[] = [
   { value: 25,   label: "nights",           Icon: Moon },
   { value: 25,   label: "attractions",      Icon: Compass },
-  { value: 7,    label: "bases",            Icon: Map },
+  { value: 9,    label: "bases",            Icon: Map },
   { value: 3,    label: "national parks",   Icon: Landmark },
   { value: 13803, suffix: " ft", label: "highest peak", Icon: Mountain },
   { value: 6,    label: "beach & snorkel days", Icon: Waves }
